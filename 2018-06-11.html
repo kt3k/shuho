@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./css/github-markdown.css">
+    <link rel="stylesheet" href="./css/arduino-light.min.css">
+    <script src="./js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 45px;
+			}
+		</style>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <a href="./">Back</a>
+      <h1>2018年第24週</h1>
+      <h2 id="oss">OSS</h2>
+<h3 id="c3-js">c3.js</h3>
+<ul>
+<li><a href="https://github.com/c3js/c3/pull/2389">#2389</a> のリファクタの PR は筋が良さそうなのでレビューしないとと思いつつ見れていない</li>
+<li><a href="https://github.com/c3js/c3/pull/1500">#1500</a> は見ないといけない</li>
+</ul>
+<h3 id="ry-deno">ry/deno</h3>
+<ul>
+<li>deno2 が出来た. golang は捨てられて C++ によって core 部分がリライトされた. ロードマップによると, rust のバインディングが出来て priviledged 領域の実装は rust で進められる方針らしい. ビルドツールには gn が使われる.</li>
+<li>ドキュメントをちょっと直す <a href="https://github.com/ry/deno/pull/263">PR</a> を出した.</li>
+</ul>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3k-moneybit-domain">kt3k/moneybit-domain</h3>
+<p>Moneybit は無料でオープンソースのモバイル会計アプリ. 複式簿記で入力出来て、貸借対照表 (バ&gt;ランスシート) を表示できて、確定申告にもそのまま使えるというアプリ. iOS、Android 対応(予定).</p>
+<ul>
+<li>最近選んだ勘定科目が貸方/借方別に保存されるようになり、新規入力欄で最近選んだ順で勘定科目が表示されるようになった。</li>
+<li>次はチェックボックス未選択のエラー表示, 入力済仕訳の編集モーダルあたりの実装</li>
+</ul>
+<h3 id="kt3k-remarker">kt3k/remarker</h3>
+<ul>
+<li><p>livereload する機能が実装できた。 <a href="https://github.com/kt3k/remarker/issues/9">https://github.com/kt3k/remarker/issues/9</a></p>
+<ul>
+<li>当初の目論見通り、<code>gulp-livereload</code> と <code>connect-livereload</code> を使って割と簡単に実装できた。</li>
+<li>ただし、任意の middleware を追加できる I/F を足せるようにするために、vinyl-serve, bulbo, berber などの依存モジュールを全部更新して行く必要があって、その作業が結構大変だった。</li>
+</ul>
+</li>
+<li><p>Implemented livereload feature. <a href="https://github.com/kt3k/remarker/issues/9">https://github.com/kt3k/remarker/issues/9</a></p>
+<ul>
+<li>Thanks for requesting the feature.</li>
+<li>As I expected, I was able to implement it by using <code>gulp-livereload</code> and <code>connect-livereload</code>.</li>
+<li>I updated <code>vinyl-serve</code>, <code>bulbo</code> and <code>berber</code> to enable them receiving custom connect middleware. That required a lot of greenkeeping works, including circle ci 2 upgrades.</li>
+</ul>
+</li>
+</ul>
+<h3 id="kt3k-domaindoc">kt3k/domaindoc</h3>
+<ul>
+<li>個別モデルページで、「そのモデルを所有しているモデル」一覧を出せるようになった。今までは、「そのモデルが所有するモデル」しか出せていなかった。被所有が出せると、このモデルどこで使ってるんだっけ？という疑問がすぐに解決できるようになるため、結構意味があるアップデートになっている気がする。</li>
+<li>上から派生して、誰にも所有されていないモデルに対して [Independent] というラベルを表示するようになった. [Independent] がついていれば、そのモデルが Aggregate Root のように、ある程度独立性を持ったモデルということがわかる (ただし必ずしも Aggregate Root になるとは限らない)。</li>
+<li>将来的にはもっとドメインモデルの関係が成すグラフをもっと俯瞰的に眺められるような view を追加していきたい。</li>
+<li>あと、普通に DDD をやっているどこかしらのチームに使って欲しい. が、営業する先がわからない.</li>
+</ul>
+<h2 id="-">仕事</h2>
+<h3 id="-">インフラ</h3>
+<ul>
+<li>grafana のプロビジョニングを調べている. anonymous login を許可する設定があることが分かった. ネットワークで社内限定アクセスは保証されているので, read だけなら anonymous を許容したい. dashboard の設定なども含めて全て ansible の yaml に詰め込めるのかどうかを現在調査中.</li>
+<li>フロントエンド会で久しぶりに redux-saga 談義になった. redux-saga なんてそもそも必要か? 的なことを会長が言っていて, 自分はそこまで redux-saga を押したいわけではないけど, 一番 star が付いて要る redux middleware の存在意義が無い的な話の流れになってしまうのは議論の方向性として偏りすぎて要ると思われるため, 自分の理解している範囲内で saga の良さを色々と defend した.</li>
+</ul>
+<h2 id="-">勉強会</h2>
+<h3 id="cndjp">cndjp</h3>
+<ul>
+<li>オラクル青山センターの #cndjp に行った. <a href="https://cnd.connpass.com/event/89854/">https://cnd.connpass.com/event/89854/</a><ul>
+<li>kubernetes 総復習回. 基本的な使い方もあんまり分かっていないので, 若干自分には advanced すぎた印象. <a href="https://github.com/sinpaout">@sinpaout</a> さんと <a href="https://github.com/38fanjia">@38fanjia</a> さんと一緒に行った.</li>
+</ul>
+</li>
+</ul>
+<h2 id="-">山</h2>
+<h3 id="-">本</h3>
+<ul>
+<li>ラインホルトメスナーのナンガ・パルバット単独行という本を買った. まだ未読.</li>
+</ul>
+<h3 id="-">神々の山嶺</h3>
+<p>神々の山嶺は夢枕獏の小説</p>
+<ul>
+<li>羽生が「鬼スラをやろう」と言い出したので、鬼スラは何か調べてみた. 谷川岳という山にある非常に登攀難易度の高いスラブ(一枚岩)をそう呼ぶらしい(鬼スラという名称自体はフィクションで、三スラというがそのモデルとなった実際のスラブの名称). 羽生自身が森田勝という登山家がモデルになっていて、森田の三スラ冬季登攀というエピソード自体がこの部分のモデルになっているらしい.</li>
+</ul>
+<h2 id="-">生活</h2>
+<h3 id="-">ブラウザ</h3>
+<ul>
+<li>vivaldi から chrome に戻す<ul>
+<li>間違って command + shift + W でプログラムを終了させたら開いていたタブが全て失われた. command + shift + T で最後に閉じたタブを復活させようとしても、最後に1個づつ閉じてたやつしか復活しない (一気に消えたやつが丸ごと復帰不可能). これは不便すぎるので vivaldi 使用終了. chrome に戻す.</li>
+</ul>
+</li>
+</ul>
+
+      <hr>
+      <a href="./">Back</a>
+    </article>
+  </body>
+</html>
