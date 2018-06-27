@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./css/github-markdown.css" />
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 45px;
+			}
+		</style>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <h1><a href="https://github.com/kt3k">@kt3k / Yoshiya Hinosawa</a> の週報</h1>
+      <ul>
+      {% for f in file.files %}
+        <li>
+          <a href="{{ f.relative }}">2018年第{{ f.fm.week }}週</a>
+        </li>
+      {% endfor %}
+      </ul>
+    </article>
+  </body>
+</html>
