@@ -1,6 +1,6 @@
 const { asset, dest } = require('bulbo')
 
-const { relative } = require('path')
+const { join, dirname, relative } = require('path')
 const md = require('gulp-markdown')
 const acc = require('vinyl-accumulate')
 const layout1 = require('layout1')
@@ -13,6 +13,10 @@ const paths = {
   dest: 'build'
 }
 
+const sort = (x, y) => moment(y.data.start).diff(x.data.start)
+const getBasepath = path => join('.', relative(dirname(path), ''))
+const DATE_FORMAT = 'YYYY-MM-DD'
+
 dest(paths.dest)
 
 asset('assets/**/*.*')
@@ -23,15 +27,9 @@ asset('2*/*.md')
       const m = moment(file.relative, 'YYYY/MM-DD.md')
       return {
         week: m.format('w'),
-        start: m
-          .clone()
-          .startOf('isoWeek')
-          .format('YYYY-MM-DD'),
-        end: m
-          .clone()
-          .endOf('isoWeek')
-          .format('YYYY-MM-DD'),
-        basepath: relative(file.relative, '')
+        start: m.startOf('isoWeek').format(DATE_FORMAT),
+        end: m.endOf('isoWeek').format(DATE_FORMAT),
+        basepath: getBasepath(file.relative)
       }
     })
   )
@@ -41,11 +39,11 @@ asset('2*/*.md')
         .pipe(
           acc(paths.index, {
             debounce: 500,
-            sort: (x, y) => moment(y.data.start).diff(x.data.start)
+            sort
           })
         )
         .pipe(layout1.nunjucks('index.md.njk'))
-        .pipe(data({ basepath: '.' })),
+        .pipe(data({ basepath: getBasepath(paths.index) })),
       src.pipe(layout1.nunjucks('shuho.md.njk'))
     ])
   )
