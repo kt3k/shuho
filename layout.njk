@@ -17,7 +17,10 @@
   <body>
     <article class="markdown-body">
       <a href="./">Back</a>
-      <h1>2018年第{{file.fm.week}}週</h1>
+      <h1>2018年第{{file.data.week}}週</h1>
+      <blockquote>
+        {{ file.data.start.format('YYYY-MM-DD') }} to {{ file.data.end.format('YYYY-MM-DD') }}
+      </blockquote>
       {{ file.contents | safe }}
       <hr>
       <a href="./">Back</a>

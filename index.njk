@@ -17,7 +17,8 @@
       <ul>
       {% for f in file.files %}
         <li>
-          <a href="{{ f.relative }}">2018年第{{ f.fm.week }}週</a>
+          <a href="{{ f.relative }}">2018年第{{ f.data.week }}週</a>
+          <small>{{ f.data.start.format('YYYY-MM-DD') }} to {{ f.data.end.format('YYYY-MM-DD') }}</small>
         </li>
       {% endfor %}
       </ul>
