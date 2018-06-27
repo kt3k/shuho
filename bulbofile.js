@@ -1,6 +1,6 @@
 const { asset, dest } = require('bulbo')
 
-const { basename } = require('path')
+const { relative } = require('path')
 const md = require('gulp-markdown')
 const acc = require('vinyl-accumulate')
 const layout1 = require('layout1')
@@ -17,21 +17,37 @@ dest(paths.dest)
 
 asset('assets/**/*.*')
 
-asset('2*.md')
-  .pipe(data(file => {
-    const m = moment(file.relative, 'YYYY-MM-DD.md')
-    return {
-      week: m.format('w'),
-      start: m.clone().startOf('isoWeek').format('YYYY-MM-DD'),
-      end: m.clone().endOf('isoWeek').format('YYYY-MM-DD')
-    }
-  }))
-  .pipe(branch.obj(src => [
-    src.pipe(acc(paths.index, {
-      debounce: 500,
-      sort: (x, y) => moment(y.data.start).diff(x.data.start)
-    })).pipe(layout1.nunjucks('index.md.njk')),
-    src.pipe(layout1.nunjucks('shuho.md.njk'))
-  ]))
+asset('2*/*.md')
+  .pipe(
+    data(file => {
+      const m = moment(file.relative, 'YYYY/MM-DD.md')
+      return {
+        week: m.format('w'),
+        start: m
+          .clone()
+          .startOf('isoWeek')
+          .format('YYYY-MM-DD'),
+        end: m
+          .clone()
+          .endOf('isoWeek')
+          .format('YYYY-MM-DD'),
+        basepath: relative(file.relative, '')
+      }
+    })
+  )
+  .pipe(
+    branch.obj(src => [
+      src
+        .pipe(
+          acc(paths.index, {
+            debounce: 500,
+            sort: (x, y) => moment(y.data.start).diff(x.data.start)
+          })
+        )
+        .pipe(layout1.nunjucks('index.md.njk'))
+        .pipe(data({ basepath: '.' })),
+      src.pipe(layout1.nunjucks('shuho.md.njk'))
+    ])
+  )
   .pipe(md())
   .pipe(layout1.nunjucks('layout.njk'))
