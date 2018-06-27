@@ -10,8 +10,6 @@ const moment = require('moment')
 
 const paths = {
   index: 'index.html',
-  indexLayout: 'index.njk',
-  layout: 'layout.njk',
   dest: 'build'
 }
 
@@ -24,15 +22,16 @@ asset('2*.md')
     const m = moment(file.relative, 'YYYY-MM-DD.md')
     return {
       week: m.format('w'),
-      start: m.clone().startOf('isoWeek'),
-      end: m.clone().endOf('isoWeek')
+      start: m.clone().startOf('isoWeek').format('YYYY-MM-DD'),
+      end: m.clone().endOf('isoWeek').format('YYYY-MM-DD')
     }
   }))
-  .pipe(md())
   .pipe(branch.obj(src => [
     src.pipe(acc(paths.index, {
       debounce: 500,
-      sort: (x, y) => y.data.start.diff(x.data.start)
-    })).pipe(layout1.nunjucks(paths.indexLayout)),
-    src.pipe(layout1.nunjucks(paths.layout))
+      sort: (x, y) => moment(y.data.start).diff(x.data.start)
+    })).pipe(layout1.nunjucks('index.md.njk')),
+    src.pipe(layout1.nunjucks('shuho.md.njk'))
   ]))
+  .pipe(md())
+  .pipe(layout1.nunjucks('layout.njk'))
