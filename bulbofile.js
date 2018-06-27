@@ -20,6 +20,7 @@ const DATE_FORMAT = 'YYYY-MM-DD'
 dest(paths.dest)
 
 asset('assets/**/*.*')
+asset('CNAME')
 
 asset('2*/*.md')
   .pipe(
