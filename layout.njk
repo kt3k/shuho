@@ -2,6 +2,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if file.data.title %}{{ file.data.title }} | {% endif %}{{ SITE_TITLE }}</title>
     <link rel="stylesheet" href="{{ file.data.basepath }}/css/github-markdown.css">
     <link rel="stylesheet" href="{{ file.data.basepath }}/css/arduino-light.min.css">
     <script src="{{ file.data.basepath }}/js/highlight.min.js"></script>

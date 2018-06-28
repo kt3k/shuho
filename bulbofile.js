@@ -16,6 +16,7 @@ const paths = {
 const sort = (x, y) => moment(y.data.start).diff(x.data.start)
 const getBasepath = path => join('.', relative(dirname(path), ''))
 const DATE_FORMAT = 'YYYY-MM-DD'
+const SITE_TITLE = '@kt3k の週報'
 
 dest(paths.dest)
 
@@ -26,12 +27,16 @@ asset('2*/*.md')
   .pipe(
     data(file => {
       const m = moment(file.relative, 'YYYY/MM-DD.md')
+      const year = m.format('YYYY')
+      const week = m.format('w')
+      const title = `${year}年第${week}週`
       return {
-        year: m.format('YYYY'),
-        week: m.format('w'),
+        year,
+        week,
         start: m.startOf('isoWeek').format(DATE_FORMAT),
         end: m.endOf('isoWeek').format(DATE_FORMAT),
-        basepath: getBasepath(file.relative)
+        basepath: getBasepath(file.relative),
+        title
       }
     })
   )
@@ -50,4 +55,4 @@ asset('2*/*.md')
     ])
   )
   .pipe(md())
-  .pipe(layout1.nunjucks('layout.njk'))
+  .pipe(layout1.nunjucks('layout.njk', { data: { SITE_TITLE } }))
