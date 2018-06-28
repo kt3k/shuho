@@ -3,8 +3,8 @@
 > [@kt3k / Yoshiya Hinosawa][kt3k] の週報です
 
 {% for f in file.files %}
-- [{{ f.data.title }}]({{ f.relative }})
-  - {{ f.data.start }} / {{ f.data.end }}
+- [{{ f.data.title }}]({{ f.relative }}) ({{ f.data.start }} / {{ f.data.end }})
+  - {% for cat in f.data.categories %}[{{ cat }}]({{ f.relative }}#{{ cat.toLowerCase() }}){% if not loop.last%} | {% endif %}{% endfor %}
 {% endfor %}
 
 ---
