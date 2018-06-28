@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  deploy:
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - npm-{{ checksum "package.json" }}
+      - run: npm i
+      - save_cache:
+          paths:
+            - node_modules
+          key: npm-{{ checksum "package.json" }}
+      - run: npm run pub
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: master
+
