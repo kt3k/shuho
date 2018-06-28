@@ -27,6 +27,7 @@ asset('2*/*.md')
     data(file => {
       const m = moment(file.relative, 'YYYY/MM-DD.md')
       return {
+        year: m.format('YYYY'),
         week: m.format('w'),
         start: m.startOf('isoWeek').format(DATE_FORMAT),
         end: m.endOf('isoWeek').format(DATE_FORMAT),

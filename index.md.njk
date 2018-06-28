@@ -1,6 +1,8 @@
-# [@kt3k / Yoshiya Hinosawa](https://github.com/kt3k) の週報
+# 週報
+
+> [@kt3k / Yoshiya Hinosawa](https://github.com/kt3k) の週報です
 
 {% for f in file.files %}
-- [2018年第{{ f.data.week }}週]({{ f.relative.replace('.md', '.html') }})
-  - {{ f.data.start }} to {{ f.data.end }}
+- [{{ f.data.year }}年第{{ f.data.week }}週]({{ f.relative.replace('.md', '.html') }})
+  - {{ f.data.start }} / {{ f.data.end }}
 {% endfor %}
