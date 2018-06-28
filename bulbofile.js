@@ -21,7 +21,7 @@ const SITE_TITLE = '@kt3k の週報'
 dest(paths.dest)
 
 asset('assets/**/*.*')
-asset('CNAME')
+asset('assets/CNAME')
 
 asset('2*/*.md')
   .pipe(
