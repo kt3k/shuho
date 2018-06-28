@@ -1,8 +1,9 @@
 const { asset, dest } = require('bulbo')
 
 const { join, dirname, relative } = require('path')
-const md = require('gulp-markdown')
+const md = require('gulp-remark')
 const acc = require('vinyl-accumulate')
+const rename = require('gulp-rename')
 const layout1 = require('layout1')
 const branch = require('branch-pipe')
 const data = require('gulp-data')
@@ -24,6 +25,7 @@ asset('assets/**/*.*')
 asset('assets/CNAME')
 
 asset('2*/*.md')
+  .pipe(rename({ extname: '.html' }))
   .pipe(
     data(file => {
       const m = moment(file.relative, 'YYYY/MM-DD.md')
@@ -54,5 +56,12 @@ asset('2*/*.md')
       src.pipe(layout1.nunjucks('tmpl/shuho.md.njk'))
     ])
   )
-  .pipe(md())
+  //*
+  .pipe(
+    md()
+      .use(require('remark-slug'))
+      .use(require('remark-align'))
+      .use(require('remark-html'))
+  )
+  //*/
   .pipe(layout1.nunjucks('tmpl/layout.njk', { data: { SITE_TITLE } }))
