@@ -1,4 +1,4 @@
-[Back]({{ file.data.basepath }})
+[Back][]
 
 # {{ file.data.title }}
 > {{ file.data.start }} / {{ file.data.end }}
@@ -6,4 +6,7 @@
 {{ file.contents | safe }}
 
 ---
-[Back]({{ file.data.basepath }})
+[Back][] | [Edit][]
+
+[Back]: {{ file.data.basepath }}
+[Edit]: https://github.com/kt3k/shuho/edit/master/{{ file.relative }}
