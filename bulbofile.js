@@ -49,10 +49,10 @@ asset('2*/*.md')
             sort
           })
         )
-        .pipe(layout1.nunjucks('index.md.njk'))
+        .pipe(layout1.nunjucks('tmpl/index.md.njk'))
         .pipe(data({ basepath: getBasepath(paths.index) })),
-      src.pipe(layout1.nunjucks('shuho.md.njk'))
+      src.pipe(layout1.nunjucks('tmpl/shuho.md.njk'))
     ])
   )
   .pipe(md())
-  .pipe(layout1.nunjucks('layout.njk', { data: { SITE_TITLE } }))
+  .pipe(layout1.nunjucks('tmpl/layout.njk', { data: { SITE_TITLE } }))
