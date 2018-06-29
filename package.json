@@ -7,7 +7,7 @@
     "clean": "rimraf build",
     "start": "bulbo",
     "build": "bulbo build",
-    "pub": "npm run clean && npm run build && gh-pages -d build",
+    "pub": "npm run clean && npm run build && gh-pages -d build -m 'chore: update'",
     "precommit": "lint-staged"
   },
   "repository": {
