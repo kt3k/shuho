@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{% if file.data.title %}{{ file.data.title }} | {% endif %}{{ SITE_TITLE }}" />
-    <meta property="og:image" content="TBD" />
+    <meta property="og:image" content="{{ file.data.basepath }}/img/logo.svg" />
     <meta property="og:description" content="{{ SITE_DESCRIPTION }}" />
     <title>{% if file.data.title %}{{ file.data.title }} | {% endif %}{{ SITE_TITLE }}</title>
     <link rel="stylesheet" href="{{ file.data.basepath }}/css/github-markdown.css" />
