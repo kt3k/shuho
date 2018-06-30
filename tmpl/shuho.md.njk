@@ -1,9 +1,15 @@
 [Back][]
 
 # {{ file.data.title }}
+
 > {{ file.data.start }} / {{ file.data.end }}
 
+
 {{ file.contents | safe }}
+
+---
+
+<div class="fb-like" data-href="{{ file.data.basepath }}/{{ file.data.relative }}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
 
 ---
 [Back][] | [Edit][]
