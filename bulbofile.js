@@ -19,9 +19,10 @@ const getBasepath = path => join('.', relative(dirname(path), ''))
 const DATE_FORMAT = 'YYYY-MM-DD'
 const SITE_TITLE = '@kt3k の週報'
 const SITE_DESCRIPTION = '@kt3k の週報です | Weekly Journal of @kt3k'
+const DOMAIN = 'shuho.kt3k.org'
 
 const tmpl = tmpl =>
-  layout1.nunjucks(tmpl, { data: { SITE_TITLE, SITE_DESCRIPTION } })
+  layout1.nunjucks(tmpl, { data: { SITE_TITLE, SITE_DESCRIPTION, DOMAIN } })
 const acc = () => accumulate(paths.index, { debounce: 500, sort })
 const md = () =>
   remark()
