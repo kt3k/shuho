@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="2018年第26週 | @kt3k の週報" />
+    <meta property="og:image" content="../img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly Journal of @kt3k" />
+    <title>2018年第26週 | @kt3k の週報</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="2018年第26週">2018年第26週</h1>
+<blockquote>
+<p>2018-06-25 / 2018-07-01</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="rydeno">ry/deno</h3>
+<ul>
+<li>
+<p><a href="https://github.com/ry/deno/issues/269">issue #269</a></p>
+<ul>
+<li>Protobuf v2 の作者の issue. Protobuf はオーバーヘッドが大きすぎるから <a href="https://capnproto.org/">Cap'n Proto</a> を使った方が良いのでは, と言う提言. だいたい好意的に受け取られている雰囲気. capnp-ts という typescript 実装の調査を始めた人が現れたが, 結構バギーらしいという報告が出てきている.</li>
+</ul>
+</li>
+</ul>
+<h2 id="news">News</h2>
+<h3 id="hagex-殺人事件">Hagex 殺人事件</h3>
+<ul>
+<li>ネット炎上ウォッチャーの Hagex という人が刺殺された. 自分はそれほどこの人のブログを見ていたわけではないけど, はあちゅうが #metoo で炎上していた時に情報が錯綜しすぎて何がなんだかわからなかった時にこの人のまとめを読んで事態を理解した記憶があった. ネットウォッチ界では相当知られた存在だったらしく, 界隈がかなりざわついていたように見えた. 容疑者は低脳先生という, 無限に垢バンを繰り返しているどうしようもないはてなユーザーだったらしく, かなり異常な事件 (主に犯人が) という印象. ゲームで垢バンとかなら分かるけど, はてなみたいなサービスで無限に垢バン繰り返すってどういうことなんだろう... 相当その世界に飲み込まれていたのだろうと思うけど, 何がきっかけなんだろう... Hagex と低脳先生には直接のやり取りはほとんど無かったらしく (低脳先生というのが居て, みんなで通報しているというちょっとした記事を書いた程度), ほとんど逆恨みに近い動機に見えた. 増田に犯行声明のようなものが投稿されたがその日のうちに削除され, 不気味だった.</li>
+</ul>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3kshuho">kt3k/shuho</h3>
+<ul>
+<li>
+<p>この週報を html にレンダリングできるようにした.</p>
+<ul>
+<li><a href="https://npm.im/bulbo">bulbo</a> で<a href="https://github.com/kt3k/shuho/blob/b0ee1edc6cb4b8d14faef72d157d00cd7513d654/bulbofile.js#L38-L71">パイプライン</a>を組んで各週の md から html と index ページ (トップページ) を自動生成. (いわゆるブログのビルド)</li>
+<li>master に push すると circleci 2 経由で自動的に gh-pages に push される. (デプロイコマンドを打つ必要がない).</li>
+<li>greenkeeper も入れたので, 依存 npm 自体が腐らないようになってる. 3年ぐらい運用した middleman の依存 gem が腐ってて, ビルド環境自体のメンテが辛くなってるパターンはよく見るので, それと比べるとメンテナンス性が高いはず.</li>
+<li>css は github-markdown-css という sindresorhus 製の github の markdown レンダリングを再現した css というのを使っていて, 自分ではほぼデザインしていない.</li>
+<li>https 化は最近入った gh-pages の自動 let's encrypt 機能を使った. DNS の設定次第で効いたり, 効かなかったりするらしく, ここのデバッグは少し面倒だった.</li>
+</ul>
+</li>
+</ul>
+<h2 id="仕事">仕事</h2>
+<h3 id="react">react</h3>
+<ul>
+<li>create-react-app でプロジェクトを始めて, それを eject したチームがあって, その eject されたごちゃごちゃしたスクリプト群がネックになって webpack が 2 から上げられなくなっているという相談を受けた. create-react-app のスクリプト群を読み解いて, webpack CLI から直接ビルドできるように変更する作業などを行った.</li>
+</ul>
+<h3 id="インフラ">インフラ</h3>
+<ul>
+<li>ansible-grafana をまだ調査中. ansible-grafana は debian しかサポートしていないことが分かったので, ベース AMI を ubuntu に変更. その後 ansible-grafana のプロビジョニングに入っていってエラーが出ているが, セキュリティの都合でエラーメッセージを検閲 (censor) するという機能が ansible-grafana に入っていて, そのせいでエラー内容がはっきりとは分からず, 作業が難航中.</li>
+</ul>
+<h2 id="イベント">イベント</h2>
+<h3 id="tng31">tng31</h3>
+<ul>
+<li>
+<p><a href="https://nodejs.jp/events/2018/06-29-tng31">Node学園31時限目</a></p>
+<ul>
+<li>Deno, GraalVM, JSConf EU 報告 etc.</li>
+</ul>
+</li>
+</ul>
+<h3 id="飲み会">飲み会</h3>
+<ul>
+<li>月曜数学飲み, 火曜kebary飲み, 金曜送別会飲み</li>
+</ul>
+<h2 id="その他">その他</h2>
+<h3 id="sinpaout-さん">@sinpaout さん</h3>
+<ul>
+<li>パートナーの @sinpaout さんが離任された. フルスタックが出来るフロントエンドエンジニアだったので非常に残念.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2018/06-25.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a> | <a href="https://github.com/kt3k/shuho/edit/master/2018/06-25.md">Edit</a></p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>
