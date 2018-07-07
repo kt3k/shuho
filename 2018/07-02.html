@@ -60,7 +60,7 @@
 <li>
 <p><a href="https://github.com/ry/deno/pull/330">pull #330</a></p>
 <ul>
-<li>protocol buffers を flatbuffers で置き換える PR. Cap'n Proto が良いではという issue (<a href="https://github.com/ry/deno/issue/269">#269</a>) も出ていたが, Cap'n Proto とほぼ似たようなパフォーマンスがでるシリアライズプロトコルで, google 製の flatbuffers の方が適切という判断がされたぽい. ただ, この決定に関してはまだ非常に <a href="https://gitter.im/denolife/Lobby?at=5b3ed9ee3572e970c17a181d">tentative</a> ということで, 完全に決まったわけではない.</li>
+<li>protocol buffers を flatbuffers で置き換える PR. Cap'n Proto が良いのではという issue (<a href="https://github.com/ry/deno/issue/269">#269</a>) も出ていたが, Cap'n Proto とほぼ似たようなパフォーマンスがでるシリアライズプロトコルで, google 製の flatbuffers の方が適切という判断がされたぽい. ただ, この決定に関してはまだ非常に <a href="https://gitter.im/denolife/Lobby?at=5b3ed9ee3572e970c17a181d">tentative</a> ということで, 完全に決まったわけではない.</li>
 </ul>
 </li>
 </ul>
@@ -76,6 +76,25 @@
 <h3 id="lekohothouse">Leko/hothouse</h3>
 <ul>
 <li>Leko さんが <a href="https://github.com/Leko/hothouse">hothouse</a> という OSS を作られた. 自家製 greenkeeper のようなものぽい. 使ってみたい.</li>
+</ul>
+<h3 id="gn">gn</h3>
+<ul>
+<li>
+<p><a href="https://github.com/o-lim/generate-ninja">https://github.com/o-lim/generate-ninja</a></p>
+<ul>
+<li>deno が使っているビルドシステム. 独自 DSL (結構綺麗) で語彙がかなり多い. ninja ファイルが出力される.</li>
+<li><a href="https://docs.google.com/presentation/d/15Zwb53JcncHfEwHpnG_PoIbbzQ3GQi_cpujYwbpcbZo/edit">このスライド</a>がわかりやすい.</li>
+</ul>
+</li>
+</ul>
+<h3 id="ninja">ninja</h3>
+<ul>
+<li>
+<p><a href="https://github.com/ninja-build/ninja">https://github.com/ninja-build/ninja</a></p>
+<ul>
+<li>gn で設定をビルドした結果は ninja として出力される. ninja は手でかく想定はされていない, とにかく速さに特化されたビルドシステム. <a href="https://ninja-build.org/manual.html">公式ドキュメント</a>が非常に丁寧.</li>
+</ul>
+</li>
 </ul>
 <h2 id="仕事">仕事</h2>
 <h3 id="アンチパターン">アンチパターン</h3>
