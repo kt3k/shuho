@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6002px" height="502px" viewBox="0 0 6002 502" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="18.319463%" y1="49.9995142%" x2="84.1960206%" y2="49.9995142%" id="linearGradient-1">
+            <stop stop-color="#EC6161" offset="0%"></stop>
+            <stop stop-color="#C9AC2E" offset="51.8554516%"></stop>
+            <stop stop-color="#57CFBA" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-95.000000, -102.000000)">
+            <g id="bg" transform="translate(96.000000, 103.000000)">
+                <polygon stroke="#979797" fill="url(#linearGradient-1)" points="0 0 6000 0 6000 500 0 500"></polygon>
+                <g id="KT3K" transform="translate(5008.000000, 144.000000)" fill="#FFFFFF">
+                    <g id="K">
+                        <polygon id="Triangle" points="1.06655185e-15 0 51.1908361 0 0 68.4117607"></polygon>
+                        <polygon id="Triangle" transform="translate(25.595418, 147.512859) scale(1, -1) translate(-25.595418, -147.512859) " points="1.06655185e-15 113.306979 51.1908361 113.306979 0 181.718739"></polygon>
+                        <polygon id="Rectangle" points="86.6051597 0 154.91908 0 85.99878 91.2055347 154.91908 182.411069 86.6051597 182.411069 17.07848 90.9111268"></polygon>
+                    </g>
+                    <g id="K" transform="translate(661.000000, 0.000000)">
+                        <polygon id="Triangle" points="1.06655185e-15 0 51.1908361 0 0 68.4117607"></polygon>
+                        <polygon id="Triangle" transform="translate(25.595418, 147.512859) scale(1, -1) translate(-25.595418, -147.512859) " points="1.06655185e-15 113.306979 51.1908361 113.306979 0 181.718739"></polygon>
+                        <polygon id="Rectangle" points="86.6051597 0 154.91908 0 85.99878 91.2055347 154.91908 182.411069 86.6051597 182.411069 17.07848 90.9111268"></polygon>
+                    </g>
+                    <g id="3" transform="translate(415.000000, 0.000000)">
+                        <path d="M124.385143,85.8504531 L124.385143,36.5057106 C125.097931,36.4886383 125.812821,36.4800536 126.529714,36.4800536 C175.090692,36.4800536 214.457143,75.8706259 214.457143,124.461359 C214.457143,173.052093 175.090692,212.442665 126.529714,212.442665 C77.9687364,212.442665 38.6022857,173.052093 38.6022857,124.461359 C38.6022857,123.744027 38.6108652,123.028699 38.6279271,122.315474 L87.9424523,122.315474 C87.9324587,122.671901 87.9274286,123.029571 87.9274286,123.388416 C87.9274286,144.128364 104.730182,160.941413 125.457429,160.941413 C146.184675,160.941413 162.987429,144.128364 162.987429,123.388416 C162.987429,102.648469 146.184675,85.8354202 125.457429,85.8354202 C125.098803,85.8354202 124.741352,85.8404534 124.385143,85.8504531 L124.385143,85.8504531 Z" id="Combined-Shape"></path>
+                        <rect id="Rectangle-4" x="0" y="0" width="98.6502857" height="100.856619"></rect>
+                    </g>
+                    <g id="T" transform="translate(194.000000, 0.000000)">
+                        <rect id="Rectangle-3" x="57.85875" y="0" width="68.5733333" height="184.290833"></rect>
+                        <polygon id="Rectangle-3" points="34.2866667 0 34.2866667 68.5733333 0 68.5733333 0 0"></polygon>
+                        <polygon id="Rectangle-3" points="184.290833 0 184.290833 68.5733333 150.004167 68.5733333 150.004167 0"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
