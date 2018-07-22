@@ -1,0 +1,138 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="2018年第29週 | @kt3k の週報" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly Journal of @kt3k" />
+    <title>2018年第29週 | @kt3k の週報</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="2018年第29週">2018年第29週</h1>
+<blockquote>
+<p>2018-07-16 / 2018-07-22</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="rydeno">ry/deno</h3>
+<ul>
+<li>
+<p>Error on Warnings</p>
+<ul>
+<li><a href="https://github.com/ry/deno/pull/379">pull #379</a></li>
+<li>deno は今まで compile 時の warning を error 扱いはして居なかったけど, それを error にしたいという <a href="https://github.com/ry/deno/issues/374">issue</a> が立って居たので, それに挑戦してみたという PR. mac では問題になる warning がそもそも3つしか出ていなかったので, それは簡単にクリアできたものの, @piscisaureus さんのレビューで linux と windows だと数え切れない warnings が出ていることが分かり, warning を error にするフラグを true にすることは諦めて, mac の warning のみ出ない状態にして merge することにした.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/ry/deno/pull/371">pull #371</a></p>
+<ul>
+<li>deno が rust で書き換えられてから初めて hello world が動くようになった PR. とりあえず @ry の machine では hello world は 300ms で動いているらしい. 自分のマシンだと 500ms だった. ちなみに node だと自分のマシンで 100ms だった.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/ry/deno/pull/383">pull #383</a></p>
+<ul>
+<li>cargo を使って rust の dependency を取ってくるという PR (今までは gclient を使っていた). <code>cargo install</code> ではなく <code>cargo fetch</code> というコマンドでソースコードを落として来ている.</li>
+</ul>
+</li>
+<li>
+<p>deno build args</p>
+<ul>
+<li>
+<p><code>treat_warnings_as_errors</code> boolean</p>
+<ul>
+<li>これを true にすると c のコンパイル時に出て来た warnings がコンパイルエラーになって, コンパイルが失敗するようになる. mac は true にしてもビルド可能だが, 現状 linux, windows ではこれを true にするとビルドが通らない. 将来的には全ての platform で true にしたいが, 現状 linux, windows で warnings 無しでビルドする方法が誰にも分からない.</li>
+</ul>
+</li>
+<li>
+<p><code>use_allocator</code> string</p>
+<ul>
+<li>これを指定すると, 特殊な memory allocator を利用することが出来る. "none" を指定すると default の allocator が使われる. linux で "none" で無い値を指定するとビルドツールの flatc が異常終了してビルドが通らなくなる. linux 上では "none" を指定するしかないと思われる.</li>
+</ul>
+</li>
+<li>
+<p><code>use_custom_libcxx</code> boolean</p>
+<ul>
+<li>これが true だと libcxx をカスタムビルドするようになり, linux 上だと途方も無い量の unused-commnad-line-argument という warning が上がるようになる. とりあえず現状 travis 上では false に設定されている. linux でビルドする場合は false にするのが正と思われる.</li>
+</ul>
+</li>
+<li>
+<p><code>is_clang</code> boolean</p>
+<ul>
+<li>c コンパイラとして LLVM の clang を使うかどうかという arg. デフォルトだと true になっている. true のままビルドすると linux 上では unreachable-code の warning が出る. false にすると linux 上では g++ が使われるようになり, unreachable-code は封じることが出来るようになるが, deno のソースコード上で unused-variable や unsed-result が出るようになる.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="c3jsc3">c3js/c3</h3>
+<ul>
+<li>
+<p><a href="https://github.com/c3js/c3/pull/2417">pull #2417</a></p>
+<ul>
+<li>gauge chart のバックグラウンド (灰色の弧状の部分) がチャートのリサイズ時に追随してリサイズされないという問題が指摘されていて, それに対する対応. 途中まで @rahul-winner さんが修正案を作ってくれていたけど, その修正だと gauge 上のマウスイベントがなぜか効かなくなっていて, そこも含めた全体的な対応.</li>
+</ul>
+</li>
+</ul>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3kmoeneybit-app">kt3k/moeneybit-app</h3>
+<p>moneybit は仕訳帳を入力したら貸借対照表 / 月ごとの勘定の内訳等が出力できるモバイルアプリ. (青色確定申告に使えます.)</p>
+<ul>
+<li>仕訳帳の内容を月毎にグルーピングして表示する部分が完成. 月別のグルーピングを作るアルゴリズムが O(n) になっているので後で O(log(n)) に要修正.</li>
+</ul>
+<img src="../img/2018/moneybit-2018-07-21.png" width="200" />
+<h2 id="ツール">ツール</h2>
+<h3 id="zenhub">ZenHub</h3>
+<ul>
+<li>パートナー / 知り合いで ZenHub に興味ありという人が急に3人も現れて, ZenHub の案内を色々やっていた. 久しぶりに Aaron さんに連絡を取って, ZenHub Enterprise で seat 数を超えてユーザーを増やしたい場合にどうすれば良いかなどを聞いた.</li>
+</ul>
+<h2 id="イベント">イベント</h2>
+<h3 id="スパイス食堂-umitoyama">スパイス食堂 umitoyama</h3>
+<p><a href="https://www.facebook.com/umitoyamacurry/">https://www.facebook.com/umitoyamacurry/</a></p>
+<ul>
+<li>水曜日しかやっていない本格カレー屋さんのスパイス食堂 umitoyama に @sinpaout さん, @38fanjia さん, @yuichirokage さん, @jb-matsunaga さん, 馬場さん, あさみさんと一緒に行った. レモンの漬物が非常に珍しくて美味.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2018/07-16.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a> | <a href="https://github.com/kt3k/shuho/edit/master/2018/07-16.md">Edit</a></p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
