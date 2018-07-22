@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="6002px" height="502px" viewBox="0 0 6002 502" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="6002px" height="364px" viewBox="0 0 6002 364" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
     <title>bg</title>
     <desc>Created with Sketch.</desc>
     <defs>
         <linearGradient x1="18.319463%" y1="49.9995142%" x2="84.1960206%" y2="49.9995142%" id="linearGradient-1">
-            <stop stop-color="#EC6161" offset="0%"></stop>
-            <stop stop-color="#C9AC2E" offset="51.8554516%"></stop>
-            <stop stop-color="#57CFBA" offset="100%"></stop>
+            <stop stop-color="#27D0B5" offset="0%"></stop>
+            <stop stop-color="#0B9079" offset="100%"></stop>
         </linearGradient>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Artboard" transform="translate(-95.000000, -102.000000)">
             <g id="bg" transform="translate(96.000000, 103.000000)">
-                <polygon stroke="#979797" fill="url(#linearGradient-1)" points="0 0 6000 0 6000 500 0 500"></polygon>
-                <g id="KT3K" transform="translate(5316.000000, 291.000000)" fill="#FFFFFF">
+                <polygon stroke="#979797" fill="url(#linearGradient-1)" points="0 0 6000 0 6000 362 0 362"></polygon>
+                <g id="KT3K" transform="translate(5182.000000, 100.000000)" fill="#FFFFFF">
                     <g id="K">
                         <polygon id="Triangle" points="8.18836581e-16 0 39.3013516 0 0 52.3368661"></polygon>
                         <polygon id="Triangle" transform="translate(19.650676, 112.851368) scale(1, -1) translate(-19.650676, -112.851368) " points="8.18836581e-16 86.6829345 39.3013516 86.6829345 0 139.019801"></polygon>
