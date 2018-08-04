@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="2018年第31週 | @kt3k の週報" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly Journal of @kt3k" />
+    <title>2018年第31週 | @kt3k の週報</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="2018年第31週">2018年第31週</h1>
+<blockquote>
+<p>2018-07-30 / 2018-08-05</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="c3jsc3">c3js/c3</h3>
+<ul>
+<li>
+<p><a href="https://github.com/c3js/c3/pull/2439">pull #2439</a></p>
+<ul>
+<li>チャートの横の範囲をドラッグするとその範囲にチャートがズームするという<a href="https://468-11496279-gh.circle-artifacts.com/0/htdocs/samples/zoom_type.html">機能</a>が <a href="https://github.com/c3js/c3/pull/1500">pull #1500</a> で提案されていて(コレ自体は自分がメンテナになるはるか以前), 一旦レビューOKになったもののその後放置し過ぎた結果マージできなくなっていたのを, マージ可能に修正するというPR. d3-brush というモジュールを使って選択範囲のようなものを出しているのだけど, d3 v3系と v4系以上で API がかなり変わっていたため, かなり直す必要があった. 改めて d3 はかなり辛いという印象が強くなった.</li>
+</ul>
+</li>
+</ul>
+<h3 id="rydeno">ry/deno</h3>
+<ul>
+<li>今週もかなり活発な deno. option parse は2転3転して, やっぱり js でやりましょうという話になって(rust では --v8-options など非常に限定的な option のみ扱う), js でどの parser 使うかというのも2転3転したのち minimist2 という typescript で書き直された minimist が組み込み中.</li>
+<li>setTimeout の実装も進んでいて, rust の非同期ライブラリの tokio が導入されている.</li>
+<li>ビルドツール周りも整備が進んで repo をクローンしてから <code>./tools/setup.py</code> <code>./tools/build.py</code> でビルド出来るようになった.</li>
+</ul>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3ksaku">kt3k/saku</h3>
+<ul>
+<li>
+<p><a href="https://github.com/kt3k/saku/issues/31">pull #31</a></p>
+<ul>
+<li>タスクのグルーピングを実装する PR. golang が久しぶりだったので, 自分の実装をキャッチアップするのに少し時間がかかったものの, テストカバレッジ(C1)が100%なので, 落ち着いて自由気ままにリファクタリングをしていたら golang 熱が戻ってきた.</li>
+<li>実装上ネックになった部分は主に2点で, タスクの各ノードの実行開始を goroutine に通知して別スレッドでログ出力する実装でやろうとしたのだけど, ログが出るタイミングとコマンドの中身が実行されるタイミングがうまく制御できなかった(タスク開始のログより先にコマンドの中の出力が出力されてしまう(時系列と逆)事があった)点. 結局 goroutine に通知する実装を諦めて, 愚直にメインスレッドでログ出力するように書き換えた. もう1点は blackfriday (markdown parser) の parse が非常に分かりにくかった点. <code>&#x3C;!-- saku parallel --></code> というディレクティブを markdown の中に書くとそのタスクの子タスク達は parallel に実行されるという機能を実装してる時に, <code>&#x3C;!-- saku parallel --></code> が入っているノードを blackfriday のツリーから見つけ出すのが非常に時間がかかった. 例えば, js の場合だと parse された object をそのまま dump すれば何がどこにあるか眺めるだけで解決する事が, blackfriday の場合だと, そもそも blackfriday が何をどう parse しているのかを知るために大量のコードを書かなければならず, 非常に不効率で時間がかかってしまった.</li>
+<li>実装をしていて面白かった点は, 機能を実装し終わった後に, さらにリファクタリングを進めていた時に, js 版の実装とは違う方向性の抽象化が必要になった点が面白かった. JS では parse された option を使って CLI がどのアクションを dispatch するか, という部分を抽象化するために, <a href="https://www.npmjs.com/package/action-selector">action-selector</a> というモジュールを作っていて, minimist 後, 各アクションに入るつなぎまでの部分をやるものという感じで抽象化しているのだけど, golang だとそもそもコレと同じことをするものを実装しようとしてもうまくいかず, 代わりに option を parse した object をラップした, 流暢なインターフェースの option オブジェクトのようなものを実装したところうまく行ったという点が面白かった. 改めて2つの抽象化を見比べてみると, golang の抽象化の方が堅牢でうまく行っているように見えて, js の抽象化は幼稚な API という印象に映る. golang のように本当にシンプルな機能しか持っていない言語で書く事で, 本来あるべき抽象化の方向と, js の柔軟すぎる言語仕様のゆえに実現できている特殊な抽象化の仕方の違いが炙り出されるのが面白いと思った.</li>
+</ul>
+</li>
+</ul>
+<h3 id="kt3kmoneybit-app">kt3k/moneybit-app</h3>
+<p>moneybit は仕訳帳を入力したら貸借対照表 / 月ごとの勘定の内訳等が出力できるモバイルアプリ. (青色確定申告に使えます.)</p>
+<ul>
+<li>削除モーダルの国際化を実装. この作業で仕訳帳画面のすべての issue が完了して C1 milestone がクローズ.</li>
+<li>残タスクを整理していたら, 勘定科目表 (AccountTypeChart) の編集機能と, データのエクスポート画面がタスクとして積まれていないことに気づいたためそこをまとめて C3 で切りなおして, 初回マーケットリリースを C4 に切りなおした.</li>
+<li>due date もすでに大幅オーバーしていたので C2 を 8/31, C3 を 9/15, C4 が 9/30, 登頂(iOSリリース) を 10/15 で再設定.</li>
+<li>Android ビルド, iOS ビルドのそれぞれで straw を久しぶり (数年ぶり) に触ることになるが, そこで相当リファクタが必要になる可能性があるため, C4, summit のタイミングでさらに数ヶ月の delay が生じる可能性が高そう. 何らかの対策が必要.</li>
+</ul>
+<h2 id="仕事">仕事</h2>
+<h3 id="flowtype-集団信号無視事件">flowtype 集団信号無視事件</h3>
+<ul>
+<li>とある flowtype の入ったプロジェクトにコミットしようとしたらなぜか flow チェックが全く通らず, エラーの箇所も自分の変更箇所と全く関係ない箇所から大量に出ており, どうも flow が通るかどうかを全くチェックしないまま開発しているらしいという事が発覚. そういえば, flow を入れているチームが多いはずなのに flow の型チェックが通らなくて困ったという話題が全く聞こえて来ないような気がして, 各チームを監視しに行ったところ, 計3チームが flow を導入しつつ flow チェックをしていない事が分かり, それらの放置されたエラー (計400程度) を片っ端から修正し, CI でもチェックするようにするという修正を行った.</li>
+</ul>
+<h3 id="greenkeeper-lockfile">greenkeeper-lockfile</h3>
+<ul>
+<li>
+<p><a href="https://github.com/recruit-tech/redux-pluto/pull/111">redux-pluto pull #111</a></p>
+<ul>
+<li><a href="https://greenkeeper.io/">greenkeeper</a> に yarn.lock や package-lock.json を自動的にアップデートさせるためのスクリプトで <a href="https://github.com/greenkeeperio/greenkeeper-lockfile">greenkeeper-lockfile</a> というものがあるが, これを circleci できちんと動かすようにするという修正. このスクリプト自体は大した仕事をしていなくて, greenkeeper のコミットで npm install した結果 lock ファイルに差分が出たらそれを追加でコミットするというだけなのだが, その greenkeeper のコミットで, というチェックの部分が異常に厳しく, 具体的に何をチェックしているのかドキュメントもされておらず, エラーメッセージからも次のアクションが分からないため, ソースコードをかなり読み込んで, 何がどうなっているかを把握しながら circleci のコンフィグをかなり書き換える必要があった. 途中ブランチの最初のビルド以外は無効になるという仕様がある事が分かり, それ以降は1つ試すごとに1ブランチ作るという PDCA を回す必要があったため, 最終的に10ブランチ目5プルリク目でやっと成功した.</li>
+</ul>
+</li>
+</ul>
+<h2 id="イベント">イベント</h2>
+<h3 id="maker-faire-tokyo-2018">Maker Faire Tokyo 2018</h3>
+<ul>
+<li>
+<p><a href="http://makezine.jp/event/mft2018/about/">http://makezine.jp/event/mft2018/about/</a></p>
+<ul>
+<li>Maker Faire Tokyo を初めて見に行った.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2018/07-30.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a> | <a href="https://github.com/kt3k/shuho/edit/master/2018/07-30.md">Edit</a></p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
