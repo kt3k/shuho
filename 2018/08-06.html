@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="2018年第32週 | @kt3k の週報" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly Journal of @kt3k" />
+    <title>2018年第32週 | @kt3k の週報</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="2018年第32週">2018年第32週</h1>
+<blockquote>
+<p>2018-08-06 / 2018-08-12</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="c3jsc3">c3js/c3</h3>
+<ul>
+<li>
+<p><a href="https://github.com/c3js/c3/pull/2439">pull #2439</a></p>
+<ul>
+<li>先週出したドラッグでズームする機能の続き. オリジナルの PR 作者の @mistic さんからフィードバックがあり, zoom.disableDefaultBehavior というオプションを消さないで欲しいという要望が来たので (自分が理解できなかったので勝手に消していた), なんとか意味を汲み取って再実装した. そこまで実装した時点で @mistic さんから良さそうというフィードバックがあり, マージしてリリースした. 2年半以上待たされた上に微妙に機能を消されそうになったのに不満一つ言わず, 良いことしか言わないので, なんて良い人なんだろうと思った.</li>
+</ul>
+</li>
+</ul>
+<h3 id="rydeno">ry/deno</h3>
+<ul>
+<li><a href="https://github.com/denoland/deno/pull/452">readFileSync</a> が入った. ファイルが読めるので, まともなプログラムが少し書き始められるかもという雰囲気.</li>
+<li>0.1 milestone にはまだまだ届かないものの, 毎日何かしらマージされていて, 開発自体はかなり活発な状況. 関係者の数も日に日に増えている. さすが @ry.</li>
+</ul>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3kremarker">kt3k/remarker</h3>
+<p>remarker は markdown ファイルからブラウザ上で見れるスライドを直接作れるコマンドラインツール. 内部的に <a href="https://github.com/gnab/remark">gnab/remark</a> を利用している. gnab/remark は html / css を結構手で書かないといけなくてその管理が面倒くさいという問題があり, remarker はその点を解決している. <a href="https://github.com/search?q=filename%3Aremarker.yml">remarker.yml で検索</a> するとそこそこ使われているぽいツール.</p>
+<ul>
+<li>
+<p><a href="https://github.com/kt3k/remarker/pull/11">pull #11</a></p>
+<ul>
+<li>久しぶりに remarker に PR が飛んで来たのでレビュー. コマンドラインオプションで <code>remarker --cssFiles https://..../style.css</code> のように指定した時に上手く行っていなかったのを直してくれるという修正. 本筋と関係ない絵文字をレンダリングできるようにしたいという修正の方で gnab/remark と remarkjs/remark を混同した内容の変更が入っていて根本的に壊れた内容の修正になっていたので, その点だけ修正依頼. すぐに修正されマージ &#x26; リリース.</li>
+</ul>
+</li>
+</ul>
+<h3 id="kt3kmoneybit-app">kt3k/moneybit-app</h3>
+<p>moneybit は仕訳帳を入力したら貸借対照表 / 月ごとの勘定の内訳等が出力できるモバイルアプリ. (青色確定申告に使えます.)</p>
+<ul>
+<li>今週は貸借対照表画面を作成. 仕訳帳の最終日時点の貸借対照表と損益計算書を表示できる部分まで完成. 仕訳帳画面と比べると圧倒的に速い速度で進んでいて, やっぱりこういうのは入力系統があるかどうかで, 実装ボリュームが圧倒的に変わってくるというのを再実感.</li>
+</ul>
+<blockquote>
+<img src="../img/2018/08-06-moneybit.png" width="360">
+</blockquote>
+<ul>
+<li>後は期初時点の貸借対照表と月ごとの各勘定科目のサマリーが出せれば, 青色確定申告に必要な情報が揃う. ただ, 月ごとのサマリーが出て, 単純に各科目の勘定一覧 (総勘定元帳 = General Ledger に相当するもの) が出ないのはなんとなく違和感がある (日本の税のドキュメント用に特化しすぎている) ため, 出来れば科目ごとの勘定一覧を出す機能も上手く入れていきたい.</li>
+</ul>
+<h3 id="capsidjscapsid">capsidjs/capsid</h3>
+<p>capsid.js は DOM プログラミング用軽量フレームワーク. DOM 要素に振る舞いを足してカスタムなコンポーネントが実装できるライブラリ.</p>
+<ul>
+<li>
+<p><a href="https://github.com/capsidjs/capsid/commit/58800a7581ab015663d7fc54d2afa596ec6ea9b4">https://github.com/capsidjs/capsid/commit/58800a7581ab015663d7fc54d2afa596ec6ea9b4</a></p>
+<ul>
+<li>親クラスで <code>@on</code> ハンドラーを登録して, 子クラスをコンポーネントとして登録した時に, 親のハンドラーが正しく保存されておらず, unmount 時に正しくハンドラーを削除できていなかったバグを発見して修正. moneybit-app の貸借対照表画面実装時に初めて継承したクラスをコンポーネント登録する状況が発生してバグが露見した.</li>
+</ul>
+</li>
+</ul>
+<h2 id="映画">映画</h2>
+<h3 id="ミッションインポッシブルフォールアウト">ミッションインポッシブル/フォールアウト</h3>
+<ul>
+<li>ミッションインポッシブル/フォールアウトを鑑賞. 護送中の犯罪者を奪還するくだりがものすごく長くてややこしくて印象的だった.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2018/08-06.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a> | <a href="https://github.com/kt3k/shuho/edit/master/2018/08-06.md">Edit</a></p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
