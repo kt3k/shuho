@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="2018年第33週 | @kt3k の週報" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly Journal of @kt3k" />
+    <title>2018年第33週 | @kt3k の週報</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="2018年第33週">2018年第33週</h1>
+<blockquote>
+<p>2018-08-13 / 2018-08-19</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="rydeno">ry/deno</h3>
+<ul>
+<li>
+<p>コントリビュート</p>
+<ul>
+<li><a href="https://github.com/denoland/deno/pull/516">pull #516</a></li>
+<li><a href="https://github.com/denoland/deno/pull/517">pull #517</a></li>
+<li><a href="https://github.com/denoland/deno/pull/531">pull #531</a></li>
+<li><a href="https://github.com/denoland/deno/pull/532">pull #532</a></li>
+<li>割と簡単な issue を4つ消化. あまり摩擦なく, 全てスッとマージ. 自分があまりにも簡単な issue を潰しすぎたせいか, 明らかに難易度が低い issue に対しては <a href="https://github.com/denoland/deno/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22">Good First Issue</a> というラベルがつけられるようになってしまった.</li>
+</ul>
+</li>
+<li>
+<p>全体的には割と落ち着いた進捗の週という印象. コントリビュートしている人の数自体は多いけど, マージされる PR が少なくて, それぞれの人がそれぞれのペースで WIP で作業している時間が長いという感じ. ただ, 結構時間がかかった PR でも, そろそろ出来たかなという頃合いで, ヌッと @ry が現れてきちんと全てレビューしてくれるので, そういうみんなが自分のペースで各々作業するという雰囲気が出来ているという印象. 2ヶ月ほど deno をウォッチしていて @ry という人は各作業者をすごく褒めるし, コントリビュートした人には必ず感謝の言葉をかけているし, みんなで作る OSS をうまく盛り上げる雰囲気作りがすごくうまいという印象を持った. どれとは言わないけれど作者が自分の作品意識を持ちすぎている OSS (<code>g*lp</code> とか) だと, 作者の持っているイメージとズレたベクトルのコントリビュートをしてくるコミッターが割と頭ごなしに否定されているケースはよく見かけて, それとは正反対のいつでも何をやっても良い自由な空間の雰囲気がよく出来ていて, 実際自分もコントリビュートしていて非常に心地よいと感じる.</p>
+</li>
+</ul>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3kmoneybit-app">kt3k/moneybit-app</h3>
+<p>moneybit は仕訳帳を入力したら貸借対照表 / 月ごとの勘定の内訳等が出力できるモバイルアプリ. (青色確定申告に使えます.)</p>
+<ul>
+<li>特定日付までの仕分けに対する貸借対照表(バランスシート)が出力できるようなった(青色申告決算書には会計開始時点と会計終了時点のバランスシートの記入が必要). バランスシートの日付を変える UI をどうするかを現在検討中.</li>
+<li>特定勘定科目の月別サマリーと総勘定元帳は, 総勘定元帳をベースとして表示しつつ, 月毎の小計を月毎のエリアの末尾に追加していけば, 両方の情報を違和感なく出せるということに気づいて, そのデザインを sketch で起こす部分まで作業. 来週以降実装予定.</li>
+</ul>
+<h3 id="capsidjscapsid">capsidjs/capsid</h3>
+<p>capsid.js は DOM プログラミング用軽量フレームワーク. DOM 要素に振る舞いを足してカスタムなコンポーネントが実装できるライブラリ.</p>
+<ul>
+<li>久しぶりに README を眺めていたら codepen でデコレータがビルドできなくなっていてデコレータを使ったサンプル (ミラリングとカウンター) が動かなくなっていた. ビルド言語を typescript にしてもターゲットが es3 になっていて accessor デコレータの3引数名が入って来ず, <code>@wired</code> デコレータが機能しない点が致命的だったため codepen を使い続けることを断念. jsfiddle でも全く同じ現象が起きていて利用が不可能だった. ビルドを独自で組める plunker と codesandbox を検討してとりあえず動く状態が作れた codesandbox に移行した. <a href="https://codesandbox.io/s/yky5y55j9v">例</a>.</li>
+</ul>
+<h2 id="映画">映画</h2>
+<h3 id="オールユーニードイズキル-edge-of-tomorrow">オールユーニードイズキル (Edge of Tomorrow)</h3>
+<ul>
+<li>アマゾンプライムで鑑賞. 時間を操る能力を持った宇宙人に侵略されつつある地球で, 宇宙人の1体から無限にとある一日を繰り返すという能力を奪った主人公が, 無限に繰り返す1日の中で試行錯誤を繰り返しながら宇宙人を倒す方法を模索するという SF 映画. 時間を操るという能力は本来は全くリアリティがないはずなのに, なぜか非常に魅力を感じてしまう点が不思議だと思った.</li>
+</ul>
+<h3 id="スターリンの葬送狂騒曲-the-death-of-stalin">スターリンの葬送狂騒曲 (The Death of Stalin)</h3>
+<ul>
+<li>スターリンが死ぬ直前から, スターリンの死後ベリアが失脚, 処刑されるまでを描いたコメディ映画. スターリン施政下の不毛な社会の様子を面白可笑しく描いていて, 非常に楽しめた. 極端に失敗した社会システムを笑いの対象として表現する点について<a href="https://ja.wikipedia.org/wiki/%E6%9C%AA%E6%9D%A5%E4%B8%96%E7%B4%80%E3%83%96%E3%83%A9%E3%82%B8%E3%83%AB">未来世紀ブラジル</a>と通じる部分があると思った. 原作はフランスの<a href="https://fr.wikipedia.org/wiki/La_Mort_de_Staline_%28bande_dessin%C3%A9e%29">バンドデジネ</a>らしい.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2018/08-13.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a> | <a href="https://github.com/kt3k/shuho/edit/master/2018/08-13.md">Edit</a></p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
