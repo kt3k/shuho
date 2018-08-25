@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="2018年第34週 | @kt3k の週報" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly Journal of @kt3k" />
+    <title>2018年第34週 | @kt3k の週報</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="2018年第34週">2018年第34週</h1>
+<blockquote>
+<p>2018-08-20 / 2018-08-26</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="rydeno">ry/deno</h3>
+<ul>
+<li>
+<p>コントリビュート</p>
+<ul>
+<li><a href="https://github.com/denoland/deno/pull/546">pull #546</a></li>
+<li>今まで <code>srd/</code> 以下には rust と c++ のファイルを混在させていたのを, <code>src/</code> 以下は rust のみ, <code>libdeno/</code> 以下に c++ 関連と分離する PR.</li>
+</ul>
+</li>
+<li>
+<p>deno 0.1 が<a href="https://github.com/denoland/deno/releases/tag/v0.1.0">リリース</a>された, 一応 readFileSync と writeFileSync があるので, 簡単なファイルの読み書きが出来るスクリプト程度なら実行可能. http import は出来るものの https サポートが無いため, unpkg や jspm.io などから npm モジュールを import する事が出来ないため, 本格的に遊べるようになるのはまだもう少し先になりそう. なお, rustup のような deno のバイナリバージョンを自動的にアップデートするようなスクリプトが予定されている.</p>
+</li>
+</ul>
+<h2 id="調査">調査</h2>
+<h3 id="netlify">Netlify</h3>
+<ul>
+<li>
+<p>Netlify は 2015年に Mathias Biilmann と Chris Bach によって創業された静的サイトホスティングの会社. 本社は San Francisco. 静的サイトホスティング以外に, Netlify Identity (ユーザー認証), Netlify Functions (FaaS) など, JAMStack の API 部分を構成するパーツの提供も行っている. JAMStack という概念を最初に提唱した会社で, JAMStack によって web の作り方を変えるというミッションを持っている.</p>
+</li>
+<li>
+<p>Netlify CMS</p>
+<ul>
+<li>Netlify CMS は静的サイトの管理画面のような OSS プロジェクト. ビルドパイプラインを持った静的サイトの更新を wordpress の管理画面のような GUI 上から, wysiwyg エディターで行えるというようなもの. 従来だと JAMStack でデプロイした website は, エンジニアからは見通しが良いものの, 非エンジニアにはアクセスしづらいものであったのを, 誰にでもアクセス可能とするアプリケーショ.</li>
+</ul>
+</li>
+</ul>
+<h2 id="旅行">旅行</h2>
+<h3 id="下田">下田</h3>
+<ul>
+<li>伊豆の下田に行った. 海が綺麗だった. 日帰りだったのであまりまわれなかった.</li>
+</ul>
+<h2 id="イベント">イベント</h2>
+<h3 id="深堀隆介展">深堀隆介展</h3>
+<ul>
+<li>平塚市に深堀隆介展を見に行った. アクリルの中に金魚を書いている作家.</li>
+</ul>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/BmfPnQ_Hk8z/?utm_source=ig_embed" data-instgrm-version="9" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/BmfPnQ_Hk8z/?utm_source=ig_embed" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Yoshiya Hinosawaさん(@kt3k)がシェアした投稿</a> - <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2018-08-15T05:42:07+00:00">2018年 8月月14日午後10時42分PDT</time></p></div></blockquote> <script async defer src="//www.instagram.com/embed.js"></script>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2018/08-20.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a> | <a href="https://github.com/kt3k/shuho/edit/master/2018/08-20.md">Edit</a></p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
