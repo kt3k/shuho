@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="2018年第35週 | @kt3k の週報" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly Journal of @kt3k" />
+    <title>2018年第35週 | @kt3k の週報</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="2018年第35週">2018年第35週</h1>
+<blockquote>
+<p>2018-08-27 / 2018-09-02</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="rydeno">ry/deno</h3>
+<ul>
+<li>
+<p>コントリビュート</p>
+<ul>
+<li><a href="https://github.com/denoland/deno/pull/605">pull #605</a></li>
+<li>初めて C++ 側のコードから, V8 API を叩いて, JS の runtime に手を入れるという修正をした. 具体的な内容としては, window.onerror に入っている関数を最終的な uncaught error のハンドリングに内部的に使っていたのを, libdeno.setGlobalErrorHandler という明示的な internal な API 呼び出しで uncaught error をハンドリングできるように書き換えるという内容.</li>
+</ul>
+</li>
+<li>
+<p>今週も deno は活発に開発されて居る状況. Good First Issue をとる new comer も何人か登場して, contribute してる人の全体を把握するのが難しいくらい contributor が増えた.</p>
+</li>
+<li>
+<p>https の import が出来るようになって, <a href="https://unpkg.com">https://unpkg.com</a> から直接依存を落として遊べるようになった (v0.1.2). http(s) import した後の相対パスのハンドリングがバグっているため, まだ jspm.io のリソースを正しく扱うのは無理そう. @mizchi さんの <a href="https://github.com/mizchi/trans-loader">trans-loader</a> で service worker 上で jspm.io のリソースで babel のビルドが成功しているため, もしかしたら上の修正で deno で babel が動くかもしれないという期待が持てる.</p>
+</li>
+</ul>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3kmoneybit-app">kt3k/moneybit-app</h3>
+<p>moneybit は仕訳帳を入力したら貸借対照表 / 月ごとの勘定の内訳等が出力できるモバイルアプリ. (青色確定申告に使えます.)</p>
+<ul>
+<li>今週はそれほど進捗せず. バランスシートの期初/期末の切り替えをボタンからタブに変更した.</li>
+</ul>
+<blockquote>
+<img src="../img/2018/09-01-moneybit.png" width="250">
+</blockquote>
+<h2 id="仕事">仕事</h2>
+<h3 id="c3">c3</h3>
+<ul>
+<li>仕事で c3 のかなり難しいデバッグ案件があった. とある min を 0 に設定しているバーチャートの data でマイナス値が非常に大きくなる (min 0 なので表示されない) と, バーチャートに重ねて表示しているラインチャートが Microsoft のブラウザでのみ消えるという現象. 問題の状況だと内部的に高さ数千万px 程度の矩形ができていて, そういうサイズの矩形ができると, MS のブラウザだと正常に扱えないようだった (ただ, そういう正常でない動作をしていることをログに吐けていないため, その挙動自体はバグのように見えた). 見えない範囲の矩形の問題だったので, 適当に常識的なスケールをかけてあげることで解決できた.</li>
+</ul>
+<h2 id="生活">生活</h2>
+<h3 id="レジュメ">レジュメ</h3>
+<ul>
+<li>
+<p>すごい久しぶりに<a href="https://kt3k.github.io/resume/">レジュメ</a>を書いた. 疲れた.</p>
+<ul>
+<li>レジュメの html をビルドするのに resume-cli というのを使ったけど, テンプレートが割ときちんと作られていてそこは良かったけど, プロジェクト自体がもうメンテされていないようだったので, 次やるときは別のツールを考えたい.</li>
+</ul>
+</li>
+</ul>
+<h2 id="イベント">イベント</h2>
+<h3 id="devfest18">DevFest18</h3>
+<ul>
+<li>
+<p><a href="https://gdg-tokyo.connpass.com/event/95307/">GDG DevFest Tokyo 2018</a> というイベントに参加した.</p>
+<ul>
+<li>前半はすべて Flutter の話を聞いた. 後半は ML, golang, Android を一つずつ聞いた. MIU と ZYYX で同僚だったモハメドさんに 5, 6 年ぶりに偶然再会した. 今は mixi のエンジニアをされているとのこと.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2018/08-27.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a> | <a href="https://github.com/kt3k/shuho/edit/master/2018/08-27.md">Edit</a></p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
