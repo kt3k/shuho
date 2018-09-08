@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="2018年第36週 | @kt3k の週報" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly Journal of @kt3k" />
+    <title>2018年第36週 | @kt3k の週報</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="2018年第36週">2018年第36週</h1>
+<blockquote>
+<p>2018-09-03 / 2018-09-09</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="rydeno">ry/deno</h3>
+<ul>
+<li>0.1.3 リリース. https import がある程度出来るようになった. ただファイル拡張子が無いとまだ js として動かせないので, 例えば jspm.io とかが動かない. 拡張子無しも実行してほしいという <a href="https://github.com/denoland/deno/issues/702">issue</a> を立てたら, とりあえず賛同してもらえたので 0.1.4 あたりでは jspm.io が動くかもしれない. jspm.io からの import が動くようになると, 任意の npm モジュールがかなりの確率で動くようになるため, node の API に依存していない npm パッケージはかなり使えるようになる可能性が高く, 例えば react のサーバーサイドレンダリングとか, babel とか, chalk とかが動くようになる可能性が高そうと思われる.</li>
+</ul>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3kbuttons">kt3k/buttons</h3>
+<p><a href="https://github.com/kt3k/buttons">https://github.com/kt3k/buttons</a></p>
+<ul>
+<li>buttons というプロジェクトを始めてみた. web サービスで, いくつかのボタンを自分のページに設置して, それぞれのボタンに1日でやるべきことをそれぞれ設定して, 出来たらボタンを押す, 出来なかったら押さないということを毎日繰り返して, それが github の草カレンダーのように表示されるというサービス. 自分の場合は, c3 ボタン(c3 に1コントリビュートしたら押す), MyProjectボタン (MyProject に1コントリビュートしたら押す), denoボタン(deno に1コントリビュートしたら押す), 数学ボタン (数学的命題を1個証明したら押す) の4ボタンを設定する予定.</li>
+<li>express / mongoDB を使うこと, DDD を採用して domain 層を切ることなどは前回作ったサービスの pomodoro-meter と同じ. 前回との差分は認証に Auth0 を使うこと, mongoDB のセットアップに docker-compose を使うこと, サーバーサイドレンダリングをやめて JAMstack にすることなど. Auth0 は覚えることが非常に多いものの, それによって得られることの方が多いため, 勉強するに値するサービスだと思われる. node.js 系の jwt 周辺ライブラリはほとんどが Auth0 によってメンテナンスされていて非常に信頼度が高い. docker-compose は docker for mac が安定して来たおかげでなんの問題もなく使えて, 単純に便利. brew での install や, 設定ファイルの調整などが必要ないため, 昔良く使った LAMP 環境並みの手軽さで DB 環境が手に入って非常に便利.</li>
+</ul>
+<h3 id="greenkeeper-babelify-10">greenkeeper babelify 10</h3>
+<ul>
+<li>
+<p>greenkeeper で babelify 10 の update が大量に飛んで来て, 大量に babel 7 移行をやった. ちょっと前まではかなり plugin で babel 7 非対応のものがポツポツあって, 相当難易度の高い作業だったものの, 今やほとんどが babel 7 対応済みのため, 大体がバージョンを最新に上げるか, @babel scope の package に置き換えることで対応が可能だった.</p>
+<ul>
+<li><a href="https://github.com/kt3k/gulp-browserify-example/pull/12">https://github.com/kt3k/gulp-browserify-example/pull/12</a></li>
+<li><a href="https://github.com/kt3kstudio/pairs/pull/130">https://github.com/kt3kstudio/pairs/pull/130</a></li>
+<li><a href="https://github.com/kt3k/t10/pull/25">https://github.com/kt3k/t10/pull/25</a></li>
+<li><a href="https://github.com/c3js/c3/pull/2471">https://github.com/c3js/c3/pull/2471</a></li>
+<li><a href="https://github.com/capsidjs/todomvc/pull/60">https://github.com/capsidjs/todomvc/pull/60</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="イベント">イベント</h2>
+<h3 id="社内-splatoon-2-大会">社内 Splatoon 2 大会</h3>
+<ul>
+<li>社内の Splatoon 2 大会に出てみた. 4人1チームで5戦して先に3勝した方が勝ちというルールでトーナメント方式. 5戦のルールはナワバリ -> ホコ -> エリア -> ヤグラ -> アサリという順番で, ステージはランダム. ナワバリ -> ホコ と連勝したもののその後 エリア -> ヤグラ -> アサリと3連敗してしまい1回戦敗退してしまった. ヤグラとアサリでは割と裏周りを決められて, 一か八かの駆け引きをされてうまいことやられてしまったという印象. 知り合い集まって Splatoon をやるのが初めてだったので楽しかった.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2018/09-03.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a> | <a href="https://github.com/kt3k/shuho/edit/master/2018/09-03.md">Edit</a></p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
