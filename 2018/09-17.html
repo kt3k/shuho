@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="2018年第38週 | @kt3k の週報" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly Journal of @kt3k" />
+    <title>2018年第38週 | @kt3k の週報</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="2018年第38週">2018年第38週</h1>
+<blockquote>
+<p>2018-09-17 / 2018-09-23</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
+<ul>
+<li>
+<p>Contribution</p>
+<ul>
+<li>
+<p><a href="https://github.com/denoland/deno/pull/777">https://github.com/denoland/deno/pull/777</a></p>
+<ul>
+<li>Added benchmark tools which performs a benchmark for each commit in the master branch. Reverted due to token issue, but I guess it'll be soon restored again when the issue solved.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="babel">babel</h3>
+<ul>
+<li>
+<p><a href="https://babeljs.io/blog/2018/09/17/decorators">https://babeljs.io/blog/2018/09/17/decorators</a></p>
+<ul>
+<li>Babel has finally released the new decorators implementation 🎉🎉🎉</li>
+</ul>
+</li>
+</ul>
+<h3 id="c3">c3</h3>
+<ul>
+<li>Slow progress. Keep reading the issues. Did a small refactoring. I want to address #2458 for the next iteration. #2483 can be easily addressed and should be done soon.</li>
+</ul>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3kbuttons">kt3k/buttons</h3>
+<p><a href="https://github.com/kt3k/buttons">https://github.com/kt3k/buttons</a></p>
+<p><code>buttons</code> is a web service which shows the buttons of <em>daily habits</em> and the user push them everyday when they finished the task, and the records are shown as a calendar.</p>
+<ul>
+<li>Wrote the tests of the <code>PUT /users/self/id</code> API.</li>
+<li>Added the check of the availability of the display id. No same ids for different users 👍</li>
+<li>The next step: Write <code>/users/self/buttons</code> APIs. They can be done in very TDD manner now because every set up is ready now. Now I can do very robust and quick iterations on creating the APIs.</li>
+</ul>
+<h2 id="math">Math</h2>
+<h3 id="math-notebook">Math notebook</h3>
+<p><a href="https://github.com/kt3k/math-exercises-notes">https://github.com/kt3k/math-exercises-notes</a></p>
+<ul>
+<li>Did the first 3 examples. Showed <code>Sets</code>, <code>sets</code> (category of small sets), and <code>Groups</code> are categories.</li>
+</ul>
+<h2 id="events">Events</h2>
+<h3 id="roppongijs">roppongi.js</h3>
+<p><a href="https://roppongi-js.connpass.com/event/98983/">https://roppongi-js.connpass.com/event/98983/</a></p>
+<ul>
+<li>It was the 2nd time to come to the roppongi.js. Went the venue with @38fanjia. Greeted with @Leko and @kuy. @sadnessOjisan's talk about z-index and stack context seemed getting popular there. I talked with @Yug1224 and @jaxx2104 for a while after the presentations.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2018/09-17.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a> | <a href="https://github.com/kt3k/shuho/edit/master/2018/09-17.md">Edit</a></p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
