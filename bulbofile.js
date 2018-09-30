@@ -17,7 +17,7 @@ const paths = {
 const sort = (x, y) => moment(y.data.start).diff(x.data.start)
 const getBasepath = path => join('.', relative(dirname(path), ''))
 const DATE_FORMAT = 'YYYY-MM-DD'
-const SITE_TITLE = '@kt3k の週報'
+const SITE_TITLE = '@kt3k の週報 | Weekly journal of @kt3k'
 const SITE_DESCRIPTION = '@kt3k の週報です | Weekly Journal of @kt3k'
 const DOMAIN = 'shuho.kt3k.org'
 
@@ -42,7 +42,7 @@ asset('2*/*.md')
       const m = moment(file.relative, 'YYYY/MM-DD.md')
       const year = m.format('YYYY')
       const week = m.format('w')
-      const title = `${year}年第${week}週`
+      const title = `Week ${week} - ${year}`
       const categories = file.contents
         .toString()
         .match(/^##\s.*$/gm)
