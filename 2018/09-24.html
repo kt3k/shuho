@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 39 - 2018 | @kt3k の週報 | Weekly journal of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly Journal of @kt3k" />
+    <title>Week 39 - 2018 | @kt3k の週報 | Weekly journal of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-39---2018">Week 39 - 2018</h1>
+<blockquote>
+<p>2018-09-24 / 2018-09-30</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
+<ul>
+<li>The benchmark page evolved very much thanks to @kevinkassimo. It's fun to see the charts and their progress! 😃</li>
+<li>
+<p>Deno became multithreaded! <a href="https://github.com/denoland/deno/pull/782">https://github.com/denoland/deno/pull/782</a></p>
+<ul>
+<li>I don't know what it means though.</li>
+</ul>
+</li>
+</ul>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3kbuttons">kt3k/buttons</h3>
+<p><a href="https://github.com/kt3k/buttons">https://github.com/kt3k/buttons</a></p>
+<p><code>buttons</code> is a web service which shows the buttons of <em>daily tasks</em> and the user push them everyday when they finished the task. The records of pushed buttons are shown as a calendar heatmap (like gihtub's contribution heatmap).</p>
+<ul>
+<li>Much progress in this week.</li>
+<li>The users can finish onboarding process.</li>
+<li>The users can check / uncheck the buttons.</li>
+<li>The users can see their own calendars.</li>
+<li>All of domain methods, and most of APIs are unit tested very well! 😃</li>
+<li>Probably finish it when I added other user's profile page and some banner ads.</li>
+<li>
+<p>Had some findings when creating these features:</p>
+<ul>
+<li>No need of Fontawesome anymore in prototyping phase. Just native emojis are enough for prototyping purpose.</li>
+<li>date-fns seems really good. It uses native Date object as the presentation of date. That's natural. And date-fns doesn't modify date object, but treat them as immutable thing. That's really good thing and must prevents lots of bugs.</li>
+</ul>
+</li>
+</ul>
+<p>The screenshot of current top page.</p>
+<blockquote>
+<img src="../img/2018/09-24-buttons.png" width="560">
+</blockquote>
+<h2 id="events">Events</h2>
+<h3 id="netlifytokyo">netlifytokyo</h3>
+<p><a href="https://netlify-meetup-tokyo.connpass.com/event/100705/">https://netlify-meetup-tokyo.connpass.com/event/100705/</a></p>
+<ul>
+<li>The first time to come to netlify meetup in Tokyo. Though Netlify rejected my job application last month, I still love the product and the idea of JAMstack.</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="macbook-pro">Macbook Pro</h3>
+<ul>
+<li>Bought a new macbook pro (13-inch, no touchbar model, 256GB SSD). Around 170K yen.</li>
+<li>The previous one has become totally unusable because the display blacks out whenever I open it with the right angle. It works normally when the display opens 80 degrees, but once the angle between main body and display reaches near 90 degrees, the display blacks out. I've never experienced this kind of malfunction before. Maybe this is because I dropped the laptop hard a few month ago, or maybe because of the dust entered through the slits around key tops. Speaking of keyboard, the previous macbook was the worst experience of keyboard in my life. I didn't hate the very short key strokes of the new macbook pro. I got used to it shortly after I started using it. However shortly after I got used to its short strokes, the left arrow key started not responding, then right arrow, then 1 key, etc. I bought an air duster for the first time in my life and I had to periodically blow it. That was really irritating 😕 I've already bought a keyboard cover for new one. I hope this prevents the keyboard problems like the previus one.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2018/09-24.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a> | <a href="https://github.com/kt3k/shuho/edit/master/2018/09-24.md">Edit</a></p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
