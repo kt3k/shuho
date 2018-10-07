@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 40 - 2018 | @kt3k の週報 | Weekly journal of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly Journal of @kt3k" />
+    <title>Week 40 - 2018 | @kt3k の週報 | Weekly journal of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-40---2018">Week 40 - 2018</h1>
+<blockquote>
+<p>2018-10-01 / 2018-10-07</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
+<p>deno は @ry が始めた新しい V8 runtime.</p>
+<ul>
+<li>
+<p>コントリビュート</p>
+<ul>
+<li><a href="https://github.com/denoland/deno/pull/889">https://github.com/denoland/deno/pull/889</a></li>
+<li><a href="https://github.com/denoland/deno/pull/932">https://github.com/denoland/deno/pull/932</a></li>
+<li><a href="https://github.com/denoland/deno/pull/933">https://github.com/denoland/deno/pull/933</a></li>
+<li>ベンチマークページにいろんな人が手を入れた結果, テストなどが割れ窓状態になっていたのを修正して再度テストが通るように直した(#889). 直す過程で, 1個ベンチマーク追加するのに3ファイル直さなないといけないのが面倒くさいという意見が @ry から出て来たので, ベンチマーク対象をある程度自動検知するようにベンチマークビューワ側を少し作り変えた(#932).</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/denoland/deno/issues/888">https://github.com/denoland/deno/issues/888</a></p>
+<ul>
+<li>上の PR を出すにあたって, master でテストが落ちているのに CI がなぜか通っているという事象を確認して, 詳しく見ていったらテストが半ばで終了しているにも関わらずエラー落ちしていないという事象が起きていたことが分かり立てた issue. rust のバグとか, debug! というマクロ関数を特定の関数内で呼ぶと直るとか, かなり雲行きの怪しい報告が色々出始めていてかなり不穏. とりあえず, master の CI ではちゃんとテストが流れるようになったので閉じた.</li>
+</ul>
+</li>
+</ul>
+<h3 id="c3jsc3">c3js/c3</h3>
+<p>c3 は d3 ベースのチャートライブラリ</p>
+<ul>
+<li>
+<p><a href="https://github.com/c3js/c3/pull/2495">https://github.com/c3js/c3/pull/2495</a></p>
+<ul>
+<li>c3 でアクティブでないタブ上でページが開かれたときにチャートが出ないという不具合があってその対応.</li>
+</ul>
+</li>
+</ul>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3kbuttons">kt3k/buttons</h3>
+<p><a href="https://github.com/kt3k/buttons">https://github.com/kt3k/buttons</a></p>
+<p>buttons は毎日やるタスクのボタンを作って, その記録をカレンダー表示する web サービス.</p>
+<ul>
+<li>今週もそこそこ進捗. ユーザー一覧ページが出来て, ユーザープロフィールページも出来た. ユーザプロフィールページでまだカレンダーヒートマップが出ないので, 来週はその辺をやりたい.</li>
+<li>twitter と相性が良さそうなので, twitter 認証を足したい.</li>
+</ul>
+<blockquote>
+<img src="../img/2018/10-01-buttons.png" width="240">
+</blockquote>
+<h2 id="数学">数学</h2>
+<h3 id="to-mock-a-mockingbird">To Mock a Mockingbird</h3>
+<p><a href="https://github.com/kt3k/math-exercises-notes/tree/master/to-mock-a-mockingbird">https://github.com/kt3k/math-exercises-notes/tree/master/to-mock-a-mockingbird</a></p>
+<ul>
+<li>シカゴ大学の圏論のテキストをちょっとお休みして, 今週は Smullyan 先生の To Mock a Mockingbird を再び (約10年ぐらいぶりに) 読み始めた. 最初の不動点 combinator みたいな鳥を作る問題と, egocentric な鳥を見つける問題を解いた. 不動点みたいな鳥を作る問題は初見時は解けなかった (と, 本自体にメモが残っていた) けど, 今回は Y combinator の実装とかをチラ見しながらなんとか自力で答えまで出せた. この問題は割と Smullyan 先生自身も combinatory logic の教科書を色々読んだ上で逆算して作っていると思うので, 全くの初見で lambda calculus の予備知識なしで, いきなり本当にこの本を読んで解ける人がいるのかどうかというのは個人的にはかなり疑問に思っている.</li>
+</ul>
+<h2 id="events">Events</h2>
+<h3 id="meguroes">meguro.es</h3>
+<p><a href="https://meguroes.connpass.com/event/98856/">https://meguroes.connpass.com/event/98856/</a></p>
+<ul>
+<li>椅子が良いアルコタワー会場で開催. 割と JS の話が多かった. 前回は JS の話をしてるスピーカーは20%ぐらいしかいなくて, merugo.es と言えば JS の話がほとんどない JS の勉強会という意味で期待していただけに, 逆に期待はずれだった. @ovrmrw さんの Big Query 話がとても勉強になった.</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="bose-soundsport-free">Bose SoundSport Free</h3>
+<p><a href="https://www.amazon.co.jp/dp/B0748JM8M5">https://www.amazon.co.jp/dp/B0748JM8M5</a></p>
+<ul>
+<li>@rt33 さんが良いと言っていて気になっていた SoundSport Free というイヤホンを購入. レビューでも音が良いと言われていて, 確かに音が良いのと, あと, 予想外に良かったのが, 充電用のドックが非常に良くて, 充電器に入れる動作自体に気持ち良さがあって良いと思った. あと, ペアリングされていない状態だと, イヤホン自体が自分の充電状態を自分で喋るのが未来感があって素晴らしいと思った.</li>
+</ul>
+<h3 id="元グリー飲み会">元グリー飲み会</h3>
+<ul>
+<li>元GREE SNS チームの4人 (@ymzkmct, @kamatari, <a href="https://twitter.com/kazukomati">https://twitter.com/kazukomati</a>, @kt3k) で飲み会. みんな元気そう. @kamatari さんはスタートアップ業界のいろんな情報が勝手に入ってくるチャンネルに入っているらしく, 裏情報量がすごかった. 某社で経費横領で辞めさせられた役員の解雇理由説明のテキストとか持っていて Michael Arrington かと思った. @ymzkmct さんはついこないだ freee を退職されて次は Kyash へ行くとのことだった. freee 時代に @joe-re さんと同僚で, @joe-re さんを激賞していた. @yonekawa さんはどうですかと聞いたら, あの人は何してるか全然わからない, と苦虫を噛み潰したような顔で言っていた.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2018/10-01.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a> | <a href="https://github.com/kt3k/shuho/edit/master/2018/10-01.md">Edit</a></p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
