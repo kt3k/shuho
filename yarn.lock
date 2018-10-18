@@ -1859,9 +1859,9 @@ hosted-git-info@^2.1.4:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.6.1.tgz#6e4cee78b01bb849dcf93527708c69fdbee410df"
 
-html-element-attributes@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/html-element-attributes/-/html-element-attributes-1.3.1.tgz#9fa6a2e37e6b61790a303e87ddbbb9746e8c035f"
+html-element-attributes@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/html-element-attributes/-/html-element-attributes-2.0.0.tgz#2c9fcbd4738c560b357d0232aa3449676b10ab77"
 
 html-void-elements@^1.0.0:
   version "1.0.3"
@@ -2771,9 +2771,9 @@ math-random@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/math-random/-/math-random-1.0.1.tgz#8b3aac588b8a66e4975e3cdea67f7bb329601fac"
 
-md-attr-parser@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/md-attr-parser/-/md-attr-parser-1.1.5.tgz#67a2c3c6836bf06ec517181b74c809194deb1f3e"
+md-attr-parser@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/md-attr-parser/-/md-attr-parser-1.1.6.tgz#bc62253c757000e810c4a92e1c90021e1a20cd3d"
 
 mdast-util-compact@^1.0.0:
   version "1.0.1"
@@ -3630,12 +3630,12 @@ remark-align@^1.2.0:
   dependencies:
     space-separated-tokens "^1.1.1"
 
-remark-attr@^0.6.2:
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/remark-attr/-/remark-attr-0.6.2.tgz#27dbc91ce3156fc4299b6d490a55990330bfe9e3"
+remark-attr@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/remark-attr/-/remark-attr-0.7.0.tgz#f550192797086d0f4c5cb0c974eceb81fac60d66"
   dependencies:
-    html-element-attributes "^1.3.1"
-    md-attr-parser "^1.1.5"
+    html-element-attributes "^2.0.0"
+    md-attr-parser "^1.1.6"
 
 remark-html@^8.0.0:
   version "8.0.0"
