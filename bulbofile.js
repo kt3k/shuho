@@ -8,10 +8,16 @@ const layout1 = require('layout1')
 const branch = require('branch-pipe')
 const data = require('gulp-data')
 const moment = require('moment')
+const frontmatter = require('gulp-front-matter')
 
 const paths = {
   index: 'index.html',
   dest: 'build'
+}
+
+const langIcon = {
+  en: '🇬🇧',
+  ja: '🇯🇵'
 }
 
 const sort = (x, y) => y.data.date.diff(x.data.date)
@@ -37,6 +43,7 @@ asset('assets/**/*.*')
 asset('assets/CNAME')
 
 asset('2*/*.md')
+  .pipe(frontmatter())
   .pipe(rename({ extname: '.html' }))
   .pipe(
     data(file => {
@@ -48,6 +55,7 @@ asset('2*/*.md')
         .toString()
         .match(/^##\s.*$/gm)
         .map(s => s.replace(/^##\s*/, ''))
+      const lang = file.frontMatter.lang || 'en'
       return {
         year,
         week,
@@ -56,7 +64,9 @@ asset('2*/*.md')
         end: m.endOf('isoWeek').format(DATE_FORMAT),
         basepath: getBasepath(file.relative),
         title,
-        categories
+        categories,
+        lang,
+        langIcon: langIcon[lang]
       }
     })
   )
