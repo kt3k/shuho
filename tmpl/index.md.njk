@@ -9,7 +9,7 @@
 <span><iframe src="https://ghbtns.com/github-btn.html?user=kt3k&repo=shuho&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe></span>
 
 {% for f in file.files %}
-- [{{ f.data.title }}]({{ f.relative }}) ({{ f.data.start }} / {{ f.data.end }})
+- [{{ f.data.title }}]({{ f.relative }}) ({{ f.data.start }} - {{ f.data.end }})
   - {% for cat in f.data.categories %}[{{ cat }}]({{ f.relative }}#{{ cat.toLowerCase() }}){% if not loop.last%} | {% endif %}{% endfor %}
 {% endfor %}
 

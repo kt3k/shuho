@@ -1,4 +1,4 @@
-const { asset, dest } = require('bulbo')
+const { asset, dest, port } = require('bulbo')
 
 const { join, dirname, relative } = require('path')
 const accumulate = require('vinyl-accumulate')
@@ -14,11 +14,11 @@ const paths = {
   dest: 'build'
 }
 
-const sort = (x, y) => moment(y.data.start).diff(x.data.start)
+const sort = (x, y) => y.data.date.diff(x.data.date)
 const getBasepath = path => join('.', relative(dirname(path), ''))
-const DATE_FORMAT = 'YYYY-MM-DD'
-const SITE_TITLE = '@kt3k の週報 | Weekly journal of @kt3k'
-const SITE_DESCRIPTION = '@kt3k の週報です | Weekly Journal of @kt3k'
+const DATE_FORMAT = 'M/D'
+const SITE_TITLE = '@kt3k の週報 | Weekly report of @kt3k'
+const SITE_DESCRIPTION = '@kt3k の週報です | Weekly report of @kt3k'
 const DOMAIN = 'shuho.kt3k.org'
 
 const tmpl = tmpl =>
@@ -31,6 +31,7 @@ const md = () =>
     .use(require('remark-html'))
 
 dest(paths.dest)
+port(7103)
 
 asset('assets/**/*.*')
 asset('assets/CNAME')
@@ -50,6 +51,7 @@ asset('2*/*.md')
       return {
         year,
         week,
+        date: m.clone(),
         start: m.startOf('isoWeek').format(DATE_FORMAT),
         end: m.endOf('isoWeek').format(DATE_FORMAT),
         basepath: getBasepath(file.relative),
