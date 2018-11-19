@@ -1,0 +1,104 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 46 - 2018 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 46 - 2018 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-46---2018">Week 46 - 2018</h1>
+<blockquote>
+<p>11/12 - 11/18</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
+<p>deno は新しい V8 runtime.</p>
+<ul>
+<li>
+<p>Installer にちょっとコントリビュート (python)</p>
+<ul>
+<li><a href="https://github.com/denoland/deno_install/pull/11">https://github.com/denoland/deno_install/pull/11</a></li>
+<li><a href="https://github.com/denoland/deno_install/pull/13">https://github.com/denoland/deno_install/pull/13</a></li>
+</ul>
+</li>
+<li>
+<p>deno 0.2.0 がリリース</p>
+<ul>
+<li><a href="https://github.com/denoland/deno/releases/tag/v0.2.0">https://github.com/denoland/deno/releases/tag/v0.2.0</a></li>
+<li>外部コマンド実行ができるようになった. shebang も解釈(無視)できるようになった. 簡単な CLI ツールが割と現実的に作れるようになったという感じ.</li>
+</ul>
+</li>
+<li>CodeFetch 周り (import 文から発動される Op) でちょっと直したい部分があるので, 来週は時間があったらその辺を見てみたい.</li>
+</ul>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3kbuttons">kt3k/buttons</h3>
+<p><a href="https://buttons.kt3k.org/">https://buttons.kt3k.org/</a></p>
+<p>🌱buttons は毎日やるタスクのボタンを作って, その記録をカレンダーヒートマップ表示する web サービス.</p>
+<ul>
+<li>ちょっと使ってくれる人が増えてきたイメージ. yuzutas0 さんという人に誘われて技術書典6でこのサービスについての章を書く事になったので, そろそろ原稿を書き始めたい.</li>
+</ul>
+<h3 id="capsidjscapsid">capsidjs/capsid</h3>
+<p><a href="https://capsid.js.org/">https://capsid.js.org/</a></p>
+<p>💊 capsid はコンポーネントベースの DOM プログラミングをするための超軽量フレームワーク</p>
+<ul>
+<li>
+<p>nicolo が実装してくれた babel 7.1 の decorator plugin を手掛かりに, 新しい decorator に対応する修正を進めた.</p>
+<ul>
+<li><a href="https://github.com/capsidjs/capsid/pull/133">https://github.com/capsidjs/capsid/pull/133</a></li>
+<li>途中何回も decorator proposal のレポジトリの方も再確認しながら, 新 decorator の挙動を探り探り実装した.</li>
+<li>新 decorator は基本的に旧 decorator より複雑になっていて, 旧に無かった情報が新しい ClassDescriptor / ElementDescriptor という 2種類の descriptor の中に格納されていて, より細やかな decoration が出来るようになっている. たとえば kind には, その decorator が class decorator として呼ばれたか, method decorator として呼ばれたか, field decorator として呼ばれたかを区別する識別子が入っていて, 作者が意図しない利用をされた時に例外を投げる事ができる. また placement というプロパティが追加されていて, その メソッド/field が static であるか, prototype 上であるか, own プロパティであるか, の区別が出来るようになった. 区別できるだけでなく, placement を変える事も出来て, 字面上ただの method 定義だけど, decorator の効果でそれが static や own プロパティに変わるというような事が実現可能になった. 若干トリッキーなのが constructor の扱いで, 旧メソッドdecorator では、まず第1引数で、そのクラスの prototype が渡って来ていたため, そこから constructor を取り出したり, prototype に直接好きな作用を加えたりという事が可能であった. 新 decorator では ElementDescriptor には constructor も prototype も含まれておらず, class 自体にアクセスする事が出来ない. では, どうするのか, というと, finisher というプロパティを使う. ElementDescriptor に finisher というプロパティを作成し, そこに callback 関数を登録する. この callback 関数はその class の constructor 引数で実行されるため, ここに, 従来の decorator 実装で行なっていた処理を書く事で, 大体問題なく移行する事が出来る.</li>
+</ul>
+</li>
+</ul>
+<h2 id="仕事">仕事</h2>
+<h3 id="react-hands-on">React Hands-on</h3>
+<ul>
+<li>簡単な React のハンズオンをやった. レベルのバラツキが大きい audience に対して hands-on するのはなかなか大変という感想.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2018/11-12.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a> | <a href="https://github.com/kt3k/shuho/edit/master/2018/11-12.md">Edit</a></p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
