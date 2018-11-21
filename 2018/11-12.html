@@ -60,7 +60,9 @@
 <li>外部コマンド実行ができるようになった. shebang も解釈(無視)できるようになった. 簡単な CLI ツールが割と現実的に作れるようになったという感じ.</li>
 </ul>
 </li>
-<li>CodeFetch 周り (import 文から発動される Op) でちょっと直したい部分があるので, 来週は時間があったらその辺を見てみたい.</li>
+<li>
+<p>CodeFetch 周り (import 文から発動される Op) でちょっと直したい部分があるので, 来週は時間があったらその辺を見てみたい.</p>
+</li>
 </ul>
 <h2 id="myproject">MyProject</h2>
 <h3 id="kt3kbuttons">kt3k/buttons</h3>
@@ -73,14 +75,11 @@
 <p><a href="https://capsid.js.org/">https://capsid.js.org/</a></p>
 <p>💊 capsid はコンポーネントベースの DOM プログラミングをするための超軽量フレームワーク</p>
 <ul>
-<li>
-<p>nicolo が実装してくれた babel 7.1 の decorator plugin を手掛かりに, 新しい decorator に対応する修正を進めた.</p>
-<ul>
+<li>nicolo が実装してくれた babel 7.1 の decorator plugin を手掛かりに, 新しい decorator に対応する修正を進めた.<ul>
 <li><a href="https://github.com/capsidjs/capsid/pull/133">https://github.com/capsidjs/capsid/pull/133</a></li>
 <li>途中何回も decorator proposal のレポジトリの方も再確認しながら, 新 decorator の挙動を探り探り実装した.</li>
 <li>新 decorator は基本的に旧 decorator より複雑になっていて, 旧に無かった情報が新しい ClassDescriptor / ElementDescriptor という 2種類の descriptor の中に格納されていて, より細やかな decoration が出来るようになっている. たとえば kind には, その decorator が class decorator として呼ばれたか, method decorator として呼ばれたか, field decorator として呼ばれたかを区別する識別子が入っていて, 作者が意図しない利用をされた時に例外を投げる事ができる. また placement というプロパティが追加されていて, その メソッド/field が static であるか, prototype 上であるか, own プロパティであるか, の区別が出来るようになった. 区別できるだけでなく, placement を変える事も出来て, 字面上ただの method 定義だけど, decorator の効果でそれが static や own プロパティに変わるというような事が実現可能になった. 若干トリッキーなのが constructor の扱いで, 旧メソッドdecorator では、まず第1引数で、そのクラスの prototype が渡って来ていたため, そこから constructor を取り出したり, prototype に直接好きな作用を加えたりという事が可能であった. 新 decorator では ElementDescriptor には constructor も prototype も含まれておらず, class 自体にアクセスする事が出来ない. では, どうするのか, というと, finisher というプロパティを使う. ElementDescriptor に finisher というプロパティを作成し, そこに callback 関数を登録する. この callback 関数はその class の constructor 引数で実行されるため, ここに, 従来の decorator 実装で行なっていた処理を書く事で, 大体問題なく移行する事が出来る.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <h2 id="仕事">仕事</h2>
 <h3 id="react-hands-on">React Hands-on</h3>

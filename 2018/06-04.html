@@ -45,32 +45,23 @@
 <h2 id="oss">OSS</h2>
 <h3 id="c3js">c3.js</h3>
 <ul>
-<li>
-<p>Merged <a href="https://github.com/c3js/c3/pull/2385">https://github.com/c3js/c3/pull/2385</a></p>
-<ul>
+<li>Merged <a href="https://github.com/c3js/c3/pull/2385">https://github.com/c3js/c3/pull/2385</a><ul>
 <li>v0.6.2 としてリリース</li>
 <li>リリース手順がかなり自動化されているので、かなり楽にリリース出来た. ただ、ドキュメントサイトの middleman が鬱陶しいので、早く gulp or bulbo に移行したい.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <h3 id="golanggo">golang/go</h3>
 <ul>
-<li>
-<p>Closed <a href="https://github.com/golang/go/pull/25267">https://github.com/golang/go/pull/25267</a></p>
-<ul>
+<li>Closed <a href="https://github.com/golang/go/pull/25267">https://github.com/golang/go/pull/25267</a><ul>
 <li>Go の html の coverage レポートのインデックスページ (各ファイルの一覧表示) が無いので足すという PR. 出してからものすごい時間が空いてから Rob Pike がそんな変更要らんと言ってきたので閉じた. 明らかに見通し悪くて不便なんだけど、 html レポート作る周りのコードはテストもない (というか js をテストする仕組み自体持って居ない) ので、おそらくメンテナンス出来そうにないので、これ以上何もしたくないということなのかなという印象.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <h3 id="rydeno">ry/deno</h3>
 <ul>
-<li>
-<p>Merged <a href="https://github.com/ry/deno/pull/2">https://github.com/ry/deno/pull/2</a></p>
-<ul>
+<li>Merged <a href="https://github.com/ry/deno/pull/2">https://github.com/ry/deno/pull/2</a><ul>
 <li>deno の typo を直した. 4番目のコントリビュータになった.</li>
 <li>testing 以下のライセンスが間違っているエラーも見つけたけど、こちらは知り合いに託した.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <p>今週はみんな ry/deno の話をしているという印象. import とか、uncaught error とか、green threads とか、node の根本的な負の部分を解決しているので、かなり魅力のあるプロジェクトだと思う.</p>
 <h2 id="news">News</h2>
@@ -93,14 +84,11 @@
 </ul>
 <h3 id="kt3kremarker">kt3k/remarker</h3>
 <ul>
-<li>
-<p>livereload がしたいという要望が来てしまった <a href="https://github.com/kt3k/remarker/issues/9">https://github.com/kt3k/remarker/issues/9</a></p>
-<ul>
+<li>livereload がしたいという要望が来てしまった <a href="https://github.com/kt3k/remarker/issues/9">https://github.com/kt3k/remarker/issues/9</a><ul>
 <li>難しくはないはずだけど、かなり面倒な対応.</li>
 <li>remarker は remarker -> berber -> bulbo -> vinyl-serve という順で依存して、サーバー機能を持って来ている。livereload を入れるためにはその依存系列全部に手を入れて、サーバーに connect-livereload を差し込めるようにする必要がある.</li>
 <li>vinyl-serve の改修から始めたが、vinyl-serve にそもそも greenkeeper が入っておらず、入れようとすると vinyl と mime-type のメジャーアップデートで当たりがあって、そのままだとテストが通らなかったり、まずメンテナンス性を確保する作業からして難航。ただテストケース自体はかなりがっつり入っているため、実装を全部思い出さなければいけないという程でもなく、なんとかなりそうな雰囲気.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <h2 id="仕事">仕事</h2>
 <ul>

@@ -45,42 +45,30 @@
 <h2 id="oss">OSS</h2>
 <h3 id="c3jsc3">c3js/c3</h3>
 <ul>
-<li>
-<p><a href="https://github.com/c3js/c3/pull/2424">pull #2424</a></p>
-<ul>
+<li><a href="https://github.com/c3js/c3/pull/2424">pull #2424</a><ul>
 <li>circle CI の Artifact 保存機能を使って c3.js に来た PR のプレビュー版サンプルサイトを circle CI 上にホストするという変更. 例えば <a href="https://github.com/c3js/c3/pull/2417">pull #2417</a> の場合は, <a href="https://415-11496279-gh.circle-artifacts.com/0/htdocs/index.html">このページ</a>にサンプル集がホストされる. <a href="https://github.com/c3js/c3/pull/2417">pull #2417</a> の修正確認の依頼を投げていた時に, 確認者の一人がどうしても修正確認が出来ず, 修正作業そのものが stuck しそうになったため, まず確認手順ミスの疑いを消すために上の仕組みを導入. 案の定プレビューサイト上では確認OKだったらしく, 無事 <a href="https://github.com/c3js/c3/pull/2417">pull #2417</a> がマージ出来た. 以前にも @panthony さんだけが修正確認がとれずに何日も止まるという事があったり, メンテナーでもブランチを切り替えながらの確認作業はミスをしやすいため, この仕組みで今後かなりのレビュー効率化が見込めそう.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <h3 id="rydeno">ry/deno</h3>
 <p>今週の deno はかなり活発な状態. I/O roadmap の PR コメント上で @ry と @benjamingr のエンドレスな議論が行われたり, @robbym さんが option parser 周りでコミットしたり, typescript 周りで @kitsonk さんがコミットしたりと, 複数のコントリビュータが活発にコミットしている状態. 本筋の実装も進んでいて, 相対 path の import が動くようになった. ビルド環境の整備の方も進んで, chromium 系の特殊なツールをあらかじめインストールしなくても, python スクリプトが全ての依存をラップ/構築してくれる仕組みが整ってきて, 誰でもかなり簡単にビルドができる状態になってきた. js を動かしたり相対 import が動く部分など @ry が作るしかない根本部分の実装が一旦完了したため, 大量の issue が <a href="https://github.com/ry/deno/milestone/1">0.1 milestone</a> 以下に作られていて, 興味がある人にとってはかなりコントリビュートしやすい状況.</p>
 <ul>
-<li>
-<p><a href="https://github.com/ry/deno/pull/401">pull #401</a></p>
-<ul>
+<li><a href="https://github.com/ry/deno/pull/401">pull #401</a><ul>
 <li>相対 import が動くようになる PR. $HOME/.deno というディレクトリ以下に deno の中で import した script がキャッシュされるという仕組みが実装された. 起動速度も改善されたらしい.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <h2 id="myproject">MyProject</h2>
 <h3 id="kt3ksaku">kt3k/saku</h3>
 <ul>
-<li>
-<p><a href="https://github.com/kt3k/saku/issues/28">issue #28</a></p>
-<ul>
+<li><a href="https://github.com/kt3k/saku/issues/28">issue #28</a><ul>
 <li>israel 人からの saku の文法の拡張の提案. 現状 saku の heading は level に関わらず全て同じ意味になっているが, それを task の階層構造の表現に使ったら良いのではないかという提案. <a href="https://dev.to/kt3k/markdown-based-task-runner---saku-239o">dev.to に投げた記事</a>への<a href="https://dev.to/guilhermejcgois/comment/3c7f">コメント</a>でも, heading の各レベルが全て同じ意味になるのは make sense ではない, というようなフィードバックが来ていたり, saku のインスピレーション元になっている npm-run-all というツールでは, <code>:</code> を使ったタスク名で階層構造を表現する事ができて saku はそれを実装していない (階層という概念を持っていない) 状態である事が気になっていたりと, ちょうど気になっていた2つの部分を同時に解決する提案な上に, heading の階層がタスクの階層になるというのは非常に自然な semantics と思われるため, 基本的にこの提案に乗る方向で実装を開始.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <h2 id="炎上">炎上</h2>
 <h3 id="doしないで">DO=しないで</h3>
 <ul>
-<li>
-<p><a href="https://github.com/dotnet/docs.ja-jp/issues/118">https://github.com/dotnet/docs.ja-jp/issues/118</a></p>
-<ul>
+<li><a href="https://github.com/dotnet/docs.ja-jp/issues/118">https://github.com/dotnet/docs.ja-jp/issues/118</a><ul>
 <li>ろくにレビューしないで機械翻訳したドキュメントを乗せていた .Net 関連の公式ドキュメントで, 英語版で DO, DON'T になっているところが日本語だと DO も DON'T も「しないで」になっているというひどい誤訳があって, それを指摘するという issue. 元の誤訳自体もひどかったものの, なぜかその issue の指摘自体を却下するという, あまりにも間抜けな対応を Microsoft 社員がしてしまったため, 記録的な量の 👎 がコメントについて, 大炎上してしまった issue. 最終的に火を消せる人 (@nokura) が現れて炎上開始から3日程度で収束.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <h2 id="映画">映画</h2>
 <h3 id="ハンソロ">ハンソロ</h3>

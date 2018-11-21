@@ -53,8 +53,12 @@
 <li>A PR which improves the log output of unit testing. But the there is a problem on the timing of the logging of the test case's title, it's now pending. This PR raised another issue <a href="https://github.com/denoland/deno/issues/948">https://github.com/denoland/deno/issues/948</a>, which requires to fix the writing of stdout, which needs the fix around tokio.</li>
 </ul>
 </li>
-<li>I also tried to change <code>any</code> type of parameters of <code>assertEqual</code> function to <code>unknown</code> type, but typescript doesn't seem to guess successfully the type of them inside the <em>if</em> statement and I gave it up. Probably we need to wait for typescript to be updated to handle them correctly.</li>
-<li>deno now seems supporting TCP server.</li>
+<li>
+<p>I also tried to change <code>any</code> type of parameters of <code>assertEqual</code> function to <code>unknown</code> type, but typescript doesn't seem to guess successfully the type of them inside the <em>if</em> statement and I gave it up. Probably we need to wait for typescript to be updated to handle them correctly.</p>
+</li>
+<li>
+<p>deno now seems supporting TCP server.</p>
+</li>
 </ul>
 <p>The echo server example (taken from the benchmark script):</p>
 <pre><code>import { args, listen, copy } from "deno";
@@ -73,12 +77,9 @@ hello
 </code></pre>
 <h3 id="c3jsc3">c3js/c3</h3>
 <ul>
-<li>
-<p>Released <a href="https://github.com/c3js/c3/releases/tag/v0.6.8">v0.6.8</a></p>
-<ul>
+<li>Released <a href="https://github.com/c3js/c3/releases/tag/v0.6.8">v0.6.8</a><ul>
 <li>Now scss files are included in npm package.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <h2 id="myproject">MyProject</h2>
 <h3 id="kt3kbuttons">kt3k/buttons</h3>

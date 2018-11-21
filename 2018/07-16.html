@@ -67,41 +67,26 @@
 <li>
 <p>deno build args</p>
 <ul>
-<li>
-<p><code>treat_warnings_as_errors</code> boolean</p>
-<ul>
+<li><code>treat_warnings_as_errors</code> boolean<ul>
 <li>これを true にすると c のコンパイル時に出て来た warnings がコンパイルエラーになって, コンパイルが失敗するようになる. mac は true にしてもビルド可能だが, 現状 linux, windows ではこれを true にするとビルドが通らない. 将来的には全ての platform で true にしたいが, 現状 linux, windows で warnings 無しでビルドする方法が誰にも分からない.</li>
-</ul>
-</li>
-<li>
-<p><code>use_allocator</code> string</p>
-<ul>
+</ul></li>
+<li><code>use_allocator</code> string<ul>
 <li>これを指定すると, 特殊な memory allocator を利用することが出来る. "none" を指定すると default の allocator が使われる. linux で "none" で無い値を指定するとビルドツールの flatc が異常終了してビルドが通らなくなる. linux 上では "none" を指定するしかないと思われる.</li>
-</ul>
-</li>
-<li>
-<p><code>use_custom_libcxx</code> boolean</p>
-<ul>
+</ul></li>
+<li><code>use_custom_libcxx</code> boolean<ul>
 <li>これが true だと libcxx をカスタムビルドするようになり, linux 上だと途方も無い量の unused-commnad-line-argument という warning が上がるようになる. とりあえず現状 travis 上では false に設定されている. linux でビルドする場合は false にするのが正と思われる.</li>
-</ul>
-</li>
-<li>
-<p><code>is_clang</code> boolean</p>
-<ul>
+</ul></li>
+<li><code>is_clang</code> boolean<ul>
 <li>c コンパイラとして LLVM の clang を使うかどうかという arg. デフォルトだと true になっている. true のままビルドすると linux 上では unreachable-code の warning が出る. false にすると linux 上では g++ が使われるようになり, unreachable-code は封じることが出来るようになるが, deno のソースコード上で unused-variable や unsed-result が出るようになる.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 </li>
 </ul>
 <h3 id="c3jsc3">c3js/c3</h3>
 <ul>
-<li>
-<p><a href="https://github.com/c3js/c3/pull/2417">pull #2417</a></p>
-<ul>
+<li><a href="https://github.com/c3js/c3/pull/2417">pull #2417</a><ul>
 <li>gauge chart のバックグラウンド (灰色の弧状の部分) がチャートのリサイズ時に追随してリサイズされないという問題が指摘されていて, それに対する対応. 途中まで @rahul-winner さんが修正案を作ってくれていたけど, その修正だと gauge 上のマウスイベントがなぜか効かなくなっていて, そこも含めた全体的な対応.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <h2 id="myproject">MyProject</h2>
 <h3 id="kt3kmoneybit-app">kt3k/moneybit-app</h3>

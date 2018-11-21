@@ -49,18 +49,12 @@
 <li>
 <p>コントリビュート</p>
 <ul>
-<li>
-<p><a href="https://github.com/denoland/deno/pull/1002">https://github.com/denoland/deno/pull/1002</a></p>
-<ul>
+<li><a href="https://github.com/denoland/deno/pull/1002">https://github.com/denoland/deno/pull/1002</a><ul>
 <li>ベンチマークページで効率の悪い API リクエスト (並列で良いところを直列でとっている) をしているところがあったためその効率化の対応と, インターネットアクセスするテストケースがあったため, ローカルサーバ向きにテストするように修正.</li>
-</ul>
-</li>
-<li>
-<p><a href="https://github.com/denoland/deno/pull/1037">https://github.com/denoland/deno/pull/1037</a></p>
-<ul>
+</ul></li>
+<li><a href="https://github.com/denoland/deno/pull/1037">https://github.com/denoland/deno/pull/1037</a><ul>
 <li>ベンチマークページにデザインが入ったりした関係で全データを表示するのが厳しくなったため, トップページでは 20個だけのデータを表示するという対応. Easy peasy.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 </li>
 <li>
@@ -72,22 +66,16 @@
 </ul>
 <h3 id="c3jsc3">c3js/c3</h3>
 <ul>
-<li>
-<p><a href="https://github.com/c3js/c3/pull/2476">https://github.com/c3js/c3/pull/2476</a></p>
-<ul>
+<li><a href="https://github.com/c3js/c3/pull/2476">https://github.com/c3js/c3/pull/2476</a><ul>
 <li>以前一度見て意味が分からなかった issue. bar チャートではなく, どうも line チャートについて以前の挙動を復活しているらしいことが分かって来た. で, ということはマージしてもいい奴かなと思い始めたところで, ツールチップがデータポイントごとに変わる example で壊れているという指摘が入って, やっぱりまだマージ出来ないことが分かった.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <h2 id="tc39">TC39</h2>
 <h3 id="decorator">decorator</h3>
 <ul>
-<li>
-<p><a href="https://github.com/tc39/proposal-decorators/issues/69">https://github.com/tc39/proposal-decorators/issues/69</a></p>
-<ul>
+<li><a href="https://github.com/tc39/proposal-decorators/issues/69">https://github.com/tc39/proposal-decorators/issues/69</a><ul>
 <li>ES の decorator proposal で, 最後に残った 2つの blocker のうちの1つの issue で圧倒的に燃えている issue. 今週も再燃して通知がたくさん来た. decorator を付けた class を export する時に <code>export @deco class {}</code> か <code>@deco export class {}</code> かという話. 正直使う側としてはどちらでも出来ることが全く変わらないので, どちらになってもただ従うだけでどっちでも良い話なのだけど, とにかく両方の派閥がお互いに譲らないので, 全く進捗がみられず, 無限に議論が続いている感がある. champion は一時 <code>export @deco class {}</code> 側に傾いていたような気配があった (というか決まりかけていた時もあったように見えた) が, <code>@deco export class {}</code> 派が絶対に譲らないという姿勢で, <code>@deco export</code> を主張し続けるので, 終わりが見えない状態. とりあえず今回の proposal では判断を保留するために export と <code>@deco</code> の併用を禁止する, みたいな妙案らしきものも出たけど, やっぱり絶対に <code>@deco export</code> が書けないのはおかしいという強硬派がいるため進捗せず.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <h2 id="myproject">MyProject</h2>
 <h3 id="kt3kbuttons">kt3k/buttons</h3>

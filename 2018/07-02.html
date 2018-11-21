@@ -45,9 +45,7 @@
 <h2 id="oss">OSS</h2>
 <h3 id="rydeno">ry/deno</h3>
 <ul>
-<li>
-<p>リファクタ</p>
-<ul>
+<li>リファクタ<ul>
 <li><a href="https://github.com/ry/deno/pull/309">pull #309</a></li>
 <li><a href="https://github.com/ry/deno/pull/314">pull #314</a></li>
 <li><a href="https://github.com/ry/deno/pull/322">pull #322</a></li>
@@ -55,23 +53,16 @@
 <li><a href="https://github.com/ry/deno/pull/335">pull #335</a></li>
 <li><a href="https://github.com/ry/deno/pull/338">pull #338</a></li>
 <li>deno の 3rd パーティの依存を全て, <code>//third_party</code> というディレクトリに固めて, アップデートを自動スクリプトで行うようにするという計画があって, その作業をやる人がいなさそうだったので, 自分が @ry の issue 上の指示に従って各種対応をした.</li>
-</ul>
-</li>
-<li>
-<p><a href="https://github.com/ry/deno/pull/330">pull #330</a></p>
-<ul>
+</ul></li>
+<li><a href="https://github.com/ry/deno/pull/330">pull #330</a><ul>
 <li>protocol buffers を flatbuffers で置き換える PR. Cap'n Proto が良いのではという issue (<a href="https://github.com/ry/deno/issue/269">#269</a>) も出ていたが, Cap'n Proto とほぼ似たようなパフォーマンスがでるシリアライズプロトコルで, google 製の flatbuffers の方が適切という判断がされたぽい. ただ, この決定に関してはまだ非常に <a href="https://gitter.im/denolife/Lobby?at=5b3ed9ee3572e970c17a181d">tentative</a> ということで, 完全に決まったわけではない.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <h3 id="c3jsc3">c3js/c3</h3>
 <ul>
-<li>
-<p><a href="https://github.com/c3js/c3/pull/2401">pull #2401</a></p>
-<ul>
+<li><a href="https://github.com/c3js/c3/pull/2401">pull #2401</a><ul>
 <li>アークチャートの背景がなくなっているというバグの修正. 多分 D3 v4 対応時に入ったリグレッションと思われる. selection 周りの API が非破壊的になったせいで副作用を期待して動いていた部分が動かなくなったと思われる. <a href="https://github.com/c3js/c3/releases/tag/v0.6.3">v0.6.3</a> としてリリース.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <h3 id="lekohothouse">Leko/hothouse</h3>
 <ul>
@@ -79,22 +70,16 @@
 </ul>
 <h3 id="gn">gn</h3>
 <ul>
-<li>
-<p><a href="https://github.com/o-lim/generate-ninja">https://github.com/o-lim/generate-ninja</a></p>
-<ul>
+<li><a href="https://github.com/o-lim/generate-ninja">https://github.com/o-lim/generate-ninja</a><ul>
 <li>deno が使っているビルドシステム. 独自 DSL (結構綺麗) で語彙がかなり多い. ninja ファイルが出力される.</li>
 <li><a href="https://docs.google.com/presentation/d/15Zwb53JcncHfEwHpnG_PoIbbzQ3GQi_cpujYwbpcbZo/edit">このスライド</a>がわかりやすい.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <h3 id="ninja">ninja</h3>
 <ul>
-<li>
-<p><a href="https://github.com/ninja-build/ninja">https://github.com/ninja-build/ninja</a></p>
-<ul>
+<li><a href="https://github.com/ninja-build/ninja">https://github.com/ninja-build/ninja</a><ul>
 <li>gn で設定をビルドした結果は ninja として出力される. ninja は手でかく想定はされていない, とにかく速さに特化されたビルドシステム. <a href="https://ninja-build.org/manual.html">公式ドキュメント</a>が非常に丁寧.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <h2 id="仕事">仕事</h2>
 <h3 id="アンチパターン">アンチパターン</h3>
@@ -105,12 +90,9 @@
 <h2 id="イベント">イベント</h2>
 <h3 id="数理ナイトスペシャル">数理ナイトスペシャル</h3>
 <ul>
-<li>
-<p><a href="https://event.nnear.jp/events/468599">https://event.nnear.jp/events/468599</a></p>
-<ul>
+<li><a href="https://event.nnear.jp/events/468599">https://event.nnear.jp/events/468599</a><ul>
 <li>各種の数の定義 (公理) とか, 集合論を使って各種の数を構成できるという話. 自分が学生の頃読んだ本の<a href="https://www.amazon.co.jp/dp/425411088X">「数」(足立恒雄)</a>をそのままなぞるような内容だったため, 本質的に新情報は無かったけれど, 久しくペアノ公理に言及しているような人を見ていなかったので, 久しぶりに数学的な世界を覗けて, 非常に良い気分転換になった.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <hr>
 <div class="fb-like" data-href="https://shuho.kt3k.org/2018/07-02.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>

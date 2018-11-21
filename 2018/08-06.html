@@ -45,12 +45,9 @@
 <h2 id="oss">OSS</h2>
 <h3 id="c3jsc3">c3js/c3</h3>
 <ul>
-<li>
-<p><a href="https://github.com/c3js/c3/pull/2439">pull #2439</a></p>
-<ul>
+<li><a href="https://github.com/c3js/c3/pull/2439">pull #2439</a><ul>
 <li>先週出したドラッグでズームする機能の続き. オリジナルの PR 作者の @mistic さんからフィードバックがあり, zoom.disableDefaultBehavior というオプションを消さないで欲しいという要望が来たので (自分が理解できなかったので勝手に消していた), なんとか意味を汲み取って再実装した. そこまで実装した時点で @mistic さんから良さそうというフィードバックがあり, マージしてリリースした. 2年半以上待たされた上に微妙に機能を消されそうになったのに不満一つ言わず, 良いことしか言わないので, なんて良い人なんだろうと思った.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <h3 id="rydeno">ry/deno</h3>
 <ul>
@@ -61,12 +58,9 @@
 <h3 id="kt3kremarker">kt3k/remarker</h3>
 <p>remarker は markdown ファイルからブラウザ上で見れるスライドを直接作れるコマンドラインツール. 内部的に <a href="https://github.com/gnab/remark">gnab/remark</a> を利用している. gnab/remark は html / css を結構手で書かないといけなくてその管理が面倒くさいという問題があり, remarker はその点を解決している. <a href="https://github.com/search?q=filename%3Aremarker.yml">remarker.yml で検索</a> するとそこそこ使われているぽいツール.</p>
 <ul>
-<li>
-<p><a href="https://github.com/kt3k/remarker/pull/11">pull #11</a></p>
-<ul>
+<li><a href="https://github.com/kt3k/remarker/pull/11">pull #11</a><ul>
 <li>久しぶりに remarker に PR が飛んで来たのでレビュー. コマンドラインオプションで <code>remarker --cssFiles https://..../style.css</code> のように指定した時に上手く行っていなかったのを直してくれるという修正. 本筋と関係ない絵文字をレンダリングできるようにしたいという修正の方で gnab/remark と remarkjs/remark を混同した内容の変更が入っていて根本的に壊れた内容の修正になっていたので, その点だけ修正依頼. すぐに修正されマージ &#x26; リリース.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <h3 id="kt3kmoneybit-app">kt3k/moneybit-app</h3>
 <p>moneybit は仕訳帳を入力したら貸借対照表 / 月ごとの勘定の内訳等が出力できるモバイルアプリ. (青色確定申告に使えます.)</p>
@@ -82,12 +76,9 @@
 <h3 id="capsidjscapsid">capsidjs/capsid</h3>
 <p>capsid.js は DOM プログラミング用軽量フレームワーク. DOM 要素に振る舞いを足してカスタムなコンポーネントが実装できるライブラリ.</p>
 <ul>
-<li>
-<p><a href="https://github.com/capsidjs/capsid/commit/58800a7581ab015663d7fc54d2afa596ec6ea9b4">https://github.com/capsidjs/capsid/commit/58800a7581ab015663d7fc54d2afa596ec6ea9b4</a></p>
-<ul>
+<li><a href="https://github.com/capsidjs/capsid/commit/58800a7581ab015663d7fc54d2afa596ec6ea9b4">https://github.com/capsidjs/capsid/commit/58800a7581ab015663d7fc54d2afa596ec6ea9b4</a><ul>
 <li>親クラスで <code>@on</code> ハンドラーを登録して, 子クラスをコンポーネントとして登録した時に, 親のハンドラーが正しく保存されておらず, unmount 時に正しくハンドラーを削除できていなかったバグを発見して修正. moneybit-app の貸借対照表画面実装時に初めて継承したクラスをコンポーネント登録する状況が発生してバグが露見した.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <h2 id="映画">映画</h2>
 <h3 id="ミッションインポッシブルフォールアウト">ミッションインポッシブル/フォールアウト</h3>
