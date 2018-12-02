@@ -46,8 +46,7 @@
 <h3 id="nodejsnode">nodejs/node</h3>
 <ul>
 <li><a href="https://github.com/nodejs/node/pull/24613">https://github.com/nodejs/node/pull/24613</a><ul>
-<li>今年の Nodefest の Code and Learn で出した PR がやっとマージされた. V8 API の Array の使い方が古い使い方になっているのを新しい使い方に書き直すという内容. 自分が選んだファイルには 3箇所古い Array::New の使い方があって, うち2つは単純に固定長 (長さ 2) の Array を作るというコードでこれは何の問題も無かったのだけれど, うち1箇所で Array を作る途中で if 文があって, その条件分岐で Array の長さが 1 か 2 か変化するというコードがあって, ここの書き方で collaborator から複数のコメントがついて, もう少し最適化すべきという流れになって, 提案された方法をやってみたが, どちらの提案も罠があって単純には対応不可能で, ごちゃごちゃ対応しているうちに結構時間がかかってしまった. 結果的に c++ の std::vector に少し詳しくなった.</li>
-<li>この問題を選んだ理由は, V8 API に詳しくなれば deno のコードベースに何か還元できるかも, と思ったからだったけど, 終わった後に deno を見にいったら deno はすでに新しい方の API を使っていて, 何も還元できない事が分かった.</li>
+<li>今年の Nodefest の Code and Learn で出した PR がやっとマージされた. V8 API の Array の使い方が古い使い方になっているのを新しい使い方に書き直すという内容. 自分が選んだファイルには 3箇所古い Array::New の使い方があって, うち2つは単純に固定長 (長さ 2) の Array を作るというコードでこれは何の問題も無かった. うち1箇所で Array を作る途中で if 文があって, その条件分岐で Array の長さが 1 か 2 か変化するというコードがあって, ここの書き方で collaborator から複数のコメントがついた. 議論の流れから, もう少し最適化すべきという雰囲気になって, 提案された方法をやってみたけど, どちらの提案も穴があって単純には適用不可能だった. 結局 @refack さんの提案している方法から assertion を抜いた形のコードを push したところでマージされた. C++ の std::vector に少し詳しくなった.</li>
 </ul></li>
 </ul>
 <h2 id="myproject">MyProject</h2>
@@ -55,7 +54,7 @@
 <p><a href="https://github.com/capsidjs/todomvc">https://github.com/capsidjs/todomvc</a></p>
 <p>Capsid TodoMVC は capsid で実装した <a href="http://todomvc.com/">TodoMVC</a>.</p>
 <ul>
-<li>capsid の decorators を babel 7.1 版に update したので, todomvc も新 decorators に移行する<a href="https://github.com/capsidjs/todomvc/commit/274c5586da8c1bed5f78114899c9c390810fe7f5">作業</a>をした. ほぼ想定通りの作業 (decorators plugin をアップデートして wired を getter decorator から field decorator に変える) で済んだものの, 最初 decorators plugin に与えるパラメータを <code>{ "legacy": true }</code> から <code>{ "decoratorsBeforeExport": false }</code> に変えるのを忘れていて, その場合のエラーメッセージがかなり難解で, そこそこ難しかった. 特に karma 側を移行する際に上の plugin パラメータのアップデートし忘れによるエラーメッセージがかなり難解で, capsid 自体の decorator 移行が失敗しているのではないかという点から疑い直してかなりの時間を消費してしまった.</li>
+<li>capsid の decorators を babel 7.1 版に update したので, todomvc も新 decorators に移行する作業をした(<a href="https://github.com/capsidjs/todomvc/commit/274c5586da8c1bed5f78114899c9c390810fe7f5">1</a>, <a href="https://github.com/capsidjs/todomvc/commit/a43dbe9b51e15ff22c924dbd5792e8b1c884a05b">2</a>). ほぼ想定通りの作業 (decorators plugin をアップデートして wired を getter decorator から field decorator に変える) で済んだものの, 最初 decorators plugin に与えるパラメータを <code>{ "legacy": true }</code> から <code>{ "decoratorsBeforeExport": false }</code> に変えるのを忘れていて, その場合のエラーメッセージがかなり難解で, そこそこ難しかった. 特に karma 側を移行する際に上の plugin パラメータのアップデートし忘れによるエラーメッセージがかなり難解で, capsid 自体の decorator 移行が失敗しているのではないかという点から疑い直してかなりの時間を消費してしまった.</li>
 <li>結果としては新 decorators 移行は完了して, 綺麗な状態になった. ついでに TodoMVC 全体を圧縮して gzip サイズを badge ( <img src="https://img.badgesize.io/capsidjs/todomvc/master/dist/app.min.js.svg?compression=gzip" alt="badge"> ) で出して見たところ 10kB 程度になることが分かり, vue (~20kB) や react (~30kB) の runtime 自体より小さいことが分かった.</li>
 </ul>
 <h3 id="capsidjscapsid">capsidjs/capsid</h3>
@@ -63,16 +62,16 @@
 <p>💊 capsid はコンポーネントベースの DOM プログラミングをするための超軽量フレームワーク</p>
 <ul>
 <li>
-<p>TodoMVC の新 decorators 移行をする前に, codesandbox 上に置いている 2つの公式 example (mirroring と counter) の新 decorators 移行作業をしようとしたが, うまく行かなかった. 何が原因なのかを特定するため問題を切り分けて行ったところ, どうも codesandbox は babel 7 を扱えないらしいという疑いが出てきたため, <a href="https://github.com/kt3k/parcel-babel7-decorators-example">minimal な repro</a> を作って見たところ確かに動かなかった. ローカルや glitch では問題なくビルドできるため, おそらく codesandbox 側の babel 7 対応の問題と思われたため codesandbox の discord に上の件を投げて見たが今の所返信はなし. 色々と調べている過程で分かって面白かったのが, codesandbox は package.json を見てきちんとビルドしているように見えるが実はサーバー側で node が動いているのではなく, <a href="https://github.com/jvilk/BrowserFS">BrowserFS</a> というもの (のフォーク) を使ってブラウザ内でビルドをシミュレーションしているらしいことが分かった. なので, ローカルで出来たことがなんでもかんでも codesandbox 上で動くわけではなく, 作者が個別に対応してくれたかなり限定的な内容しか動かないらしいという事が分かった.</p>
+<p>TodoMVC の新 decorators 移行をする前に, codesandbox 上に置いている 2つの公式 example (mirroring と counter) の新 decorators 移行作業をしようとしたが, うまく行かなかった. 何が原因なのかを特定するため問題を切り分けて行ったところ, どうも codesandbox は babel 7 を扱えないらしいという疑いが出てきたため, <a href="https://github.com/kt3k/parcel-babel7-decorators-example">minimal な repro</a> を作ってみたところ確かに動かなかった. ローカルや glitch では問題なくビルドできるため, おそらく codesandbox 側の babel 7 対応の問題と思い discord に質問を投げてみたが今の所返信はなし. 色々と調べている過程で分かって面白かったのが, codesandbox は package.json を見てきちんとビルドしているように見えるが実はサーバー側で node が動いているのではなく, <a href="https://github.com/jvilk/BrowserFS">BrowserFS</a> というもの (のフォーク) を使ってブラウザ内でビルドをシミュレーションしているらしいことが分かった. なので, ローカルで出来たことがなんでもかんでも codesandbox 上で動くわけではなく, 作者が個別に対応してくれたかなり限定的な内容しか動かないらしいという事が分かった.</p>
 </li>
 <li>
 <p><a href="https://github.com/capsidjs/capsid/pull/138">https://github.com/capsidjs/capsid/pull/138</a></p>
 <ul>
 <li>capsid 自体を TyepScript に移行する PR. 移行自体は無事に完了できたがかなり大変だった.</li>
 <li>そもそも TypeScript に移行したかったが, 新 decorators が babel 7 でしか実装されていないので, TypeScript が新 decorators 実装を始めるまで移行は出来ないと思い込んでいたのだけど, 最近 <code>@babel/plugin-transform-typescript</code> というプラグインの存在を知って, babel の変換と TypeScript の型 strip を混ぜることが出来るということが分かり, したがって capsid の TypeScript 移行が現時点で可能という事が分かったため, 移行作業に着手した.</li>
-<li>とりあえず, transpile は無視して型チェックを通す作業から始めた. 拡張子を全部 .ts に変えて, 明らかに ts と flow で違うところ (:any と as any など) をサッと直したところ型エラーが100個弱出ていた. ts のエラーは割と詳細に何が悪いか出てくるため, 逐次指示に従って修正. 数時間で tsc --noEmit が通るようになった. (調べる事は多いが地道にググっていればいつかは終わる類の作業なので, 時間はかかったが難しくはなかった)</li>
+<li>とりあえず, transpile は無視して型チェックを通す作業から始めた. 拡張子を全部 .ts に変えて, 明らかに ts と flow で違うところ (型キャストの :any と as any など) をサッと直したところ型エラーが100個弱出ていた. ts のエラーは割と詳細に何が悪いか出てくるため, 逐次指示に従って修正. 数時間で tsc --noEmit が通るようになった. (調べる事は多いが地道にググっていればいつかは終わる類の作業なので, 時間はかかったが難しくはなかった)</li>
 <li>次に dist (publish 用のバンドル) をビルドする作業に着手したが, これがかなりハマった. まず想定していた <code>@babel/plugin-transform-typescript</code> で transpile するのがそもそもうまく行かなかった. capsid は rollup でビルドしている (最終的なバンドルサイズを抑えたいため, これ以外の選択肢がない) ため, rollup-plugin-babel を介して transpile するのだけれど, それが原因でうまくいかないのかもしれないが, うまくいかない原因の特定が不可能だった. 次に deno が使っている rollup-plugin-typescript2 を使ってビルドしようとしたがうまく行かなかった. こちらも意味が理解可能なエラーメッセージが全く出てこず, 対応のしようがなくなったため不可能だった. 次に rollup-plugin-typescript を使って見たところ, 嘘のように突然ビルドが成功した. dist を作るのには, 実は新 decorators を transpile する必要は無い (なぜなら capsid の内部では decorators は使っていないため) ので, 一旦これで良しとした.</li>
-<li>次に最も難航した test の transpile 作業に着手した. test は現状 karma + browserify + babelify で babel 7 の変換をしつつ browserify でファイルをつなげながら karma を介して実ブラウザ上でテストを走らせている. これを ts 化する場合, tsify を使う方法が公式では挙げられているが, 今回の対応では, babel 7 新 decorators を使わないといけないという縛りがあるため, その構成は取れず, 必ず babelify + <code>@babel/plugin-transform-typescript</code> + <code>@babel/plugin-proposal-decorators</code> という構成でビルドしなければならない. このビルドがとにかく通らず, 意味の全く通らないエラーの原因をひたすら考え続けるという苦行を何時間も続ける事になった. 結果的には主に拡張子 .ts を各ツールに伝える事がうまくいっていなかった事が分かり, babel に ts 拡張子を教える設定, browserify に ts 拡張子を教える設定 karma に ts 拡張子を教える設定を追加したところほぼ全テストケースが動くようになった. 結果が分かれば, 拡張子の設定を追加するだけという単純な内容だけれど, エラーメッセージとその対応内容の関係がかけ離れてしまっているために非常に難しい作業になった.</li>
+<li>次に最も難航した test の transpile 作業に着手した. test は現状 karma + browserify + babelify で babel 7 の変換をしつつ browserify でファイルをつなげながら karma を介して実ブラウザ上でテストを走らせている. これを ts 化する場合, tsify を使う方法が公式では挙げられているが, 今回の対応では, babel 7 新 decorators を使わないといけないという縛りがあるため, その構成は取れず, 必ず babelify + <code>@babel/plugin-transform-typescript</code> + <code>@babel/plugin-proposal-decorators</code> という構成でビルドしなければならない. このビルドがとにかく通らず, 意味の全く通らないエラーの原因をひたすら考え続けるという苦行を何時間も続ける事になった. 結果的には主に拡張子 .ts を各ツールに伝える事がうまくいっていなかった事が分かり, babel に ts 拡張子を教える設定, browserify に ts 拡張子を教える設定, karma に ts 拡張子を教える設定を追加したところほぼ全テストケースが動くようになった. 結果が分かれば, 拡張子の設定を追加するだけという単純な内容だけれど, エラーメッセージとその対応内容の関係がかけ離れてしまっているために非常に難しい作業になった.</li>
 <li>最後に lint を掛け直してみたところ大量にエラーが出ていたが, そもそも TypeScript に移行しているため, standard を使い続けるメリットがあまりなくなっていると思ったため linter も lynt に移行した. lynt を掛けたところ 50個程度のエラーが出ていたがこちらはエラーメッセージに従って地道に対応した.</li>
 </ul>
 </li>
