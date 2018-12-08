@@ -7,8 +7,7 @@
     "clean": "rimraf build",
     "start": "bulbo",
     "build": "bulbo build",
-    "pub": "npm run clean && npm run build && gh-pages -d build -m 'chore: update [skip ci]'",
-    "precommit": "lint-staged"
+    "pub": "npm run clean && npm run build && gh-pages -d build -m 'chore: update [skip ci]'"
   },
   "repository": {
     "type": "git",
@@ -48,5 +47,10 @@
       "lynt --fix",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
