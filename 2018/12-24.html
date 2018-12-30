@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 52 - 2018 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 52 - 2018 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-52---2018">Week 52 - 2018</h1>
+<blockquote>
+<p>12/24 - 12/30</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="deno">deno</h3>
+<p>🦕 Deno は新しい TypeScript / JavaScript のランタイム.</p>
+<ul>
+<li>
+<p>今週は日本勢が deno にかなり興味を示している様子が目立っていた. いつの間にか <a href="https://scrapbox.io/deno-ja/deno%E3%82%82%E3%81%8F%E3%82%82%E3%81%8F%E4%BC%9A_20181229">denoもくもく会</a> が開催されていたり, @hiroppy さん, @bokuweb さんが deno を見だしたりしていて, 急にいろんな人が deno に言及しだしているのが観測されて面白かった.</p>
+</li>
+<li>
+<p><a href="https://denolib.gitbook.io/guide/">https://denolib.gitbook.io/guide/</a></p>
+<ul>
+<li>@kevinkassimo さん, @monkingxue さんが作った contributor 向けの deno ガイドブック. イベントループがどうなっているかなどの解説があって非常にためになる内容.</li>
+<li>上の URL を twitter でつぶやいたところ, 自分のツイートにしてはかなり多くの like と retweet がついた. deno に対する関心が結構高いという事がここでも感じられた.</li>
+</ul>
+</li>
+</ul>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="ja" dir="ltr">contributor 向けの deno ガイドブックが誕生 ✨✨✨ <a href="https://t.co/n5PqP0wRjK">https://t.co/n5PqP0wRjK</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1078930290007928832?ref_src=twsrc%5Etfw">December 29, 2018</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3kmoneybit-app">kt3k/moneybit-app</h3>
+<p>💰 Moneybit はオープンソースのモバイル経理アプリ</p>
+<ul>
+<li>補助元帳モーダル (subledger-modal) の実装が進捗中. 表示対象の補助元帳 (subledger) を抜き出してモーダルコンポーネントに渡す部分, 月別のリストを作る部分などを実装.</li>
+</ul>
+<h3 id="metricslove">metrics.love</h3>
+<p>❤️ metrics.love は git のコミット毎に任意のメトリクスを蓄積して, グラフ表示するアプリ</p>
+<ul>
+<li>metrics.love のインフラ構成を検討中. DB が一番悩んでいて, 一番コスパの良い蓄積の仕方をいろいろ検討中. RDS とかはド安牌という感じだけど, 多分コスパは良くなくて, マネタイズできないとコスト的に成り立たない. git 自体を DB として使うという案も考えたけど, あまりにも git の abuse すぎるので ban されそうな気がする. 今一番気になっているのは S3 Select を使う方法. コストを限りなく抑えられそうなのと, (人的な) 運用コストが限りなく 0 になるところに魅力を感じる. CockroachDB とか InfluxDB とか LevelDB ラッパー系の DB にも結構興味があるけれど, 結局 runtime と filesystem が必要なので, 運用コスト/運用スキルが相当必要になりそうな匂いがするためちょっと敬遠.</li>
+</ul>
+<h2 id="仕事">仕事</h2>
+<h3 id="nuxt">nuxt</h3>
+<ul>
+<li>昔の同僚からもらったスポットの仕事で nuxt の実装を始めた.</li>
+</ul>
+<h2 id="生活">生活</h2>
+<h3 id="デグー">デグー</h3>
+<p>🐀🐀🐀🐀🐁</p>
+<ul>
+<li>デグーの子供が結構育ってきた. 男女構成は, 男の子4匹, 女の子1匹という構成という事が判明. 白い子(男)と白い点がある子(男)は区別がつくけど, 黒い色の男の子2匹と女の子1匹がまだ区別がつかない.</li>
+</ul>
+<h3 id="歯医者">歯医者</h3>
+<ul>
+<li>右の歯の治療がやっと終わった. 1ヶ月ぐらいかかった.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2018/12-24.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>Did you find a mistake in the article? You can fix it <a href="https://github.com/kt3k/shuho/edit/master/2018/12-24.md">here</a>.</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
