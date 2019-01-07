@@ -48,7 +48,7 @@ asset('2*/*.md')
   .pipe(
     data(file => {
       const m = moment(file.relative, 'YYYY/MM-DD.md')
-      const year = m.format('YYYY')
+      const year = m.isoWeekday(4).format('YYYY')
       const week = m.format('w')
       const title = `Week ${week} - ${year}`
       const categories = file.contents
