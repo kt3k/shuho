@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 2 - 2019 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 2 - 2019 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-2---2019">Week 2 - 2019</h1>
+<blockquote>
+<p>1/7 - 1/13</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="deno">deno</h3>
+<p>🦕 Deno は新しい TypeScript / JavaScript のランタイム.</p>
+<ul>
+<li><a href="https://gist.github.com/mizchi/31e5628751330b624a0e8ada9e739b1e">https://gist.github.com/mizchi/31e5628751330b624a0e8ada9e739b1e</a></li>
+<li><a href="https://blog.bokuweb.me/entry/2019/01/11/102706">https://blog.bokuweb.me/entry/2019/01/11/102706</a></li>
+<li>@mizchi さんのコードリーディングと @bokuweb さんのコードリーディングが出てきた. これをベースに R の FE 会でも deno の議論があったり, いろんな人が deno について喋っているという不思議な状況. 色々喋っていて, もう少し tokio / GN / ninja あたりに詳しくなりたいと思った. GN が分からないと結局何がどうなってビルドが成り立っているのか分からないため, きちんと deno を理解することは出来ないと思う. そして GN を分かるためには GN のアウトプットである ninja を分かる必要があると思う. 一時期この 2つのツールの公式ドキュメントをかなり眺めていた時期があったけど, ドキュメントだけでは必要なことは分からないという印象を受けた. 本当に分かるためにはソースを読んで行くしかないような気がする.</li>
+</ul>
+<h3 id="bahunya">bahunya</h3>
+<p>🌺 bahunya はクラスレス CSS フレームワーク</p>
+<ul>
+<li><a href="https://qiita.com/kt3k/items/f1448936ba4a8fd4de55">https://qiita.com/kt3k/items/f1448936ba4a8fd4de55</a><ul>
+<li>bahunya (バウヒニア) を初めてプロトタイピング用途で使ってみようと思ったら名前を思い出せなくてググるのも時間がかかってしまい, これはまずいと思って Qiita に紹介記事を書いた. 生 html を良しなにスタイリングするというツールで, スタイルに時間をかけたくないけど, ダサい画面を見たくないというわがままな需要に答えてくれる素晴らしいツール. のはずだけど, github のスター数が低くくて, みんな良さに気づいていないぽい. ツール自体の知名度に貢献する意味でももっと広めなければという使命感を感じて記事を書いた. でも, その記事にもいいねが付かず手応えなし😢</li>
+</ul></li>
+</ul>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3kmoneybit-app">kt3k/moneybit-app</h3>
+<p>💰 Moneybit はオープンソースのモバイル経理アプリ</p>
+<ul>
+<li>補助元帳モーダルの実装側が終わったので, テストに着手した. コンポーネントのテストを全て書いているわけではないけれど, 補助元帳モーダルはアプリ内で 1番目か2番目に複雑なコンポーネントなので, テストを書いておきたいところ. 結構大きめの domain object を複数用意して, カスタムイベントの detail にセットしたものを dispatch することが必要.</li>
+</ul>
+<h3 id="metricslove">metrics.love</h3>
+<p>❤️ metrics.love は git のコミット毎に任意のメトリクスを蓄積して, グラフ表示するアプリ</p>
+<ul>
+<li>metrics.love の DB を検討中. CockroachDB が結構気になっている. drone の様にオンプレ版と SaaS版を両方用意したくて, オンプレ版は docker run すればすぐ立てられる様な作りにしたい.</li>
+</ul>
+<h2 id="仕事">仕事</h2>
+<h3 id="nuxt">nuxt</h3>
+<ul>
+<li>nuxt のお仕事がまだ微妙に継続中. iPhone で 100vh の意味が微妙におかしい (スクロールで隠れるアドレスバーとかツールバーの高さが 100vh に含まれている) ことによる不具合などに対応. スクロールで隠れるものの高さを 100vh に含むべきかどうかは結構昔から議論があるらしく, Mobile Chrome なんかは別の実装をしていたらしいけれど, Mobile Safari の実装 (スクロールで見え隠れするものを 100vh に含む) が良いという議論になってきているらしく, その他のブラウザもそれに追従して行く方向らしい.</li>
+</ul>
+<h2 id="生活">生活</h2>
+<h3 id="デグー">デグー</h3>
+<p>🐀🐀🐀🐀🐁</p>
+<ul>
+<li>デグーの子供が6週間ぐらいになってきた. そろそろ男女別の部屋に住ませたいので, 徐々に白い子と白い点のある子を大人デグー2匹が住んでいるリビングに入れて慣らし始めた. 最初はちょっと威嚇する様な声を出したりしていたけど, 数分もしたらなんとなく仲良くなっていて, 大丈夫そうな雰囲気に見えた.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2019/01-07.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>Did you find a mistake in the article? You can fix it <a href="https://github.com/kt3k/shuho/edit/master/2019/01-07.md">here</a>.</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
