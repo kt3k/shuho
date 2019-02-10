@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 6 - 2019 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 6 - 2019 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-6---2019">Week 6 - 2019</h1>
+<blockquote>
+<p>2/4 - 2/10</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="deno">deno</h3>
+<p>🦕 Deno は新しい JavaScript 処理系.</p>
+<ul>
+<li>コントリビューション<ul>
+<li><a href="https://github.com/denoland/deno/pull/1708">https://github.com/denoland/deno/pull/1708</a></li>
+<li><a href="https://github.com/denoland/deno/pull/1732">https://github.com/denoland/deno/pull/1732</a></li>
+<li>この間作った deno で prettier を走らせるやつを使って, core の formatting もそれを使うようにするという変更. なんかこの変更で formatter 自体が flaky になってしまったらしく (たまにそこで CI がハングしたり(mac), access violation で落ちたりする(windows)), 継続して改善ポイントを探し中. この対応をしている中で, python の sys.executable みたいなやつが欲しいとか, run API に env オプションが欲しいとか, 着手しやすそうな issue がいくつか出てきた.</li>
+</ul></li>
+</ul>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3kmoneybit-app">kt3k/moneybit-app</h3>
+<p>💰 Moneybit はオープンソースのモバイル経理アプリ</p>
+<ul>
+<li>あまり進捗できず. 勘定科目編集画面で, 科目を消す時の確認モーダルのデザインを描いたり, 今の科目のセットをデフォルト化するボタンを押した時の確認モーダルのデザインを描いたりした程度の進捗. 来週はコーディングに入るよりも画面の概要書をまとめる作業などを進める予定.</li>
+</ul>
+<h2 id="仕事">仕事</h2>
+<h3 id="seqsense">SEQSENSE</h3>
+<p>🤖</p>
+<ul>
+<li>火曜日から自律移動型ロボットを作っているスタートアップの SEQSENSE に参画した. オフィスは原宿. ビルの警備業務を行うことが出来るロボットの開発をしている会社.</li>
+<li>去年の暮れ頃から IoT / ハードウェアをメインにしている会社に注目し始めていて, 少し前には obniz を作っている CambrianRobotics などにも注目していた. 12月ごろ Findy の紹介で SEQSENSE を知って, 運用までのイメージがかなり現実感のあるハードウェアプロジェクトをやっているという印象を受け, 参画したいという気持ちが強くなった. 1月に面談し, 2月から参画する形となった.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2019/02-04.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>Did you find a mistake in the article? You can fix it <a href="https://github.com/kt3k/shuho/edit/master/2019/02-04.md">here</a>.</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
