@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 12 - 2019 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 12 - 2019 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-12---2019">Week 12 - 2019</h1>
+<blockquote>
+<p>3/18 - 3/24</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="c3jsc3">c3js/c3</h3>
+<p>📊 c3 は d3 ベースのチャートライブラリ</p>
+<ul>
+<li>
+<p><a href="https://github.com/c3js/c3/pull/2584">https://github.com/c3js/c3/pull/2584</a></p>
+<ul>
+<li>.selected() API が壊れていたのを修正する PR をマージ. D3 v4 移行時のリグレッションだったぽい.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/c3js/c3/pull/2590">https://github.com/c3js/c3/pull/2590</a></p>
+<ul>
+<li>favicon を適当に考えて実装. 最近タブを大量に開いているので favicon が無いタブがあると QoL が下がるため.</li>
+</ul>
+</li>
+</ul>
+<h2 id="javascript">JavaScript</h2>
+<h3 id="decorator">decorator</h3>
+<ul>
+<li><a href="https://docs.google.com/presentation/d/1mGqWHfs1EkBneG9CGJZj5mefzMrXQnt2FjqRp9geGxI">https://docs.google.com/presentation/d/1mGqWHfs1EkBneG9CGJZj5mefzMrXQnt2FjqRp9geGxI</a><ul>
+<li>decorator の新しいスライドが出てきた. 根本的に仕組みが変わっていて, ビルトインデコレータというものがいくつか出来て, それの組み合わせで任意のデコレータを表現していくような仕組みに変わる. こうなることで compiler は decorator に関する情報を静的に解析することが出来るようになって, 以前の proposal よりも最適化がしやすくなるらしい. (以前の proposal は最適化が困難/不可能になるというような意見が支配的になって却下されたぽい雰囲気)</li>
+</ul></li>
+</ul>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3kmoneybit-app">kt3k/moneybit-app</h3>
+<p>💰 Moneybit はオープンソースのモバイル経理アプリ</p>
+<ul>
+<li>科目設定画面の実装が進捗. 科目の表示で, ジャーナル(仕訳帳)で使われている科目と使われていない科目を区別する処理を実装. (ジャーナルで使われている科目は削除が出来ない.) ある科目があるジャーナルにとって使われているかどうかという判定はビジネスロジックに属するため moneybit-domain 側に処理を追加して, それを app 側で取り込む形で実装した. moneybit-domain は何ヶ月ぶりに触っても, いつもきちんとやりたいことが実装できるため, 非常に満足.</li>
+</ul>
+<h3 id="kt3kmini-hello">kt3k/mini-hello</h3>
+<ul>
+<li><a href="https://github.com/kt3k/mini-hello">https://github.com/kt3k/mini-hello</a><ul>
+<li>hello と出力する docker container を小さくしていったらどこまで小さく出来るんだろうと疑問に思って作ってみたコンテナ. 最終的に63バイトのコンテナを作ることが出来た. 最初は C Compiler を使ってやってみたけど, それだと, 自分の知識だと 14kB が限界だった (<a href="https://github.com/kt3k/docker-scratch-hello">https://github.com/kt3k/docker-scratch-hello</a>). そういえば昔 breadbox さんとか @shinh さんが, ELF ゴルフという競技をやっていたのを思い出して, breadbox さんのサイトを漁ったところ nasm で assemble 出来る非常に小さい hello world を見つけたので, それを持ってきて docker 内においてみたところきちんと動いていた. (出力を <code>Hello, world!</code> にしたかったのでちょっとだけ改変した.) 面白いなと思ったのは, breadbox さんの記事によると ELF の spec にきちんと沿った実行ファイルは最低でも300バイトは必要になるらしい. つまりある意味で Linux Kernel は標準に準拠していない ELF を実行してしまっているわけで, それも相当大胆なショートカットがいくらでも出来てしまって, おそらく誰もそれをやらないので放置されているのだろうけど, 実行形式のローダーみたいな, 毎日ヘビーにみんなが使っている基本的な部分で, そういう準バグ的な挙動がずっと放置されているのは面白いなと思った.</li>
+</ul></li>
+</ul>
+<h3 id="kt3kbuttons">kt3k/buttons</h3>
+<p><a href="https://buttons.kt3k.org/">https://buttons.kt3k.org/</a></p>
+<p>🌱buttons は毎日やるタスクのボタンを作って, 毎日押すアプリ.</p>
+<ul>
+<li>久しぶりに buttons を改修. Silent Authentication という仕組みがあることが分かって, Access Token が expire した後に自動的に auth0 から新しい Access Token を払い出してもらう処理を追加した. この変更でユーザーは毎日ログインすれば最大30日程度セッションを維持できるようになった (今の所, 実験の意味も含めて最大は7日に設定中)</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2019/03-18.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>Have you found a mistake in the article? Please fix it <a href="https://github.com/kt3k/shuho/edit/master/2019/03-18.md">here</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
