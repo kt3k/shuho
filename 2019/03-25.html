@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 13 - 2019 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 13 - 2019 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-13---2019">Week 13 - 2019</h1>
+<blockquote>
+<p>3/25 - 3/31</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
+<p>🦕 Deno is a new JavaScript runtime.</p>
+<ul>
+<li>In this and last week, the internal structure of deno has been changed very much. <code>//core/</code> has become the new central part of deno as its name indicates. The crate name of <code>//core/</code> directory is now <code>deno</code>, and <code>//core/</code> includes libdeno as <code>//core/libdeno</code>. <code>//src/</code> has become <code>//cli/</code>. The crate name is now <code>deno_cli</code>. @keroxp reports that the new <code>core</code> is a bit unstable, and <code>listen</code> and <code>accept</code> sometimes behave in a buggy way. Probably we seem needing some more time to stabilize it.</li>
+</ul>
+<h3 id="c3jsc3">c3js/c3</h3>
+<p>📊 C3 is a chart library based on D3.</p>
+<ul>
+<li>Released <a href="https://github.com/c3js/c3/releases/tag/v0.6.14">v0.6.14</a><ul>
+<li>which includes an important bug fix <a href="https://github.com/c3js/c3/pull/2589">#2589</a>. This PR fixes the memory leak behavior which only happens when the tab is inactive (i.e. in background) and chart loads the data dynamically. This bug seems to have existed for really long time in c3 codebase. Thanks @pstromberg98 for sending the PR and thanks @NickJSpencer for giving the initial idea where the leak happened.</li>
+</ul></li>
+</ul>
+<h2 id="movie">Movie</h2>
+<h3 id="spider-man-into-the-spider-verse">Spider-Man: Into the Spider-Verse</h3>
+<ul>
+<li>Seen Spider-Verse in Tachikawa Cinema City. I liked it. The story is not of an extroadinary type, but the visual expression was really awesome. The shader looks different from the other hollywood animation movies. The last scenes were something I've never seen before and it was beautiful.</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="consumption-tax">Consumption Tax</h3>
+<ul>
+<li>I submitted the document of the consumption tax to the tax office for the first time in my life. In Japan, a self-employed person is allowed to avoid paying consumption tax to the goverment unless their revenue exceed 10M yen in the year before the accounting cycle. My revenue exceeded 10M in 2016 and now its first time to pay it to the government 😂 The document itself is very easy to create by using the website of the tax office. It almost automatically calculates everything from what I entered as the balance sheet. When I submitted it, the office was very empty unlike the ordinary (income) tax document submission sites.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2019/03-25.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>Have you found a mistake in the article? Please fix it <a href="https://github.com/kt3k/shuho/edit/master/2019/03-25.md">here</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
