@@ -46,6 +46,10 @@
       "prettier --write --single-quote --no-semi",
       "lynt --fix",
       "git add"
+    ],
+    "*.md": [
+      "prettier --write --prose-wrap always",
+      "git add"
     ]
   },
   "husky": {
