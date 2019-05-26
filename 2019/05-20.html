@@ -1,0 +1,114 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 21 - 2019 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 21 - 2019 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-21---2019">Week 21 - 2019</h1>
+<blockquote>
+<p>5/20 - 5/26</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
+<p>🦕 Deno is a new JavaScript and TypeScript runtime.</p>
+<ul>
+<li><a href="https://github.com/kt3k/build_deno_on_centos7">https://github.com/kt3k/build_deno_on_centos7</a><ul>
+<li>This week I created a Dockerfile for building deno in CentOS 7. It was
+successfully done. I also tries to build it in Ubuntu 12.04.5, but it failed
+because <code>gn</code> crashes with the error of incompatible version of (again)
+GLIBC! The binary version of <code>gn</code> seems depends on GLIBC 2.17, but ubuntu
+12.04.5 seems depending on GLIBC 2.16.</li>
+</ul></li>
+</ul>
+<h3 id="kt3kcoveralls-gradle-plugin">kt3k/coveralls-gradle-plugin</h3>
+<p>👨‍🔧 The gradle plugin for coveralls</p>
+<ul>
+<li>This week I resumed the maintainance of coveralls-gradle-plugin, which I
+created in 2014. It has only 233 stars, but it is apparantly used in
+<a href="https://github.com/search?q=filename%3Abuild.gradle+com.github.kt3k.coveralls">more than 4K repositories</a>.
+So I feel a little responsibility of maintaining it, though personally I
+stopped using coveralls in favor of codecov. In my opinion, codecov has big
+advantages over coveralls. The API is essentially better designed, and now I
+don't find any reason to keep using coveralls at this moment. Codecov supports
+the users far better than coveralls. I asked several questions to both
+coveralls and codecov. Coveralls never answered to my questions, but codecov
+answered my questions always. But still I'm the only maintainer of
+coveralls-gradle-plugin, so I have to maintain this plugin.</li>
+<li><a href="https://github.com/kt3k/coveralls-gradle-plugin/pull/90">https://github.com/kt3k/coveralls-gradle-plugin/pull/90</a><ul>
+<li>This time I updated gradle from 2.13 to 5.4.1. Interestingly this doesn't
+break my <code>build.gradle</code> file. I was just able to update the version number
+of gradle. I have to update some test cases, but they were also very small
+things, and didn't require much efforts. Because of this change, I was able
+to enable testing in oracle jdk 11. I had thought that there were some
+problems in jdk 11 because there is
+<a href="https://github.com/kt3k/coveralls-gradle-plugin/issues/85">an popular issue</a>,
+which claims that it doesn't work with jdk 11. But strangely it passes CI
+without any change. So now I don't see the cause of that issue.</li>
+</ul></li>
+</ul>
+<h2 id="book">Book</h2>
+<h3 id="animal-farm">Animal Farm</h3>
+<p>🐖 Animal Farm is a classical allegorical novel by George Orwell.</p>
+<ul>
+<li>This week we read the chapter 2. The farm is accidentally revolutionized. It
+used to be called Manor Farm. Now it's called Animal Farm.</li>
+</ul>
+<h2 id="event">Event</h2>
+<h3 id="ginzajs-1">ginza.js #1</h3>
+<ul>
+<li>Joined ginza.js #1 with many friends. The venue was the office of PLAID. We
+listened to the talks on the grass in their office. I liked @naru0504's talk
+the best.</li>
+</ul>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">今日はGinza.jsというイベントが会社で繰り広げられてます！ <a href="https://twitter.com/hashtag/plaid?src=hash&amp;ref_src=twsrc%5Etfw">#plaid</a> <a href="https://twitter.com/hashtag/ginza?src=hash&amp;ref_src=twsrc%5Etfw">#ginza</a> <a href="https://twitter.com/hashtag/ginzajs?src=hash&amp;ref_src=twsrc%5Etfw">#ginzajs</a> <a href="https://t.co/v5EOqd6krt">pic.twitter.com/v5EOqd6krt</a></p>&mdash; タカヤナギケイタロウ@PLAID.INC (@keita600) <a href="https://twitter.com/keita600/status/1131167110741127168?ref_src=twsrc%5Etfw">May 22, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2019/05-20.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>Have you found a mistake in the article? Please fix it <a href="https://github.com/kt3k/shuho/edit/master/2019/05-20.md">here</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
