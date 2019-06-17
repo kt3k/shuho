@@ -74,15 +74,15 @@ agent in Go language. This week I first experienced I leaked a goroutine.
 Thanks to @t-asaka's review, that leak has never been deployed to the actual
 device, but it was about to be shipped and I really didn't realize it leaked.</li>
 </ul>
-<pre><code>func Foo() {
+<pre><code class="language-go">func Foo() {
   ...
-  for _, item := range(list) {
+  for _, item := range list {
     go func(item) {
       c &#x3C;- doNetworkJob(item)
     }(item)
   }
 
-  for range(list) {
+  for range list {
     err &#x3C;- c
     if err != nil {
       return err
