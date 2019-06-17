@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../css/dark-mode.css" />
     <link rel="icon" href="../favicon.ico" />
     <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <style>
 			body {
@@ -77,7 +78,7 @@ device, but it was about to be shipped and I really didn't realize it leaked.</l
 <pre><code class="language-go">func Foo() {
   ...
   for _, item := range list {
-    go func(item) {
+    go func(item Item) {
       c &#x3C;- doNetworkJob(item)
     }(item)
   }
