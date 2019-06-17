@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 24 - 2019 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 24 - 2019 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-24---2019">Week 24 - 2019</h1>
+<blockquote>
+<p>6/10 - 6/16</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
+<p>🦕 Deno is a new JavaScript and TypeScript runtime.</p>
+<ul>
+<li>This week version 0.9.0 has been released, which includes <code>deno install</code>
+subcommand. Now we can install the standalone cli as follows:</li>
+</ul>
+<pre><code class="language-console">$ deno install file_server https://deno.land/std/http/file_server.ts --allow-net --allow-read
+</code></pre>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3kmoneybit-app">kt3k/moneybit-app</h3>
+<p>💰 Moneybit is an open source mobile accounting app.</p>
+<ul>
+<li>I made a little progress on <code>delete</code>-modal in chart-settings page. Now I
+realized I have 3 different approaches for creating modal in this app (feeling
+a little silly). Comparing these 3, I decided to follow the one used in
+<code>title-area</code> of document-settings page, which has the most encapsulated
+design. It is single event, single dom approach. The overlay shadow is the
+container of modal dialog. The other two have separate overlay shadows and
+modal dialog doms. The former is simpler, but less flexible. The latters are
+more complex, but more flexible.</li>
+</ul>
+<h2 id="job">Job</h2>
+<h3 id="goroutine-leaks">goroutine leaks</h3>
+<ul>
+<li>At @seqsense, we use Go language in many places. Though I first joined this
+team as a frontend engineer, but now I help implementing the data collector
+agent in Go language. This week I first experienced I leaked a goroutine.
+Thanks to @t-asaka's review, that leak has never deployed to the actual
+device, but it was about to be shipped and I really didn't realize it leaked.</li>
+</ul>
+<pre><code>func Foo() {
+  ...
+  for _, item := range(list) {
+    go func(item) {
+      c &#x3C;- doNetworkJob(item)
+    }(item)
+  }
+
+  for range(list) {
+    err &#x3C;- c
+    if err != nil {
+      return err
+    }
+  }
+  ...
+}
+</code></pre>
+<p>I supposed this worked like something JavaScript equivalent of:</p>
+<pre><code class="language-js">function foo() {
+  ...
+  try {
+    await Promise.race(list.map(doNetworkJob))
+  } catch (e) {
+    throw e
+  }
+  ...
+}
+</code></pre>
+<p>But it actually isn't. This leaks the gorouines after leaving the function <code>Foo</code>
+because the channel <code>c</code> looses the receiver and <code>c &#x3C;- doNetworkJob(item)</code> blocks
+forever!</p>
+<h2 id="movie">Movie</h2>
+<h3 id="mib-international">MIB: International</h3>
+<ul>
+<li>Seen Men In Black: International. I liked the hammer scene.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2019/06-10.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>Do you see any mistake? <a href="https://github.com/kt3k/shuho/edit/master/2019/06-10.md">Please fix it</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
