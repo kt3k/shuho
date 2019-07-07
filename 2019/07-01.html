@@ -1,0 +1,114 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 27 - 2019 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 27 - 2019 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-27---2019">Week 27 - 2019</h1>
+<blockquote>
+<p>7/1 - 7/7</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
+<p>🦕 Deno is a new JavaScript and TypeScript runtime.</p>
+<ul>
+<li>Contributions<ul>
+<li><a href="https://github.com/denoland/deno/pull/2591">https://github.com/denoland/deno/pull/2591</a><ul>
+<li>Continued to investigate the last part of the above work. In the above
+branch I encountered the strange error which says <code>unique symbol</code> is not
+assignable to <code>number | unique symbol</code>. It's strange because unique symbol
+is assinable to <code>number | unique symbol</code> if these unique symbols are the
+same. They must be the same but when I have a look at <code>deno types</code>,
+surprizingly they are different. There were two namespaces <code>Deno</code> and
+<code>io</code>. They both have <code>EOF: unique symbols</code> declarations. That's very
+strange because in the source code, it's declared only once. But in type
+declaration file, it splits into 2 different declarations, and they
+conflicts with each other. I still cannot explain what causes this
+situation, but maybe ts_library_builder handles the declaration files in a
+slightly wrong strategy.</li>
+<li>Anyway we merged the above PR with making <code>EOF: null</code> for now. That's a
+little unfortunate, but I believe that works.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="news">News</h2>
+<h3 id="kat-marchan">Kat Marchan</h3>
+<ul>
+<li>Kat Marchan quit npm this week. I think this affects npm cli in future. In the
+middle of the week, she's announced she's working on a new project of package
+manager, which is a new frontend of entropic registry. The new project will be
+written in rust. Before her quit, most leading engineers of npm had quit
+already. I highly doubt their ability to continue developing npm cli further.
+Especially to develop tink in this situation looks difficult.</li>
+</ul>
+<h3 id="7pay-incident">7pay incident</h3>
+<ul>
+<li>Japan's biggest convenience store chain 7&#x26;i Holdings released a new payment
+service, full of exploitable vulnerabilities, this week, and they immediately
+lost a half million dollars. Payment service, full of vulnerabilities 🙈
+They're still struggling to solve the issues.</li>
+</ul>
+<h2 id="movie">Movie</h2>
+<h3 id="snowpiercer">Snowpiercer</h3>
+<ul>
+<li>I've seen a movie called Snowpiercer in netflix. This is a sci-fi movie. This
+movie depicts the rebelion of the people who are oppressed in a dystopia. The
+world is in a very unnatural situation. The movie looked sometimes very
+inconsistent and impossible, but I still liked this movie very much because
+the the storyline is very dramatic and every part seems connected to another
+part very well even in such ridiculous situations. Such spontaneous emergence
+of dramaticity from the combination of ridiculousness reminded me the drawings
+of Picaso.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2019/07-01.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/master/2019/07-01.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
