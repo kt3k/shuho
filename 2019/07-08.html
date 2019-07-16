@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 28 - 2019 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 28 - 2019 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-28---2019">Week 28 - 2019</h1>
+<blockquote>
+<p>7/8 - 7/14</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
+<p>🦕 Deno is a new JavaScript and TypeScript runtime.</p>
+<ul>
+<li>Contributions<ul>
+<li><a href="https://github.com/denoland/deno/pull/2643">https://github.com/denoland/deno/pull/2643</a><ul>
+<li>Added onload and <code>load</code> event handling to <code>window</code> object. This feature is
+inspired by the <code>load</code> event of the browsers. We can use <code>window.onload</code>
+as the main entrypoint of the script.</li>
+</ul></li>
+</ul></li>
+</ul>
+<pre><code class="language-ts">window.onload = async function() {
+  const res = await fetch(Deno.args[1]);
+  console.log(await res.text());
+};
+</code></pre>
+<p>This script shows the contents from the url given from the command line
+argument. There is no explicit call of <code>onload</code> function above, but it's called
+automatically by the system when the script is loaded.</p>
+<h2 id="job">Job</h2>
+<h3 id="s3sync">s3sync</h3>
+<p>♻️ s3sync is a Golang utility for syncing between s3 and local.</p>
+<ul>
+<li>We, engineers at SEQSENSE, created and open sourced
+<a href="https://github.com/seqsense/s3sync">s3sync</a>, a small golang utility for
+syncing between s3 and local disks. The similar function is available as AWS
+cli's subcommand <code>aws s3 sync</code>, but we need more efficient one in regards to
+the size and speed for using it in our robots. So we created this library.</li>
+<li>Special thing about the testing of this library was that we first used
+<a href="https://localstack.cloud/">localstack</a> for testing. Localstack is a mock
+implementation of AWS and can be used as a 'fake' AWS in testing environment.
+We set up the testing of this library using localstack. That simplified our
+test code significantly.</li>
+</ul>
+<h2 id="event">Event</h2>
+<h3 id="ts-meetup-2">TS meetup #2</h3>
+<ul>
+<li>We, TypeScript users near Tokyo, gathered in Folio's office and listened to
+the talks about TypeScript. @mizchi's talk was the most accessible to the
+beginners of TypeScript like me. @takepepe's talk was by far the most
+high-level and excellent. @Quramy talked about the graphql support of the
+typescript language server. He introduced his tool <code>ts-graphql-plugin</code> and
+described how he approached when he created this tool.</li>
+<li>By the way, Folio's conference room is terrible (maybe the worst among the
+places I've ever been). Why did the room's designer place the screen from the
+ground level? The audience can see only the top 20% of the screen (!) unless
+they are in the front row.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2019/07-08.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/master/2019/07-08.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
