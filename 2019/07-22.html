@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 30 - 2019 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 30 - 2019 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-30---2019">Week 30 - 2019</h1>
+<blockquote>
+<p>7/22 - 7/28</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
+<p>🦕 Deno is a new JavaScript and TypeScript runtime.</p>
+<ul>
+<li>Contributions<ul>
+<li><a href="https://github.com/denoland/deno_std/pull/546">https://github.com/denoland/deno_std/pull/546</a><ul>
+<li>Fixed an uncaught error on responding 400 to aborted (or imcomplete) http
+requests. The fix itself is just surrounding the code with a <code>try</code> block,
+but the testing of it was very difficult to set up.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="nodejsnode">nodejs/node</h3>
+<ul>
+<li><a href="https://github.com/nodejs/node/pull/28817">https://github.com/nodejs/node/pull/28817</a><ul>
+<li>pkg-exports are experimentally introduced in Node 12.7.0. Need to catch up
+what it is.</li>
+</ul></li>
+</ul>
+<h2 id="job">Job</h2>
+<h3 id="gengo-genpy">gengo, genpy</h3>
+<ul>
+<li>Worked on gengo's bug. The serialization of some types of fields were wrong. I
+first confirmed the fix worked in the debugger, but setting up the proper
+testing for it was really difficult. I think the serialization format of ROS
+messages isn't documented well on ROS documentation. The impementation is
+virtually the specification. So I need to test gengo's behavior against
+implementation of the same thing in python, which is called genpy. What I set
+up for this testing is: 1) generate python code (a) using genpy, 2) serialize
+the ros message using (a), 3) generate go code (b) using gengo, 4) deserialize
+the message using (b), 5) assert that the deserialized message is the same as
+the original. I implemented all these steps in CI process. It took the entire
+2 days of work.</li>
+</ul>
+<h3 id="aws-nitro-system">AWS Nitro System</h3>
+<ul>
+<li>We first used Nitro based instance on our AWS. We didn't know enough about
+what it was and what imcompatiblities happened when we migrated from the
+legacy system. So some small incident happened about our EBS mountings. It
+required a half day for us to figure out the problem and fix it.</li>
+</ul>
+<h2 id="news">News</h2>
+<h3 id="tc39">TC39</h3>
+<ul>
+<li>TC39 seemed to happen this week. Nullish Coalescing went to stage 3.
+Promise.allSettled went to stage 4. Promise.any went to stage 2. I like the
+latter 2 because they are just APIs of promise and they are named well. So
+there will be small confusion about them. However I'm a little skeptical about
+Nullish Coalescing. It introduces a new operator <code>??</code>. It looks mysterious and
+probably people can't google this operator well. So this introduces a new
+little confusion to new learners to the language. And this operator doesn't do
+much job. <code>a ?? b</code> is just an alternative way to write <code>a != null ? a : b</code>.
+So, in my opinion, there's only a very small benefit to introduce this
+operator compared to the new confusion introduced by it.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2019/07-22.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/master/2019/07-22.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
