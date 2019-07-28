@@ -69,14 +69,14 @@ what it is.</li>
 <li>Worked on gengo's bug. The serialization of some types of fields were wrong. I
 first confirmed the fix worked in the debugger, but setting up the proper
 testing for it was really difficult. I think the serialization format of ROS
-messages isn't documented well on ROS documentation. The impementation is
-virtually the specification. So I need to test gengo's behavior against
-implementation of the same thing in python, which is called genpy. What I set
-up for this testing is: 1) generate python code (a) using genpy, 2) serialize
-the ros message using (a), 3) generate go code (b) using gengo, 4) deserialize
-the message using (b), 5) assert that the deserialized message is the same as
-the original. I implemented all these steps in CI process. It took the entire
-2 days of work.</li>
+messages isn't documented well on ROS documentation. The impementation of ROS
+itself is virtually the specification. So I need to test gengo's behavior
+against implementation of the same thing in python, which is called genpy.
+What I set up for this testing is: 1) generate python code (a) using genpy, 2)
+serialize the ros message using (a), 3) generate go code (b) using gengo, 4)
+deserialize the message using (b), 5) assert that the deserialized message is
+the same as the original. I implemented all these steps in CI process. It took
+the entire 2 days of work.</li>
 </ul>
 <h3 id="aws-nitro-system">AWS Nitro System</h3>
 <ul>
