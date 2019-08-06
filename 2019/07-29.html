@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 31 - 2019 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 31 - 2019 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-31---2019">Week 31 - 2019</h1>
+<blockquote>
+<p>7/29 - 8/4</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
+<p>🦕 Deno is a new JavaScript and TypeScript runtime.</p>
+<ul>
+<li>This week I haven't contributed code. Instead I've been writing an chapter for
+a private book Denobook Volume 2, which we, <code>deno_ja</code>, going to publish on 22
+Sep.<ul>
+<li>I'm going to write 2 chapters: One for beginners and one for new
+contributors.</li>
+</ul></li>
+</ul>
+<h3 id="c3jsc3">c3js/c3</h3>
+<p>📊 C3 is a chart library based on D3.</p>
+<ul>
+<li><a href="https://github.com/c3js/c3/releases/tag/v0.7.3">https://github.com/c3js/c3/releases/tag/v0.7.3</a><ul>
+<li>We released v0.7.3 of c3.js. It includes many bug fixes, thanks to
+@panthony!</li>
+</ul></li>
+</ul>
+<h2 id="job">Job</h2>
+<h3 id="concurrent-map-write-testing"><code>concurrent map write</code> testing</h3>
+<ul>
+<li>I wrote a test case which intentionally invokes the <code>concurrent map write</code>
+panic in golang. The error didn't happen such frequently, and actually I had
+never seen that error in actual use cases, but one of colleagues reported he
+had observed the error before. When I wrote a test case with very highly
+concurrent goroutines, it finally reproduced the error and I could fix it by
+adding appropriate read and write locks around that map. The reason why the
+error didn't happen frequently is very difficult to explain. The map write
+process is first serialized by a channel, and then that process invokes
+another goroutine and actual write happned there. So the writing to the map
+was "mostly" serialized, but not strictly serialized because of additional
+goroutine calls.</li>
+</ul>
+<pre><code>channel -> 1) some process -> another goroutine -> 2) map write (!)
+</code></pre>
+<p>If it writes to map in 1), then this panic didn't happen. However it actually
+invoked another goroutine, and then it breaks the serialization of the writing
+to the map.</p>
+<h3 id="deploy">Deploy</h3>
+<ul>
+<li>Our robot <code>SQ-2</code> is now deployed in a building and working among people. It's
+now shared in SNS.</li>
+</ul>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">オフィスビルの中にRobot発見！！ 🤖 <a href="https://t.co/KMmoIVqGgM">pic.twitter.com/KMmoIVqGgM</a></p>&mdash; masaki.kumamoto (@MasakiKumamoto) <a href="https://twitter.com/MasakiKumamoto/status/1154643322234949633?ref_src=twsrc%5Etfw">July 26, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<h2 id="event">Event</h2>
+<h3 id="ginzajs">ginzajs</h3>
+<p><a href="https://ginzajs.connpass.com/event/136794/">https://ginzajs.connpass.com/event/136794/</a></p>
+<ul>
+<li>Went to the 3rd of ginzajs. @yamatatsu talked about covariance and
+contravariance of generic types in TypeScript. @sosukesuzuki, a contributor to
+prettier, talked about how prettier works. I was interested in the <code>Doc</code>
+format which prettier uses internally to represent the texts.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2019/07-29.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/master/2019/07-29.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
