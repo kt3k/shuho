@@ -1,0 +1,137 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 35 - 2019 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 35 - 2019 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-35---2019">Week 35 - 2019</h1>
+<blockquote>
+<p>8/26 - 9/1</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="tailwind-css">Tailwind CSS</h3>
+<ul>
+<li>Found an interesting CSS framework called Tailwind CSS (
+<a href="https://tailwindcss.com">https://tailwindcss.com</a> ). This framework doesn't provide any "component" like
+Bootstrap or Bulma, but it only provides more low-level classes such as mr-6,
+text-center, etc. The users of the framework mixes these utility classes to
+make their own "components". I think that's an interesting approach. It has
+more than 14K stars in github. There are only a few CSS frameworks which has
+more than 10K stars. So it feel like it could be a new trend in CSS
+frameworks.</li>
+</ul>
+<h3 id="perl6">perl6</h3>
+<ul>
+<li><a href="https://github.com/perl6/problem-solving/issues/81">https://github.com/perl6/problem-solving/issues/81</a><ul>
+<li>Found an interesting issue about renaming perl 6 to <code>Camelia</code> or <code>Raku</code>. I
+don't use perl 6 that much, but I've been interested in it since its start.
+I remember it was first impelemented in Haskell, and eventually it produces
+serveral VMs. Now perl6 ecosystem looks so big that I can't see the whole
+picture of the project.</li>
+</ul></li>
+</ul>
+<h2 id="book">Book</h2>
+<h3 id="denobook-02">denobook 02</h3>
+<p>🦕 denobook 02 is the 2nd volume of denobook by deno-ja</p>
+<ul>
+<li>Finally I finished the most part of my chapter ☺️ My chapter is for ultimate
+beginners who start programming without any background knowledge about any
+sort of programming. I personally don't remember how it is like to start
+programming in such early stage. My chapter heavily rely on the book of Python
+by Masahiro Kamata. His book is really good at explaining the basic concept
+like variables, data types, if structure, for structure, functions etc. I
+followed the first half of his book in my chapter, and borrowed many ideas
+about explanation of basic concepts.</li>
+<li>During writing this, I compared many JavaScript and Python books for beginners
+in book stores. Usually Python books are better at explaining basic concept
+because Python run by itself without any other tools. So the authors don't
+need to explain many things when start explaining python programming. On the
+other hand, JavaScript books are usually full of technical terms from the
+biginning such as browsers, servers, HTML, CSS, DOM etc. This is natural
+because JavaScript is (or used to be) browsers' language. So the books of
+JavaScript need to explain or assume these terms before starting explaining
+any of JavaScript. Because of this constraint, most (or probably all) of
+JavaScript books are not actually for beginners.</li>
+<li>However, I thought that the situation was different for Node.js and Deno
+because they could been seen as a general purpose programming language like
+Python, Ruby, Go, etc. We could introduce Deno without any knowledge of
+browsers or servers. I thought it should be possible to introduce Deno as
+their first language to the beginners without any programming knowledge, and
+that's my attempt in the first chapter of denobook 02.</li>
+</ul>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3ksaku">kt3k/saku</h3>
+<p>saku is a markdown based task runner.</p>
+<ul>
+<li><a href="https://github.com/kt3k/saku/pull/35">https://github.com/kt3k/saku/pull/35</a><ul>
+<li>Migrated to go modules. Go modules is a official module system for golang,
+which going to be default from the next minor version 1.13. We can use it
+from go v1.11 with setting GO111MODULE env var to the string 'on'.</li>
+</ul></li>
+</ul>
+<h2 id="job">Job</h2>
+<h3 id="sq-2">SQ-2</h3>
+<ul>
+<li>The production model of our robot SQ-2 started working on a building in
+Otemachi, Tokyo.</li>
+</ul>
+<h2 id="event">Event</h2>
+<h3 id="build-battle-saga-frontend">Build Battle Saga Frontend</h3>
+<ul>
+<li>An interesting event about build techniques of frontend development organized
+by @euxn23 and @sadnessOjisan. The speakers talked about their techniques,
+experiences, practices, etc about frontend build tools such as gulp, webpack,
+etc.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2019/08-26.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/master/2019/08-26.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
