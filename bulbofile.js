@@ -37,7 +37,7 @@ const md = () =>
     .use(require('remark-html'))
 
 dest(paths.dest)
-port(7103)
+port(7070)
 
 asset('assets/**/*.*')
 asset('assets/CNAME')
