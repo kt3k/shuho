@@ -1,0 +1,124 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 42 - 2019 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 42 - 2019 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-42---2019">Week 42 - 2019</h1>
+<blockquote>
+<p>10/14 - 10/20</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
+<p>🦕 Deno is a new JavaScript and TypeScript runtime.</p>
+<ul>
+<li>Contributions<ul>
+<li><a href="https://github.com/denoland/deno/pull/3141">https://github.com/denoland/deno/pull/3141</a><ul>
+<li>I tried to update Permissions API to web standard one. Deno now uses its
+own APIs for permissions, but we realized W3C defines browser's standard
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API">Permissions API</a>.
+So we decided to switch to that APIs. But my first attempt failed because
+the required change was so big and I couldn't finish it in a proper way.
+So I closed it for the moment.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="job">Job</h2>
+<h3 id="in-house-lt">In-house LT</h3>
+<ul>
+<li>Gave a LT about frontend engineering in general in the office of SEQSENSE. It
+was only for the employees of the company. It was a little diffult for me to
+prepare the talk because I'm not used to talking about frontend engineering to
+the general audiences. I'm used to talking about some specific topics of
+frontend engineering to the frontend engineers, such as babel, webpack, etc.
+However talking about the entire frontend engineering was a huge challenge to
+me. I don't find similar talks frequently in local conferences because they
+also usually talk towards some specific audiences in specific area. They
+suppose many things and often go into the very detail of the topic. In the
+preparation, I remeber the talk by Pamela Fox almost 10 years ago. I heard the
+talk on site. She <a href="https://www.youtube.com/watch?v=2I-o9dFDzi4">talked</a> about
+the history of the browsers from the first days of the internet. So I borrowed
+some topics from her talk such as the first html pages, etc. The talk was, in
+my view, successful. Many people asked many questions to me after the talk,
+which was rare in recent conferences/meetups.</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2I-o9dFDzi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3 id="article">Article</h3>
+<ul>
+<li><a href="https://xtech.mec.co.jp/archives/1427">An article</a> about our robot, SQ-2, was
+published from one of our investors, Mitsubishi Estate.</li>
+</ul>
+<h2 id="event">Event</h2>
+<h3 id="deno_ja-6">deno_ja 6</h3>
+<ul>
+<li>We had a meetup of Japanese Deno enthusiasts in Japan. The authors of the
+denobook met for the first time after the publishing event. We talked on many
+topics about Deno.</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="retrospective">Retrospective</h3>
+<ul>
+<li>10-year retrospective was a meme in Japanese twitter timeline. I did my own.</li>
+</ul>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">27歳 新卒で入った会社が倒産<br>28歳 受託WEB開発会社で頑張る<br>29歳 グリーに入社<br>30歳 OSSを始める<br>31歳 イギリス長期滞在<br>32歳 フリーランスを始める<br>33歳 リクルートに関わり始める<br>34歳 個人アプリ開発<br>35歳 個人アプリ完成せず<br>36歳 deno にはまる<a href="https://twitter.com/hashtag/10%E5%B9%B4%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B?src=hash&amp;ref_src=twsrc%5Etfw">#10年を振り返る</a></p>&mdash; Yoshiya/肩/ひのさわ (@kt3k) <a href="https://twitter.com/kt3k/status/1185081648196440064?ref_src=twsrc%5Etfw">October 18, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<h2 id="tech">Tech</h2>
+<h3 id="borrowingownership">Borrowing/Ownership</h3>
+<ul>
+<li>This week I found that swift language and D language are aiming to implement
+borrowing and ownership feature in the languages. For now, rust is the only
+language which has this feature, but it seems that everyone now agrees that
+the feature is good and efficient in the programming, and that authors started
+thinking to introduce it in thier languages.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2019/10-14.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/master/2019/10-14.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
