@@ -16,7 +16,6 @@ const paths = {
 }
 
 const langIcon = {
-  en: '🇬🇧',
   ja: '🇯🇵'
 }
 
@@ -42,34 +41,41 @@ port(7070)
 asset('assets/**/*.*')
 asset('assets/CNAME')
 
+const fileToArticle = file => {
+  const m = moment(file.relative, 'YYYY/MM-DD.md')
+  const year = m.isoWeekday(4).format('YYYY')
+  const week = m.format('w')
+  // If the next week is the first week, then it's the last week of the year
+  const isLastWeek =
+    m
+      .clone()
+      .add(7, 'days')
+      .format('w') === '1'
+  const title = `Week ${week} - ${year}`
+  const categories = file.contents
+    .toString()
+    .match(/^##\s.*$/gm)
+    .map(s => s.replace(/^##\s*/, ''))
+  const lang = file.frontMatter.lang || 'en'
+  return {
+    year,
+    week,
+    isLastWeek,
+    date: m.clone(),
+    start: m.startOf('isoWeek').format(DATE_FORMAT),
+    end: m.endOf('isoWeek').format(DATE_FORMAT),
+    basepath: getBasepath(file.relative),
+    title,
+    categories,
+    lang,
+    langIcon: langIcon[lang]
+  }
+}
+
 asset('2*/*.md')
   .pipe(frontmatter())
   .pipe(rename({ extname: '.html' }))
-  .pipe(
-    data(file => {
-      const m = moment(file.relative, 'YYYY/MM-DD.md')
-      const year = m.isoWeekday(4).format('YYYY')
-      const week = m.format('w')
-      const title = `Week ${week} - ${year}`
-      const categories = file.contents
-        .toString()
-        .match(/^##\s.*$/gm)
-        .map(s => s.replace(/^##\s*/, ''))
-      const lang = file.frontMatter.lang || 'en'
-      return {
-        year,
-        week,
-        date: m.clone(),
-        start: m.startOf('isoWeek').format(DATE_FORMAT),
-        end: m.endOf('isoWeek').format(DATE_FORMAT),
-        basepath: getBasepath(file.relative),
-        title,
-        categories,
-        lang,
-        langIcon: langIcon[lang]
-      }
-    })
-  )
+  .pipe(data(fileToArticle))
   .pipe(
     branch.obj(src => [
       src.pipe(tmpl('tmpl/shuho.md.njk')),

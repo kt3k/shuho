@@ -7,8 +7,10 @@
 <span><iframe src="https://ghbtns.com/github-btn.html?user=kt3k&repo=shuho&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe></span>
 
 {% for f in file.files %}
-- [{{ f.data.title }}]({{ f.relative }}) <small>{{ f.data.start }} - {{ f.data.end }} ✍️{{f.data.langIcon}}</small>
-  - {% for cat in f.data.categories %}[{{ cat }}]({{ f.relative }}#{{ cat.toLowerCase() }}){% if not loop.last%} | {% endif %}{% endfor %}
+{% if loop.first or f.data.isLastWeek %}
+  ## {{ f.data.year }}
+{% endif %}
+- [Week {{ f.data.week }}]({{ f.relative }}) <small>{{ f.data.start }} - {{ f.data.end }}</small> {% for cat in f.data.categories %}[{{ cat }}]({{ f.relative }}#{{ cat.toLowerCase() }}){% if not loop.last %} | {% endif %}{% endfor %}{% if f.data.langIcon %} <small>✍️{{f.data.langIcon}}</small>{% endif %}
 {% endfor %}
 
 ---
