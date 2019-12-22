@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 51 - 2019 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 51 - 2019 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-51---2019">Week 51 - 2019</h1>
+<blockquote>
+<p>The weekly report from 12/16 to 12/22. You can <a href="https://github.com/kt3k/shuho/edit/master/2019/12-16.md">edit</a> this page (on github) if you find any error.</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<p>🦕 Deno is a new JavaScript and TypeScript runtime.</p>
+<ul>
+<li>Contributions<ul>
+<li><a href="https://github.com/denoland/deno/pull/3507">https://github.com/denoland/deno/pull/3507</a><ul>
+<li><code>deno --version</code> shows TS/V8 versions as well as deno's version. It was a
+little difficult to find out a right lifetime for long version string.
+First I tried to put that in the function which sets up the clap
+configurations, but that didn't work because the function returns clap app
+instance, and the lifetime of that string isn't long enough for that
+situation. The answer was to put the string out of the function and to
+give the static lifetime to it.</li>
+</ul></li>
+<li><a href="https://github.com/denoland/deno/pull/3514">https://github.com/denoland/deno/pull/3514</a><ul>
+<li><code>test</code> function used to take only single function argument, and the name
+of test is specified by the name of the function, but now we have 3
+different ways to specify the name of test, and the error message was so
+outdated. This PR updated it to fit the current signature of <code>test</code>
+function.</li>
+</ul></li>
+<li><a href="https://github.com/denoland/deno/pull/3529">https://github.com/denoland/deno/pull/3529</a><ul>
+<li>YAML module of the standard library completely lacked the documentation
+except the docs in source code. I realized it when I was creating a small
+script using deno for automating a small task in a company which now I
+worked in. So I added it to README.</li>
+</ul></li>
+<li><a href="https://github.com/denoland/deno/pull/3535">https://github.com/denoland/deno/pull/3535</a><ul>
+<li><code>parseAll</code> function of YAML module was simply broken, and couldn't parse a
+very simple case of YAML documents. The cause was a mistake in porting of
+js-yaml to deno std.</li>
+<li>By the way, this was my 100th contribution to deno's main repository.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="event">Event</h2>
+<h3 id="bokuwebnes">bokuweb.nes</h3>
+<ul>
+<li>Bokuweb.nes members gathered in Karumaru Ikebukuro and talked about random
+things around OSS, IT, etc.</li>
+</ul>
+<h3 id="deno-advent-calendar">Deno Advent Calendar</h3>
+<ul>
+<li>This month we, Japanese Deno community, are doing
+<a href="https://qiita.com/advent-calendar/2019/deno">Deno Advent Calendar</a> in
+qiita.com, which is the series of articles about Deno. Each article appears
+each day of December from 1st to 25th. I submitted 9 entries to it.</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="divorce">Divorce</h3>
+<ul>
+<li>I'm in the process of divorcing with my wife. I rented a new room to live
+alone. I've been moving things to that room these days. I prepared 2 copies of
+the document to submit to the City Hall to make divorce officially, but they
+are shredded by her immediately. I need to repeat the same thing again. Our
+marriage is really unproductive. We don't have any child. My wife now don't
+have an ability to be pregnant. I don't love her anymore. I don't respect any
+aspect of her anymore. She plays everyday without learning anything, without
+making any money, without contributing anything to us, spending money which I
+earned, regarding it as normal thing, taking it for granted. I don't know why
+I have to continue this until I die.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2019/12-16.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/master/2019/12-16.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
