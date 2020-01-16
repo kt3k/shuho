@@ -1,0 +1,125 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 2 - 2020 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 2 - 2020 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-2---2020">Week 2 - 2020</h1>
+<blockquote>
+<p>The weekly report from 1/6 to 1/12. You can <a href="https://github.com/kt3k/shuho/edit/master/2020/01-06.md">edit</a> this page (on github) if you find any error.</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
+<ul>
+<li>
+<p>Contributions</p>
+<ul>
+<li>
+<p>Signal Handler</p>
+<p><a href="https://github.com/denoland/deno/pull/3610">https://github.com/denoland/deno/pull/3610</a></p>
+<p>Signal Handler (Ctrl-C とか kill とかのハンドリング) を入れる PR. 前からやろ
+うやろうとおもいなかなか着手出来ていなかったけど, ついに着手した. Tokio の
+tokio::signal というモジュールを使って実装している. rust の Stream の実装の
+仕方が分からなくて, 初めからかなり苦戦したけど, Signal をハンドルするところ
+までは何とか出来た.</p>
+<p>Signal のハンドリングはできたけど, Signal を Listen するとプロセスが終了出来
+ないという問題があって, その機能を入れるためには Deno の Core の仕組みの
+Event Loop の深いところに手を入れないといけなくて, そこで今完全に立ち往生し
+ている. Deno の Core の何となくの仕組みとか, どういう風にループを回している
+とか, どこで終了判定しているとかはもう分かっていて, どういう変更をすれば良い
+という戦略的なイメージはすでに付いているのだけど, それを rust 的にどう表現し
+ていいのかが, 絶望的なまでに分からなくて, 完全に動きが取れなくなっている.
+futures 周りのドキュメントを熟読していくしかなさそう.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="furniture">Furniture</h3>
+<ul>
+<li>
+<p>1/1 から奥さんと別れて新居で一人暮らし中. 家具をいろいろと買い揃えるために, 毎
+日のようにニトリ, 東急ハンズ, その他家具屋をかなり回った. 今週は選びに選んだソ
+ファとダイニングテーブルとラグが届いた.</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ついに人権(ソファ)が届いた! <a href="https://t.co/AcLZKNRT4q">pic.twitter.com/AcLZKNRT4q</a></p>&mdash; Yoshiya/肩/Deno澤 (@kt3k) <a href="https://twitter.com/kt3k/status/1216565170027159553?ref_src=twsrc%5Etfw">January 13, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>ソファとダイニングテーブルは関家具という会社がやっている CRASH GATE というブラ
+ンドから出ているもので, そこそこの値段するけど, そこまでは高くないもの. 特にソ
+ファはモデルチェンジ中の影響でセール品になっていて半額以下(¥35,000)で買えた.
+吉祥寺に CRASH GATE の直営店が 1 軒あって, そこで何回か見た上で決めた. テーブ
+ルはソファーダイニング用のテーブルで, ソファから使う前提の設計になっていて, 通
+常のダイニングテーブルより高さがかなり低く(65cm)なっている. 結構カフェとかでは
+, ソファ(座面 40-42cm)の前に普通のダイニングテーブル(70-75cm)を置いている店も
+多いので, 普通のダイニングテーブルでもそこまでおかしいわけではないけど, やっぱ
+り座ってみると 65cm ぐらいの方が何となくしっくりくる気がする.</p>
+<p>ラグは大漁カーペットという北海道にあるカーペット専門の通販店から購入. 他にもニ
+トリネット(あんまりない), びっくりカーペット(かなりある), @kuy さんから教えて
+もらった IERUG (かなりある) などのカーペット通販サイトなども全点目を通して, 3
+万円を超えない範囲で圧倒的に気に入ったものを選んだ. 値段の上限を倍にした場合
+は<a href="https://bicklycarpet.co.jp/?pid=144414055">こちら</a>がベストだった気がする.
+選び方の根拠としては, 今回は家具を基本的に白かグレーで統一しようと考えていて (
+ソファとテーブルは例外), 白/グレー系しか使っていないラグという時点で 10%以下に
+絞られて, その中でデザイン性の良いものと選ぶとすでにかなり大きめのサイトをトー
+タルしても数点程度しか候補がなかった. 色々なデザインを見ていく中で, ラグは基本
+的にはっきりしたデザイン/クラシカルなエンブレム的なものをあしらったものが圧倒
+的に多い中で, わざと劣化したコンクリートのような柄だったり, 経年による建物の汚
+れ/かすれのようなものをあしらっているラグが数パーセントあって, そのようなラグ
+はカーペット界では「男前」という形容詞で呼ばれているらしかった. 個人的に男前カ
+テゴリのラグはあまり見た経験がなくて, これがかなり気に入ったので, 男前かつホワ
+イト/グレー系統で絞ると, ほぼ 3,4 点ぐらいしか候補がなかった. その中でも大漁カ
+ーペットの PATINA というメーカーのラグはかなりグランジの入れ方がおかしな感じに
+なっていて, どうやったらこのデザインをやろうという気になるのかが理解不能な感じ
+でとても面白く, 非常に気に入ったので購入した.</p>
+</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2020/01-06.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/master/2020/01-06.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
