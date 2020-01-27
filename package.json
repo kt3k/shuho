@@ -29,7 +29,7 @@
     "gulp-rename": "^2.0.0",
     "husky": "^4.0.2",
     "layout1": "^1.1.0",
-    "lint-staged": "^9.0.1",
+    "lint-staged": "^10.0.3",
     "lynt": "^0.5.0",
     "moment": "^2.22.2",
     "nunjucks": "^3.1.6",
