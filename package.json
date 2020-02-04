@@ -45,12 +45,10 @@
   "lint-staged": {
     "*.js": [
       "prettier --write --single-quote --no-semi",
-      "lynt --fix",
-      "git add"
+      "lynt --fix"
     ],
     "*.md": [
-      "prettier --write --prose-wrap preserve",
-      "git add"
+      "prettier --write --prose-wrap preserve"
     ]
   },
   "husky": {
