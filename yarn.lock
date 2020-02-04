@@ -2707,6 +2707,14 @@ load-plugin@^2.0.0:
     npm-prefix "^1.2.0"
     resolve-from "^4.0.0"
 
+localsd@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/localsd/-/localsd-0.3.1.tgz#11094246cb93aa2b8340d6933267bc99bafebc00"
+  integrity sha512-AojynSKiHFQ4F7rGcXOuI5Ry+tPlLTrx02dP9g3ECoeQNonYH+bNcUX/q/ZXvG2ikF15XGkRqkTcBBtfXxJaIw==
+  dependencies:
+    minimist "^1.2.0"
+    ws "^7.2.1"
+
 locate-path@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/locate-path/-/locate-path-2.0.0.tgz#2b568b265eec944c6d9c0de9c3dbbbca0354cd8e"
@@ -5116,6 +5124,11 @@ write@^0.2.1:
   resolved "https://registry.yarnpkg.com/write/-/write-0.2.1.tgz#5fc03828e264cea3fe91455476f7a3c566cb0757"
   dependencies:
     mkdirp "^0.5.1"
+
+ws@^7.2.1:
+  version "7.2.1"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-7.2.1.tgz#03ed52423cd744084b2cf42ed197c8b65a936b8e"
+  integrity sha512-sucePNSafamSKoOqoNfBd8V0StlkzJKL2ZAhGQinCfNQ+oacw+Pk7lcdAElecBF2VkLNZRiIb5Oi1Q5lVUVt2A==
 
 x-is-string@^0.1.0:
   version "0.1.0"

@@ -10,6 +10,16 @@ const data = require('gulp-data')
 const moment = require('moment')
 const frontmatter = require('gulp-front-matter')
 
+const localsd = require('localsd')
+
+const PORT = 7070
+
+localsd.service({
+  service: 'shuho',
+  port: PORT,
+  description: 'My weekly report website'
+})
+
 const paths = {
   index: 'index.html',
   dest: 'build'
@@ -36,7 +46,7 @@ const md = () =>
     .use(require('remark-html'))
 
 dest(paths.dest)
-port(7070)
+port(PORT)
 
 asset('assets/**/*.*')
 asset('assets/CNAME')

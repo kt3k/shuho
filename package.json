@@ -30,6 +30,7 @@
     "husky": "^4.0.2",
     "layout1": "^1.1.0",
     "lint-staged": "^10.0.3",
+    "localsd": "^0.3.1",
     "lynt": "^0.5.0",
     "moment": "^2.22.2",
     "nunjucks": "^3.1.6",
