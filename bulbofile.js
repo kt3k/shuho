@@ -10,15 +10,15 @@ const data = require('gulp-data')
 const moment = require('moment')
 const frontmatter = require('gulp-front-matter')
 
-const localsd = require('localsd')
-
 const PORT = 7070
 
-localsd.service({
+/*
+require('localsd').service({
   service: 'shuho',
   port: PORT,
   description: 'My weekly report website'
 })
+*/
 
 const paths = {
   index: 'index.html',
