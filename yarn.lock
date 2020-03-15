@@ -3879,10 +3879,10 @@ remark-align@^1.2.0:
   dependencies:
     space-separated-tokens "^1.1.1"
 
-remark-attr@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/remark-attr/-/remark-attr-0.9.0.tgz#5b213c4e9815fa4f8c07cbaa674aeb525966b15a"
-  integrity sha512-Q2M/fJixf+wBxOmzSp7Ux6s7UzWoLFSGXxnfPG8frGXoxAXbUIs/XF8IVrLWmvqjZ8a66Eb02r4gsbJkIhLewQ==
+remark-attr@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/remark-attr/-/remark-attr-0.10.0.tgz#a5fd0a24a8bcbfeb00976f497d9ea24df61a444d"
+  integrity sha512-jfKVrYnItRnmOwZfsbZsN3vIkZSz02n/VnylfN50fnzSURTUk8L6TQkl8baOCf0J56yl9kAL1G+qD3vtt0vJ3Q==
   dependencies:
     html-element-attributes "^2.0.0"
     md-attr-parser "^1.3.0"
