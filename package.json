@@ -34,7 +34,7 @@
     "lynt": "^0.5.0",
     "moment": "^2.22.2",
     "nunjucks": "^3.1.6",
-    "prettier": "^1.13.6",
+    "prettier": "^2.0.0",
     "remark-align": "^1.2.0",
     "remark-attr": "^0.10.0",
     "remark-html": "^10.0.0",
