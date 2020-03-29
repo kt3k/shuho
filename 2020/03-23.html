@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 13 - 2020 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 13 - 2020 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-13---2020">Week 13 - 2020</h1>
+<blockquote>
+<p>The weekly report from 3/23 to 3/29. You can <a href="https://github.com/kt3k/shuho/edit/master/2020/03-23.md">edit</a> this page (on github) if you find any error.</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="deno">Deno</h3>
+<ul>
+<li>
+<p>Deno finally has <code>--inspect</code> option! We can debug deno applications from chrome devtools!</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Trying new deno --inspect option <a href="https://twitter.com/hashtag/denoland?src=hash&amp;ref_src=twsrc%5Etfw">#denoland</a> <a href="https://t.co/SdAjAed8Iq">pic.twitter.com/SdAjAed8Iq</a></p>&mdash; Yoshiya/肩/Deno澤 (@kt3k) <a href="https://twitter.com/kt3k/status/1243760804807077888?ref_src=twsrc%5Etfw">March 28, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>This also opens the path for implementing the coverage support of deno <a href="https://github.com/denoland/deno/issues/106">#106</a>.</p>
+</li>
+</ul>
+<h2 id="myproject">MyProject</h2>
+<h3 id="tententen">Tententen</h3>
+<p><a href="https://github.com/monoidcc/Tententen">https://github.com/monoidcc/Tententen</a></p>
+<ul>
+<li>Continued working on Tententen. Started crafting domain logic of the app. This week I made preview modal of the editted Tententen object. Next week I'm going to make save and delete features.</li>
+</ul>
+<h3 id="lepontasync-storage">@lepont/async-storage</h3>
+<p><a href="https://github.com/kt3k/lepont-async-storage">https://github.com/kt3k/lepont-async-storage</a></p>
+<ul>
+<li>
+<p>Created AsyncStorage plugin for <a href="https://github.com/kt3k/lepont">lepont</a>. You can use <a href="https://github.com/react-native-community/async-storage">AsyncStorage</a> of react-native inside the lepont-enabled "browser".</p>
+<p>The testing of this library was a little hard to write. First I imagined I could test this in a integration test style if I could launch karma inside the webview inside the react-native app in the iOS and Android simulators. However after a while I figured out that nobody was doing it and the karma-launcher of such stack was very very hard to write. So I gave up that path and swithed to thinking about mocking the environment. After several trials and errors, it appeared that mocking was not bad, and I was able to write good tests for both react-native side and browser side code bases using simple mock objects 👍 This was a nice first step for expanding lepont ecosystem.</p>
+</li>
+</ul>
+<h2 id="news">News</h2>
+<h3 id="pezy-computing">PEZY computing</h3>
+<p><a href="http://www.news24.jp/articles/2020/03/25/07615275.html">http://www.news24.jp/articles/2020/03/25/07615275.html</a></p>
+<ul>
+<li>
+<p>The CEO of PEZY computing was verdicted 5 years in prison. He was a so brilliant engineer and businessman. PEZY was doing so well on producing energy efficient super computers which were listed in <a href="https://www.top500.org/green500/lists/">GREEN500 list</a>. The reason of verdict says that he used the invented money for private usage. I'm a little skeptical about that reason because the amount of (allegedly) abused money is only a little part of the money they have been invested and what PEZY produced actually achieved sufficiently what they promised to produce. So there seems only a little (or 0) problem on their activity.</p>
+<p>What will he learn from this inprisonment? Who gets what benefit from this? This seems only slowing down the innovation of super computers in this country. What's the motivation behind the sentence behind this?</p>
+</li>
+</ul>
+<h3 id="itp">ITP</h3>
+<p><a href="https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/">https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/</a></p>
+<ul>
+<li>Webkit announced they make 7-day cap on all script-writable data on browser, which includes localStorage, Indexed DB, and ServiceWorker. After reading the specs carefully, expiring indexed DB is no problem because the spec seems saying it's ok to expire it to prevent 3rd party tracking. However the spec of Web Storage says localStorage will never expire except when the user explicitly want it or for security reason. So in my opinion, this breaks the spec and probably it will actually break the real world applications which depend on localStorage. As for service workers, there seems no way to abuse it for 3rd party tracking because the authors seem very carefully drafting the spec to avoid such abuses. So in this point webkit seems failing to describe the reason for disabling the persistence of it.</li>
+</ul>
+<h2 id="hobby">Hobby</h2>
+<h3 id="key-holder">Key holder</h3>
+<ul>
+<li>
+<p>I created acrylic key holders of Deno using two companies Pixiv and Otaclub.</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">不要不急のアクリルキーホルダーが納品された. <a href="https://twitter.com/hashtag/denoland?src=hash&amp;ref_src=twsrc%5Etfw">#denoland</a> <a href="https://t.co/PJ5nESYwsy">pic.twitter.com/PJ5nESYwsy</a></p>&mdash; Yoshiya/肩/Deno澤 (@kt3k) <a href="https://twitter.com/kt3k/status/1242080374806609922?ref_src=twsrc%5Etfw">March 23, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>The qualities of the products were almost the same. Otaclub ships faster and cheaper, but the process of submitting the data was tedious. Pixiv provides far better user experience in the process of submission of data. You can only need web browser and base image file for creating data for pixiv. I was really surprised by the quality of the user interfaces of the design editor of pixiv. So I recommend pixiv for prototyping the material and otaclub for mass production. By the way, both services probably only operate in Japan! I guess there are similar local services in most countries.</p>
+</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2020/03-23.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/master/2020/03-23.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
