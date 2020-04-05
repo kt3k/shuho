@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 14 - 2020 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 14 - 2020 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-14---2020">Week 14 - 2020</h1>
+<blockquote>
+<p>The weekly report from 3/30 to 4/5. You can <a href="https://github.com/kt3k/shuho/edit/master/2020/03-30.md">edit</a> this page (on github) if you find any error.</p>
+</blockquote>
+<h2 id="myproject">MyProject</h2>
+<h3 id="tententen">Tententen</h3>
+<p><a href="https://github.com/monoidcc/Tententen">https://github.com/monoidcc/Tententen</a></p>
+<ul>
+<li>
+<p>Continued working on Tententen. Completed saving feature and the list view. The project had a nice progress this week. Now the user can save the image they created, and can see the list of what they created.</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/Tententen?src=hash&amp;ref_src=twsrc%5Etfw">#Tententen</a> How does the advanced user&#39;s list page look ilke <a href="https://t.co/Zg1aUjw4Pc">pic.twitter.com/Zg1aUjw4Pc</a></p>&mdash; Yoshiya/肩/Deno澤 (@kt3k) <a href="https://twitter.com/kt3k/status/1245050785387253760?ref_src=twsrc%5Etfw">March 31, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h3 id="lepontshare"><code>@lepont/share</code></h3>
+<p><a href="https://github.com/kt3k/lepont-share">https://github.com/kt3k/lepont-share</a></p>
+<ul>
+<li>Started creating Share plugin for <a href="https://github.com/kt3k/lepont">lepont</a> ecosystem. Web standard now has <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share">Web Share API</a>, but this isn't usable in our Tententen project because the app is deployed in <code>file://</code> context. Web Share API requires the page to be hosted in the secure context (which means <code>https://</code>). So we need the share plugin for the lepont bridge. First I tried to bridge the Share API of react-native itself, but I ended up finding that the API was unable to use for Tententen because the API didn't support image sharing! Next I tried <a href="https://www.npmjs.com/package/react-native-share">react-native-share</a> module. This seemed the decent choice. I created <a href="https://github.com/kt3k/lepont-share/commit/b7ee2077852468f4f3c57cb478bf1ebeca304ccd">the initial version</a> and now I'm still working on the testing of it.</li>
+</ul>
+<h2 id="society">Society</h2>
+<h3 id="coronavirus">Coronavirus</h3>
+<ul>
+<li>
+<p>Our society has been totally changed by the coronavirus. The virus itself isn't such scary because the fatality rate of younger generations is extremely low. I don't have any close elder family. My parents both died 14 years ago. All 4 my grand parents have already passed away. I don't have any specific beloved family vulnerable to covid-19.</p>
+<p>In Tokyo, the government hasn't declare emergency yet. They haven't dispatched strict order to the people. They only request the people to stay at home as long as possible, but it doesn't have any legal power. However the shops started voluntarily stopping running. For example, Starbucks stopped all shops. Many shops now operate shorter time. The city looks very different now.</p>
+</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2020/03-30.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/master/2020/03-30.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
