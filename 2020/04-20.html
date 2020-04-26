@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 17 - 2020 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 17 - 2020 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-17---2020">Week 17 - 2020</h1>
+<blockquote>
+<p>The weekly report from 4/20 to 4/26. You can <a href="https://github.com/kt3k/shuho/edit/master/2020/04-20.md">edit</a> this page (on github) if you find any error.</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
+<ul>
+<li>
+<p>This week I was reading around the module loader to address <a href="https://github.com/denoland/deno/issues/2731">#2731</a>. I haven't found the key so far.</p>
+</li>
+<li>
+<p>@dsherret parallelized <code>deno fmt</code> execution. It gains 3 times faster execution time of the command. See <a href="https://github.com/denoland/deno/pull/4823">#4823</a> for details.</p>
+<p>In the note, he found that <code>prettier --write</code> took the same amount of time when formatting formatted and unformatted code base. He guessed that prettier always writes to the filesystem when executing with <code>--write</code> option.</p>
+</li>
+</ul>
+<h2 id="tech">Tech</h2>
+<h3 id="bikeshed">Bikeshed</h3>
+<ul>
+<li>
+<p>A little flame happened around let / const discussion on twitter.</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">JS の let / const はキーワードの選び方が残念だった感がある。なるべく使うべき方の const の文字数が長いのが残念。scala の var, val みたいに同じ文字数なら、だれでも「意味の違い」だけに注目した使い方をして、変な let の使い方みたいなのは発生しなかった気がする。</p>&mdash; Yoshiya/肩/Deno澤 (@kt3k) <a href="https://twitter.com/kt3k/status/1252575511022206976?ref_src=twsrc%5Etfw">April 21, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="iyo">Iyo</h3>
+<ul>
+<li>She is apparently like a baby. She is 11 years younger than me, but she is a very strong woman. She is so sweet and very soft to me, but she is not soft to everyone, everything. She judges everything very very critically. She sees me in very detail, very deeply. She's read all of my weekly reports (for 100 weeks), and so huge amount of my tweets and she found me fit to her. I see the same to her. I think she is fit to me. We're so similar in very much detail. I found she's my destiny.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2020/04-20.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/master/2020/04-20.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
