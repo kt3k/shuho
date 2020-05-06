@@ -2461,6 +2461,11 @@ is-whitespace-character@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-whitespace-character/-/is-whitespace-character-1.0.2.tgz#ede53b4c6f6fb3874533751ec9280d01928d03ed"
 
+is-whitespace-character@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/is-whitespace-character/-/is-whitespace-character-1.0.4.tgz#0858edd94a95594c7c9dd0b5c174ec6e45ee4aa7"
+  integrity sha512-SDweEzfIZM0SJV0EUga669UTKlmL0Pq8Lno0QDQsPnvECB3IM2aP0gdx5TrU0A01MAPfViaZiI2V1QMZLaKK5w==
+
 is-windows@^1.0.1, is-windows@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-windows/-/is-windows-1.0.2.tgz#d1850eb9791ecd18e6182ce12a30f396634bb19d"
@@ -3904,13 +3909,20 @@ remark-align@^1.2.0:
   dependencies:
     space-separated-tokens "^1.1.1"
 
-remark-attr@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/remark-attr/-/remark-attr-0.10.0.tgz#a5fd0a24a8bcbfeb00976f497d9ea24df61a444d"
-  integrity sha512-jfKVrYnItRnmOwZfsbZsN3vIkZSz02n/VnylfN50fnzSURTUk8L6TQkl8baOCf0J56yl9kAL1G+qD3vtt0vJ3Q==
+remark-attr@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/remark-attr/-/remark-attr-0.11.0.tgz#4fda7658db10348038c74154e860579d739372fa"
+  integrity sha512-NmClj1XX0WzzYCS3eL59d7sB22u8AvylKjbK+Sdw20gPUfes/kXTGXyStfTYUy71SBGoVIDUm9xLZWJMd18zew==
   dependencies:
     html-element-attributes "^2.0.0"
+    is-whitespace-character "^1.0.4"
     md-attr-parser "^1.3.0"
+    remark-footnotes "^1.0.0"
+
+remark-footnotes@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/remark-footnotes/-/remark-footnotes-1.0.0.tgz#9c7a97f9a89397858a50033373020b1ea2aad011"
+  integrity sha512-X9Ncj4cj3/CIvLI2Z9IobHtVi8FVdUrdJkCNaL9kdX8ohfsi18DXHsCVd/A7ssARBdccdDb5ODnt62WuEWaM/g==
 
 remark-html@^11.0.0:
   version "11.0.0"
