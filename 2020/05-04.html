@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 19 - 2020 | @kt3k の週報 | Weekly report of @kt3k" />
+    <meta property="og:image" content="https://shuho.kt3k.org/img/logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 19 - 2020 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/github-markdown.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+			body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-19---2020">Week 19 - 2020</h1>
+<blockquote>
+<p>The weekly report from 5/4 to 5/10. You can <a href="https://github.com/kt3k/shuho/edit/master/2020/05-04.md">edit</a> this page (on github) if you find any error.</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
+<ul>
+<li>
+<p>1.0.0-rc1 and 1.0.0-rc2 were released this week.</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">v1.0.0-rc1 has been released in preparation for the stable release on May 13th. We expect minimal API changes from here on out.<a href="https://t.co/Xbi19babHw">https://t.co/Xbi19babHw</a></p>&mdash; Deno (@deno_land) <a href="https://twitter.com/deno_land/status/1257407478251347968?ref_src=twsrc%5Etfw">May 4, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>Deno is going to be 1.0.0 next week, but the core team decided standard library remains at 0.x version. So from this point, the deno cli and standard modules start having different version numbers and different release cycles.</p>
+</li>
+<li>
+<p>Contributions</p>
+<ul>
+<li>
+<p><a href="https://github.com/denoland/deno/pull/5120">https://github.com/denoland/deno/pull/5120</a></p>
+<p>Fixed an old issue <a href="https://github.com/denoland/deno/issues/2731">#2731</a>. This improved the error message when the DENO_DIR is not owned by the current user. Before this fix, it printed a too generic error like <code>Permission denied (os error 13)</code> and was very confusing.</p>
+<p>This fix itself isn't a big fix, but I needed to read a lot of code to grasp how deno first write anything into DENO_DIR. I first follow the worker's preload_module method, which actually downloads and compiles the scripts, but GlobalState's new method was the actual place where the DENO_DIR is touched first. I'd like to publish some notes somewhere based on these readings.</p>
+</li>
+<li>
+<p><a href="https://github.com/denoland/deno/pull/5139">https://github.com/denoland/deno/pull/5139</a></p>
+<p>This PR formats the output of <code>deno bundle</code> with <code>dprint</code> formatter. <code>dprint</code> has a nice interface and therefore this fix isn't such difficult.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="gw">GW</h3>
+<ul>
+<li>
+<p>This week was <a href="https://en.wikipedia.org/wiki/Golden_Week_%28Japan%29">the Golden Week</a> in Japan (which means that we had a lot of holidays in this week). I spent most of time with Iyo. We were so happy living together 💑</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">萌え要素が詰まっている(盗撮) <a href="https://t.co/hYlQaOBu8B">pic.twitter.com/hYlQaOBu8B</a></p>&mdash; あずき (@okomekirai) <a href="https://twitter.com/okomekirai/status/1257576386576838657?ref_src=twsrc%5Etfw">May 5, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">通勤中のあずき <a href="https://t.co/EFeAiYiTqW">pic.twitter.com/EFeAiYiTqW</a></p>&mdash; あずき (@okomekirai) <a href="https://twitter.com/okomekirai/status/1259624892007251968?ref_src=twsrc%5Etfw">May 10, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">え、え、えろい！ <a href="https://t.co/FmJsJLN1Gl">pic.twitter.com/FmJsJLN1Gl</a></p>&mdash; あずき (@okomekirai) <a href="https://twitter.com/okomekirai/status/1257619789356232704?ref_src=twsrc%5Etfw">May 5, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h3 id="covid-19">COVID-19</h3>
+<ul>
+<li>This week was the end of the period of the first emergency declaration in Japan. Though the emergency had been extended officially by the government until the end of May, many shops started operating again at the end of this week.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2020/05-04.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/master/2020/05-04.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
