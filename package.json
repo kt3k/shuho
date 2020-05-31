@@ -22,7 +22,7 @@
   "devDependencies": {
     "branch-pipe": "^1.0.1",
     "bulbo": "^7.0.0",
-    "gh-pages": "^2.0.0",
+    "gh-pages": "^3.0.0",
     "gulp-data": "^1.3.1",
     "gulp-front-matter": "^1.3.0",
     "gulp-remark": "^8.0.0",
