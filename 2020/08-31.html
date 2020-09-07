@@ -1,0 +1,133 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2020/08-31.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 36 - 2020 | @kt3k の週報 | Weekly report of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2036%20-%202020" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 36 - 2020 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-36---2020">Week 36 - 2020</h1>
+<blockquote>
+<p>The weekly report from 8/31 to 9/6. You can <a href="https://github.com/kt3k/shuho/edit/master/2020/08-31.md">edit</a> this page (on github) if you find any error.</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
+<p>🦕 Deno is a new JavaScript and TypeScript runtime</p>
+<ul>
+<li>
+<p>Contributions</p>
+<ul>
+<li>
+<p><a href="https://github.com/denoland/deno/pull/7314">https://github.com/denoland/deno/pull/7314</a></p>
+<p>Found an issue <a href="https://github.com/denoland/deno/issues/7308">#7308</a> and solved it in <a href="https://github.com/denoland/deno/pull/7314">#7314</a>. I first realized in it that <code>decodeURIComponent</code> doesn't parse query (search) param correctly, but we need to <code>.replace(/+/g, ' ')</code> before applying it 🤔</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Applications</p>
+<ul>
+<li>This week I found a deno application, <a href="https://github.com/ryo-ma/github-profile-trophy">GitHub Profile Trophy</a>. This is written in Deno using <a href="https://github.com/TooTallNate/vercel-deno">vercel-deno</a> builder and therefore deployed to <a href="https://vercel.app">vercel</a>. I think this app is significant in the sense that the author used deno for trying to invent something new in software space, not just reinvent something already existed in the world.</li>
+</ul>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">開発しました。GitHubを利用している方、是非、個人開発や学習のモチベーション維持に。<br><br>🏆 GitHubのプロフィールをイケイケにするトロフィー(活動実績)が表示できるサービスの開発および公開した話 <a href="https://t.co/RhN2ZBtwgO">https://t.co/RhN2ZBtwgO</a> <a href="https://twitter.com/hashtag/Qiita?src=hash&amp;ref_src=twsrc%5Etfw">#Qiita</a> <a href="https://twitter.com/hashtag/%E9%A7%86%E3%81%91%E5%87%BA%E3%81%97%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2?src=hash&amp;ref_src=twsrc%5Etfw">#駆け出しエンジニア</a> <a href="https://twitter.com/hashtag/%E5%80%8B%E4%BA%BA%E9%96%8B%E7%99%BA?src=hash&amp;ref_src=twsrc%5Etfw">#個人開発</a></p>&mdash; ryo-ma (@Skeinin) <a href="https://twitter.com/Skeinin/status/1300204099745406976?ref_src=twsrc%5Etfw">August 30, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h3 id="romefrontendrome">romefrontend/rome</h3>
+<p>Rome is a new frontend toolchain.</p>
+<ul>
+<li>Last week I wrote that rome was disappointing because it didn't provide the modification ability of lint rules and enforces the hard tabs to all users. That changed this week. Now those are simply configurable! 🎉 See <a href="https://github.com/romefrontend/rome/pull/1163">#1163</a>.</li>
+</ul>
+<h3 id="curlcurl">curl/curl</h3>
+<ul>
+<li>
+<p>Curl now supports MQTT by default. It's very interesting to see such old software still developing dynamically.</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">curl: MQTT support is now enabled by default. No longer considered &quot;experimental&quot;.<a href="https://t.co/c0kOffRXnK">https://t.co/c0kOffRXnK</a></p>&mdash; Daniel Stenberg (@bagder) <a href="https://twitter.com/bagder/status/1300339234495135744?ref_src=twsrc%5Etfw">August 31, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h3 id="tc39proposal-decorators">tc39/proposal-decorators</h3>
+<ul>
+<li>
+<p>To my surprise, @littledan started again a new draft of decorators proposal. This time he simplified it very much and maybe it's the simplest to the users, the decorator authors, and the implementors of the engines. It's very similar to python's decorator. Especially the semantics and the way to evaluate decorators is very very similar to python.</p>
+<p>I've never expected this new version happens because decorators proposal have been already defeated 4 times and there seemed no reasonably way to continue it anymore. I was really surprised his undefeatable mind 😵</p>
+<p>I'm also very surprised the simplicity of this version of the proposal. This one obviously lacks the feature to "add" new properties to the prototype of the class, and that's the point of this version. We can modify only the decorated methods, not able to modfiy arbitrary property of the prototype. That simpifies the implementation of both engines and transpilers. Thus it's named "simplified" decorators.</p>
+<p>The evaluation of the decorator happens after the evaluations of the other elements. That's basically the same as the python version. So this proposal, in my view, is the same in most aspects as the python's version. The idea of decorators were derived from python's decorators, and we tweak it a little to align it to the Object.defineProperty's signature. That caused the problem in the evaluation of order of class elements and decorators, and the 1st decorators were rejected. The 2nd decorators addressed that evaluation order problem, but it became too complicated. The transpilation of the 2nd decorators were totally huge and at the level of suffering the web ecosystem. Then it was rejected. The 3rd proposal, static decorators, tried to address that complexity, but it introduced totally new syntax elements and that caused the traspilation very difficult. Then it was rejected. The 4th decorator shed lights to how to implement field decorators, but didn't address the previous issues at all, and it was rejected. After such very long detour, we finally try to simply mimic the python's decorator. I found it's a very interesting story.</p>
+</li>
+</ul>
+<h2 id="myproejct">MyProejct</h2>
+<h3 id="kt3kgenerator-lepont-bridge">kt3k/generator-lepont-bridge</h3>
+<ul>
+<li>Created a yeoman geneartor for a lepont bridge, <a href="https://github.com/kt3k/generator-lepont-bridge">generator-lepont-bridge</a>. You can generate a scaffold of lepont bridge, and easily start the development of a new bridge (A lepont bridge is a plugin of lepont which handles some specific function of react native and bridges between react native and webview).</li>
+</ul>
+<h3 id="kt3klepont-platform">kt3k/lepont-platform</h3>
+<ul>
+<li>Using the above generator, I created a new lepont plugin, <a href="https://github.com/kt3k/lepont-platform">lepont-platform</a>. lepont-platform provides the function of accessing the platform information from the webview.</li>
+</ul>
+<h3 id="kt3kshuho">kt3k/shuho</h3>
+<ul>
+<li>
+<p>Switched the css theme of Shuho (this weekly report website) from new.css to <a href="https://github.com/oxalorg/sakura">sakura.css</a>. I also tries ridge.css and Marx. Sakura was by far the best among these classless css frameworks and now my best favourite classless css framework!</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">やっぱり sakura の方が圧倒的に良いので、sakura に変えよう・・・<br>← marx<br>→ sakura <a href="https://t.co/oQprrXqsul">pic.twitter.com/oQprrXqsul</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1300483476802551809?ref_src=twsrc%5Etfw">August 31, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="iyos-kitchen">Iyo's kitchen</h3>
+<ul>
+<li>
+<p>This week's Iyo's kitchen!</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/kt3kmeal?src=hash&amp;ref_src=twsrc%5Etfw">#kt3kmeal</a> 豚モヤシ、ひじき、梅干し、卵焼き、麦みそ汁と雑穀ごはん <a href="https://t.co/6edUilGgld">pic.twitter.com/6edUilGgld</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1300404293887905792?ref_src=twsrc%5Etfw">August 31, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/kt3kmeal?src=hash&amp;ref_src=twsrc%5Etfw">#kt3kmeal</a> ラタトゥイユ、ジョンソンヴィルソーセージ、他 <a href="https://t.co/ln1mJK1GMr">pic.twitter.com/ln1mJK1GMr</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1300770324431003648?ref_src=twsrc%5Etfw">September 1, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">肉豆腐の下準備完了！<br>味がしみてないのでまた一晩寝かせます😴<br>煮物は崩れてしまうのが嫌なので、最低限火にかけてあとはアルミホイルで蓋をして余熱で煮込み、一晩冷蔵庫に入れて次の日食べる派です🍳 <a href="https://t.co/oI2hb9Yd7e">pic.twitter.com/oI2hb9Yd7e</a></p>&mdash; あずき (@okomekirai) <a href="https://twitter.com/okomekirai/status/1301466270810779648?ref_src=twsrc%5Etfw">September 3, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">たまごやき綺麗にできました🍳 <a href="https://t.co/yxVH4vMa43">pic.twitter.com/yxVH4vMa43</a></p>&mdash; あずき (@okomekirai) <a href="https://twitter.com/okomekirai/status/1300383192545861632?ref_src=twsrc%5Etfw">August 31, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h3 id="weekend">Weekend</h3>
+<ul>
+<li>
+<p>Went to Tiffany's Cafe in Harajuku on Saturday together with Iyo-chan.</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ティファニーカフェきゃわ🥰 <a href="https://t.co/oetGoIeA7R">pic.twitter.com/oetGoIeA7R</a></p>&mdash; あずき (@okomekirai) <a href="https://twitter.com/okomekirai/status/1302109543371956229?ref_src=twsrc%5Etfw">September 5, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2020/08-31.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/master/2020/08-31.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
