@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2020/09-28.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 40 - 2020 | @kt3k の週報 | Weekly report of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2040%20-%202020" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 40 - 2020 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-40---2020">Week 40 - 2020</h1>
+<blockquote>
+<p>The weekly report from 9/28 to 10/4. You can <a href="https://github.com/kt3k/shuho/edit/master/2020/09-28.md">edit</a> this page (on github) if you find any error.</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="dnolanddeno">dnoland/deno</h3>
+<ul>
+<li>
+<p>A commercial book about Deno seems published by Apress. Wow!</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">It&#39;s finally here! In case you didn&#39;t know, with <a href="https://twitter.com/Apress?ref_src=twsrc%5Etfw">@Apress</a> we&#39;ve published a book about <a href="https://twitter.com/deno_land?ref_src=twsrc%5Etfw">@deno_land</a> ! If your interested in learning more about it, check it out! <a href="https://t.co/O992XSJegt">https://t.co/O992XSJegt</a> <a href="https://t.co/AysFDKklZB">pic.twitter.com/AysFDKklZB</a></p>&mdash; Fernando Doglio (@deleteman123) <a href="https://twitter.com/deleteman123/status/1311246308456435713?ref_src=twsrc%5Etfw">September 30, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h3 id="php-8-attribute">PHP 8 Attribute</h3>
+<ul>
+<li>
+<p>PHP 8 has so many new features. It includes JIT, for example. I found the Attributes feature especially interesting among them.</p>
+<p>PHP 8 Attributes has the following syntax:</p>
+<pre><code>#[Attribute('foo')]
+class Foo {
+  ...
+}
+</code></pre>
+<p>This attaches the instance of Attribute class to Foo class. The instance can be retrieved as the below:</p>
+<pre><code>$reflector = new \ReflectionClass(Foo::class);
+$reflector->getAttributes();
+</code></pre>
+<p>So PHP's Attributes are like Attributes of C# or Annotations of Java. They are not like the decorators of Python or the decorators of the TC39 proposal. PHP Attributes just append metadata to the attributed elements, not dynamically replace or modify them.</p>
+<p>TC39's decorators proposal has been experiencing hard time for over 5 years. It faces so many negative reactions from the implementers of JS engines and transpilers and their early adopters. All these negative reactions are rooted, IMO, from its too dynamical nature. Decorators modifies too much things at runtime, and that reduces the benefit of JIT. Any measures against that problem has caused other problems for now and we don't see the reasonable exit route at this moment.</p>
+<p>PHP didn't chose Decorators, but chose Attributes. I think that was a very right choice. Most decorators' use cases are, IMO, covered by Attributes, and it doesn't make such bad impact to the runtime performance. So now Attributes seem a right tool to do Aspect Oriented Programming in dynamic language. TC39 should have promoted Attributes instead of Decorators. So I started writing Proposal Attributes in my scrapbox ( <a href="https://scrapbox.io/kt3k/proposal-attributes">https://scrapbox.io/kt3k/proposal-attributes</a> ).</p>
+</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="scrapbox">Scrapbox</h3>
+<ul>
+<li>Still feels very comfortable with Scrapbox. It feels like a smart drug without chemicals.</li>
+</ul>
+<h3 id="hammock">Hammock</h3>
+<ul>
+<li>
+<p>We bought a hammock.</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ハンモックで揺れながらプログラム書くおじさん <a href="https://t.co/gWyitC2641">pic.twitter.com/gWyitC2641</a></p>&mdash; あずき (転職活動中) (@okomekirai) <a href="https://twitter.com/okomekirai/status/1311295544673722368?ref_src=twsrc%5Etfw">September 30, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h3 id="iyos-kitchen">Iyo's kitchen</h3>
+<ul>
+<li>
+<p>This week's Iyo's kitchen!</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">クリームシチューと<br>おいしい食パン🍞 <a href="https://t.co/yDMAI64Fnv">pic.twitter.com/yDMAI64Fnv</a></p>&mdash; あずき (転職活動中) (@okomekirai) <a href="https://twitter.com/okomekirai/status/1310607226311114752?ref_src=twsrc%5Etfw">September 28, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">今までで一番おいしいからあげだった <a href="https://t.co/CSQJ7qEEJ5">pic.twitter.com/CSQJ7qEEJ5</a></p>&mdash; あずき (転職活動中) (@okomekirai) <a href="https://twitter.com/okomekirai/status/1312734290547884033?ref_src=twsrc%5Etfw">October 4, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h3 id="mother">Mother</h3>
+<ul>
+<li>This weekend Iyo-chan's mother visited our house. We talked about a lot of things, had dinner together, and spent a happy time.</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2020/09-28.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/master/2020/09-28.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
