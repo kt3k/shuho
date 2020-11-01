@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2020/10-26.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 44 - 2020 | @kt3k の週報 | Weekly report of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2044%20-%202020" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 44 - 2020 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-44---2020">Week 44 - 2020</h1>
+<blockquote>
+<p>The weekly report from 10/26 to 11/1. You can <a href="https://github.com/kt3k/shuho/edit/master/2020/10-26.md">edit</a> this page (on github) if you find any error.</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
+<ul>
+<li>
+<p>Contributions</p>
+<ul>
+<li>
+<p><a href="https://github.com/denoland/deno/pull/8092">https://github.com/denoland/deno/pull/8092</a></p>
+<p>I tried to fix URLSearchParams constructor with the case of invalid escape sequenses. <code>decodeURIComponent('a=%xy')</code> throws an Error because '%xy' is invalid escape sequense, but new URLSearchParams('a=%xy')<code>doesn't throw and it works like the value of key</code>a<code>is</code>%xy'. URLSearchParams are more tolerant with malformed URLs. Deno's parser of query string uses <code>decodeURIComponet</code> but that was impossible because of this difference of these 2 APIs. In the above PR, I changed the parsing of it, and allowed such malformed cases.</p>
+</li>
+<li>
+<p><a href="https://github.com/denoland/deno/pull/8133">https://github.com/denoland/deno/pull/8133</a></p>
+<p>There is a plan for releasing nightly build of deno (See <a href="https://github.com/denoland/deno/issues/6974">#6974</a>), and the issue is blocked by another issue <a href="https://github.com/denoland/deno/issues/6037">#6037</a>. So I tried to solve it. It's still in review.</p>
+</li>
+<li>
+<p><a href="https://github.com/denoland/deno/pull/8199">https://github.com/denoland/deno/pull/8199</a></p>
+<p>Tried to fix the new API <code>prompt</code> which had a bug with printing non-ascii characters on windows.</p>
+<p>To fix this issue, I needed to set up EC2 instance of Windows Server 2019, and as a side effect I finally created a powershell script which prepares all of necessary dependecies for building deno with one single command. <a href="https://github.com/kt3k/setup.ps1">https://github.com/kt3k/setup.ps1</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="myproject">MyProject</h2>
+<h3 id="tententen">Tententen</h3>
+<ul>
+<li>This week I improved the storybook of Tententen which now includes Toast and ConfirmDialog components. First I replaced default babel-loader with ts-loader because capsid's decorators need to be transpiled by typescript. Second I added mutation observer to document.body which calls <code>capsid.prep()</code> for each dom element addition, which was necessary for capsid components correctly initialized on each page transition inside storybook. Third I rewrite the story with very declarative manner by utilizing the simple dom helper method <a href="https://github.com/monoidcc/Tententen/blob/4bc2b50/src/util/dom.ts#L15">create</a>. The result of these refactoring was like <a href="https://github.com/monoidcc/Tententen/blob/4bc2b504bb7a357cf55a386a23efe1afdc59807c/src/toast.stories.ts">this</a>. It's totally declarative and very readable and maintainable. I'm very satisfied with this result.</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="iyos-study-of-web">Iyo's study of web</h3>
+<ul>
+<li>This week Iyo tried to mimic Japanese old-fashioned SNS "前略プロフィール" with her html skill. It resulted as <a href="https://iyochan.love/">https://iyochan.love/</a>. It was a good job.</li>
+</ul>
+<h3 id="iyos-kitchen">Iyo's kitchen</h3>
+<ul>
+<li>
+<p>This week she cooked an apple pie and it was a great job 👍</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">アップルパイできました⭐️ <a href="https://t.co/M0Df07hWZf">pic.twitter.com/M0Df07hWZf</a></p>&mdash; あずき (@okomekirai) <a href="https://twitter.com/okomekirai/status/1321464343498682368?ref_src=twsrc%5Etfw">October 28, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h3 id="tokyo-train-museum">Tokyo Train Museum</h3>
+<ul>
+<li>
+<p>This week Iyo and I went to Tokyo Train Museum.</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">エッチ！！！！！！！ <a href="https://t.co/yWprvhDQzg">pic.twitter.com/yWprvhDQzg</a></p>&mdash; あずき (@okomekirai) <a href="https://twitter.com/okomekirai/status/1322021353906556928?ref_src=twsrc%5Etfw">October 30, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">鉄道に興味ないタイプのエンジニアの方です(早くカフェに行ってプログラム書き隊の隊員さん!) <a href="https://t.co/m4RW5FcYvy">pic.twitter.com/m4RW5FcYvy</a></p>&mdash; あずき (@okomekirai) <a href="https://twitter.com/okomekirai/status/1322038292116721664?ref_src=twsrc%5Etfw">October 30, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">鉄道大好きっ子 <a href="https://t.co/CUpENTmvb4">pic.twitter.com/CUpENTmvb4</a></p>&mdash; Yoshiya Hinosawa 𓆈 (@kt3k) <a href="https://twitter.com/kt3k/status/1322066852625838080?ref_src=twsrc%5Etfw">October 30, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h3 id="iyos-photo">Iyo's photo</h3>
+<ul>
+<li>
+<p>This week's best photo of Iyo!</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">飛んだ! <a href="https://t.co/WDWVMF27KD">pic.twitter.com/WDWVMF27KD</a></p>&mdash; あずき (@okomekirai) <a href="https://twitter.com/okomekirai/status/1322460249199009792?ref_src=twsrc%5Etfw">October 31, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h3 id="ninos-walk">Nino's walk</h3>
+<ul>
+<li>
+<p>She tries to enter many shops (but failed)!</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">わかる <a href="https://t.co/h41YmfJyUz">pic.twitter.com/h41YmfJyUz</a></p>&mdash; あずき (@okomekirai) <a href="https://twitter.com/okomekirai/status/1321746176492728320?ref_src=twsrc%5Etfw">October 29, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2020/10-26.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/master/2020/10-26.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
