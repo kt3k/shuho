@@ -12,31 +12,23 @@ const frontmatter = require('gulp-front-matter')
 
 const PORT = 7070
 
-/*
-require('localsd').service({
-  service: 'shuho',
-  port: PORT,
-  description: 'My weekly report website'
-})
-*/
-
 const paths = {
   index: 'index.html',
-  dest: 'build'
+  dest: 'build',
 }
 
 const langIcon = {
-  ja: '🇯🇵'
+  ja: '🇯🇵',
 }
 
 const sort = (x, y) => y.data.date.diff(x.data.date)
-const getBasepath = path => join('.', relative(dirname(path), ''))
+const getBasepath = (path) => join('.', relative(dirname(path), ''))
 const DATE_FORMAT = 'M/D'
 const SITE_TITLE = '@kt3k の週報 | Weekly report of @kt3k'
 const SITE_DESCRIPTION = '@kt3k の週報です | Weekly report of @kt3k'
 const DOMAIN = 'shuho.kt3k.org'
 
-const tmpl = tmpl =>
+const tmpl = (tmpl) =>
   layout1.nunjucks(tmpl, { data: { SITE_TITLE, SITE_DESCRIPTION, DOMAIN } })
 const acc = () => accumulate(paths.index, { debounce: 500, sort })
 const md = () =>
@@ -51,21 +43,17 @@ port(PORT)
 asset('assets/**/*.*')
 asset('assets/CNAME')
 
-const fileToArticle = file => {
+const fileToArticle = (file) => {
   const m = moment(file.relative, 'YYYY/MM-DD.md')
   const year = m.isoWeekday(4).format('YYYY')
-  const week = m.format('w')
+  const week = m.format('W')
   // If the next week is the first week, then it's the last week of the year
-  const isLastWeek =
-    m
-      .clone()
-      .add(7, 'days')
-      .format('w') === '1'
+  const isLastWeek = m.clone().add(7, 'days').format('W') === '1'
   const title = `Week ${week} - ${year}`
   const categories = file.contents
     .toString()
     .match(/^##\s.*$/gm)
-    .map(s => s.replace(/^##\s*/, ''))
+    .map((s) => s.replace(/^##\s*/, ''))
   const lang = file.frontMatter.lang || 'en'
   return {
     year,
@@ -78,7 +66,7 @@ const fileToArticle = file => {
     title,
     categories,
     lang,
-    langIcon: langIcon[lang]
+    langIcon: langIcon[lang],
   }
 }
 
@@ -87,12 +75,12 @@ asset('2*/*.md')
   .pipe(rename({ extname: '.html' }))
   .pipe(data(fileToArticle))
   .pipe(
-    branch.obj(src => [
+    branch.obj((src) => [
       src.pipe(tmpl('tmpl/shuho.md.njk')),
       src
         .pipe(acc())
         .pipe(tmpl('tmpl/index.md.njk'))
-        .pipe(data({ basepath: getBasepath(paths.index) }))
+        .pipe(data({ basepath: getBasepath(paths.index) })),
     ])
   )
   .pipe(md())
