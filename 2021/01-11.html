@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2021/01-11.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 2 - 2021 | @kt3k の週報 | Weekly report of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%202%20-%202021" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weekly report of @kt3k" />
+    <title>Week 2 - 2021 | @kt3k の週報 | Weekly report of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-2---2021">Week 2 - 2021</h1>
+<blockquote>
+<p>The weekly report from 1/11 to 1/17. You can <a href="https://github.com/kt3k/shuho/edit/master/2021/01-11.md">edit</a> this page (on github) if you find any error.</p>
+</blockquote>
+<h2 id="tech">Tech</h2>
+<h3 id="webidl">WebIDL</h3>
+<ul>
+<li>
+<p>I contributed to the WebIDL, one of the spec of Web Platform. This was the first time I contributed to the spec of web platform. This task was derived from the PR in Deno in which I fixed the implementation of DOMException API. I found a little strange point in the previous implementation. Some of the error codes weren't mapped from the error names. I was curious about that "omissions" of the mappings. Then I found that some of the mappings were mistakenly dropped from the test cases many years ago in web platform test repository. I added thoses test cases and @domenic found that 3 of those missed mappings were already dropped from all the browsers (chrome, safari, firefox, edge). So we decided to dropped these non-existent mappings of error codes from the spec of DOMException API, and this became my first contribution to the spec of the web platform.</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">web platform test について質問を投げていたら web の仕様自体に contribute することになった 💪<a href="https://t.co/t2F422exik">https://t.co/t2F422exik</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1350276456799109120?ref_src=twsrc%5Etfw">January 16, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h2 id="job">Job</h2>
+<h3 id="preparation">Preparation</h3>
+<ul>
+<li>I was preparing for the new job in Deno Land. I felt a little pressured because this is the first time I work in an international company, the first time I have to use English in my job, and the first time I work mainly on OSS in my work time. This job is totally new to me.</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="iyos-kitchen">Iyo's kitchen</h3>
+<ul>
+<li>
+<p>This week's Iyo's kitchen! This week she created a very special kind of paste which she had learned in her Italian cooking class.</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/kt3kmeal?src=hash&amp;ref_src=twsrc%5Etfw">#kt3kmeal</a> ガルガネッリ サルシッチャソース <a href="https://t.co/E5uKMvdhyp">pic.twitter.com/E5uKMvdhyp</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1349928867490762752?ref_src=twsrc%5Etfw">January 15, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2021/01-11.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/master/2021/01-11.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
