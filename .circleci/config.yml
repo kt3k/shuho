@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:8
+      - image: circleci/node:14
     steps:
       - checkout
       - restore_cache:
@@ -16,7 +16,7 @@ jobs:
       - run: yarn run build
   deploy:
     docker:
-      - image: circleci/node:8
+      - image: circleci/node:14
     steps:
       - checkout
       - restore_cache:
