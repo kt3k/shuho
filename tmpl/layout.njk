@@ -10,7 +10,7 @@
     {% if file.data.title %}
     <meta property="og:image" content="https://shuho-og-image.vercel.app/{{ file.data.title | urlencode }}" />
     {% else %}
-    <meta property="og:image" content="https://shuho-og-image.vercel.app/Weekly%20Report" />
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Weeknotes" />
     {% endif %}
     <meta property="og:description" content="{{ SITE_DESCRIPTION }}" />
     <title>{% if file.data.title %}{{ file.data.title }} | {% endif %}{{ SITE_TITLE }}</title>

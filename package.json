@@ -1,7 +1,7 @@
 {
   "name": "kt3k-shuho",
   "version": "1.0.0",
-  "description": "weekly journal of kt3k",
+  "description": "Weeknotes of kt3k",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf build",
