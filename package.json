@@ -31,7 +31,6 @@
     "layout1": "^1.1.0",
     "lint-staged": "^10.0.3",
     "localsd": "^0.3.1",
-    "lynt": "^0.5.0",
     "moment": "^2.22.2",
     "nunjucks": "^3.1.6",
     "prettier": "^2.0.0",
@@ -44,8 +43,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier --write --single-quote --no-semi",
-      "lynt --fix"
+      "prettier --write --single-quote --no-semi"
     ],
     "*.md": [
       "prettier --write --prose-wrap preserve"
