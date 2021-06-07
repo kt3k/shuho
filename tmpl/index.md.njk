@@ -4,11 +4,10 @@
 
 <img src="img/kt3k.jpg" width="45" style="border-radius: 50%; margin-bottom: -15px; margin-right: 5px;"/> The weeknotes of [@kt3k][github]
 
-<a href="https://twitter.com/kt3k?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @kt3k</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<span><iframe src="https://ghbtns.com/github-btn.html?user=kt3k&repo=shuho&type=star&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe></span>
-
 {% for f in file.files %}
 {% if loop.first or f.data.isLastWeek %}
+  <hr />
+
   ## {{ f.data.year }}
 {% endif %}
 - [Week {{ f.data.week }}]({{ f.relative }}) <small>{{ f.data.start }} - {{ f.data.end }}</small> {% for cat in f.data.categories %}[{{ cat }}]({{ f.relative }}#{{ cat.toLowerCase() }}){% if not loop.last %} | {% endif %}{% endfor %}{% if f.data.langIcon %} <small>✍️{{f.data.langIcon}}</small>{% endif %}
