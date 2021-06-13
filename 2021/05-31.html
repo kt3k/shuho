@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2021/05-31.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 22 - 2021 | @kt3k の週報 | Weeknote of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2022%20-%202021" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weeknote of @kt3k" />
+    <title>Week 22 - 2021 | @kt3k の週報 | Weeknote of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-22---2021">Week 22 - 2021</h1>
+<blockquote>
+<p>The weeknote for 5/31 - 6/6. You can <a href="https://github.com/kt3k/shuho/edit/master/2021/05-31.md">edit</a> this page (on github) if you find any error.</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="alangpiercesucrase">alangpierce/sucrase</h3>
+<p>Sucrase is a fast typescript transpiler.</p>
+<ul>
+<li>These days I'm interested in Sucrase typescript transpiler. It skips the process of creating AST from the source code and directly works on token stream for performing type stripping. Because of this design decision, it says it's faster than SWC or Esbuild. I feel this tool is worth trying for some specific purposes such as transpiling on the edge server, etc.</li>
+</ul>
+<h3 id="kt3ktwd">kt3k/twd</h3>
+<ul>
+<li>
+<p>'twd' is tailwind like CLI tool for Deno. I created this tool for replacing tailwind usages in Deno ecosystem, specifically I'm going to use this in doc website of packup.</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">tailwind のためだけに node を引っ張り出すのが嫌だったので Deno から tailwind (的な css 生成) が出来るツールを作った <a href="https://t.co/qgfOn5g9bR">https://t.co/qgfOn5g9bR</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1400458103431200775?ref_src=twsrc%5Etfw">June 3, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h2 id="tech">Tech</h2>
+<h3 id="frontend-testing-in-deno">Frontend Testing in Deno</h3>
+<ul>
+<li>I was able to run react-testing-library for the first in Deno with <a href="https://gist.github.com/kt3k/f1975da5533bd567c1b363ccaec2cf69">this example</a>. One thing unfortunate about this is that this example is not type checked because I import unpkg version of react, react-dom, and react-testing-library which don't provide type definition. Why didn't I use esm.sh or skypack version of them? Because they didn't work with esm.sh or skypack for very obscure reasons. React and react-dom actually work with those CDNs, but the react-testing-library is actually the cause of the problem, which doesn't work with type providing CDNs.</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="baby">Baby</h3>
+<ul>
+<li>
+<p>Iyo-chan and I got a baby finally. He/she's 7 week old in her. He/she is expected to be born in January next year.</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ベビちゃん!😃 <a href="https://t.co/OruGBpPZcF">https://t.co/OruGBpPZcF</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1399692430375493633?ref_src=twsrc%5Etfw">June 1, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h2 id="hobby">Hobby</h2>
+<h3 id="mario-maker-2">Mario Maker 2</h3>
+<ul>
+<li>
+<p>These days I play Mario Maker 2 sometimes. In this game, any user can create their own levels and publish them to the world, and every player can play them. It's like Super Mario with open central level registry. Some levels are extremely difficult to solve.</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ドッスン <a href="https://twitter.com/hashtag/SuperMarioMaker2?src=hash&amp;ref_src=twsrc%5Etfw">#SuperMarioMaker2</a> <a href="https://t.co/o8B561B6HU">pic.twitter.com/o8B561B6HU</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1401206588942086146?ref_src=twsrc%5Etfw">June 5, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<hr>
+<div class="fb-like" data-href="https://shuho.kt3k.org/2021/05-31.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/master/2021/05-31.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+  </body>
+</html>
