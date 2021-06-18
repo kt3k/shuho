@@ -1,7 +1,10 @@
-<html>
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="{% if file.data.title %}{{ file.data.title }} | {% endif %}{{ SITE_TITLE }}" />
+    <meta name="description" content="{{ SITE_DESCRIPTION }}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@kt3k" />
     <meta property="og:url" content="https://shuho.kt3k.org/{{ file.relative }}" />
@@ -17,9 +20,6 @@
     <link rel="stylesheet" href="{{ file.data.basepath }}/css/sakura.css" />
     <link rel="stylesheet" href="{{ file.data.basepath }}/css/arduino-light.min.css" />
     <link rel="icon" href="{{ file.data.basepath }}/favicon.ico" />
-    <script src="{{ file.data.basepath }}/js/highlight.min.js"></script>
-    <script src="{{ file.data.basepath }}/js/go.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
     <style>
       .align-center {
         text-align: center;
@@ -27,14 +27,6 @@
 		</style>
   </head>
   <body>
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=121142394633952&autoLogAppEvents=1';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
     <article class="markdown-body">
       {{ file.contents | safe }}
     </article>
@@ -45,5 +37,8 @@
       gtag('js', new Date());
       gtag('config', 'UA-121539714-1');
     </script>
+    <script src="{{ file.data.basepath }}/js/highlight.min.js"></script>
+    <script src="{{ file.data.basepath }}/js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>
