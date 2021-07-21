@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Week 27 - 2021 | @kt3k の週報 | Weeknote of @kt3k" />
+    <meta name="description" content="@kt3k の週報です | Weeknote of @kt3k">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2021/07-05.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 27 - 2021 | @kt3k の週報 | Weeknote of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2027%20-%202021" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weeknote of @kt3k" />
+    <title>Week 27 - 2021 | @kt3k の週報 | Weeknote of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-27---2021">Week 27 - 2021</h1>
+<blockquote>
+<p>The weeknote for 7/5 - 7/11. You can <a href="https://github.com/kt3k/shuho/edit/master/2021/07-05.md">edit</a> this page (on github) if you find any error.</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="linkedom">linkedom</h3>
+<p><a href="https://github.com/WebReflection/linkedom">https://github.com/WebReflection/linkedom</a></p>
+<ul>
+<li>
+<p>This week I found a new DOM implementation, linkedom. Linkedom works in Deno as well.</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Got <a href="https://twitter.com/WebReflection?ref_src=twsrc%5Etfw">@WebReflection</a>&#39;s linkedom running on <a href="https://twitter.com/deno_land?ref_src=twsrc%5Etfw">@deno_land</a> and now I can server-render custom elements in Deno 😍 <a href="https://t.co/EaDTIPk6tM">pic.twitter.com/EaDTIPk6tM</a></p>&mdash; Matthew Phillips (@matthewcp) <a href="https://twitter.com/matthewcp/status/1411321458089996291?ref_src=twsrc%5Etfw">July 3, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h3 id="es-module-lexer">es-module-lexer</h3>
+<p><a href="https://github.com/guybedford/es-module-lexer">https://github.com/guybedford/es-module-lexer</a></p>
+<ul>
+<li>These days I've been learning es-module-lexer by Guy Bedford. This module is written in C, but it's compiled into wasm and published as an npm module, which is also usable from Deno via esm.sh. This 'parser' doesn't create an AST. It even doesn't create tokens. It skips reading everything except import and export statements. I wanted to enhance this module to support JSX, and tried a bit, but now I have no idea how to do that (probably it requires a lot of work, a lot of code).</li>
+</ul>
+<h3 id="kt3kdeps_info">kt3k/deps_info</h3>
+<p><a href="https://github.com/kt3k/deps_info">https://github.com/kt3k/deps_info</a></p>
+<ul>
+<li>Created a module called <code>deps_info</code> which analyzes the dependency of the script and recursively downloads the dependency. I'm trying to enhance packup to make it support css imports using this module. I'm still in the middle of that.</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="lunch">Lunch</h3>
+<ul>
+<li>
+<p>Iyo-chan and I went to Yugen-tei and had Yakiniku lunch there. It was super delicious 😋</p>
+<blockquote class="twitter-tweet"><p lang="in" dir="ltr"><a href="https://twitter.com/hashtag/kt3kmeal?src=hash&amp;ref_src=twsrc%5Etfw">#kt3kmeal</a> Yakiniku <a href="https://t.co/iDUqSEiIUy">pic.twitter.com/iDUqSEiIUy</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1413730055168040962?ref_src=twsrc%5Etfw">July 10, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/master/2021/07-05.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
