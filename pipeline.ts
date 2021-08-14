@@ -75,6 +75,7 @@ function weeknotes(opts: { watch?: boolean } = {}) {
 }
 
 type Article = {
+  file: File;
   year: string;
   week: string;
   isLastWeek: boolean;
@@ -86,13 +87,17 @@ type Article = {
   categories: string[] | undefined;
   lang: "ja" | "en";
   langIcon: string | undefined;
-} & File;
+};
 
 const decoder = new TextDecoder();
 
-const fileToArticle = async (
-  file: File & { frontMatter: { lang?: "en" | "ja" } },
-): Promise<Article> => {
+const fileToArticle = async ({
+  file,
+  frontMatter,
+}: {
+  file: File;
+  frontMatter: { lang?: "en" | "ja" };
+}): Promise<Article> => {
   const m = moment(file.name, "YYYY/MM-DD.md");
   const year = m.isoWeekday(4).format("YYYY");
   const week = m.format("W");
@@ -104,9 +109,10 @@ const fileToArticle = async (
     .decode(new Uint8Array(bytes))
     .match(/^##\s.*$/gm)
     ?.map((s: string) => s.replace(/^##\s*/, ""));
-  const lang = file.frontMatter.lang || "en";
-  const r = new File([bytes], file.name);
-  return Object.assign(r, {
+  const lang = frontMatter.lang || "en";
+  const newFile = new File([bytes], file.name);
+  return {
+    file: newFile,
     year,
     week,
     isLastWeek,
@@ -118,5 +124,5 @@ const fileToArticle = async (
     categories,
     lang,
     langIcon: langIcon[lang],
-  });
+  };
 };

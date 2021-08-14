@@ -8,4 +8,7 @@ d:
 	git add deploy.js
 	git commit -m "chore: update deploy.js"
 
+fmt:
+	deno fmt pipeline.ts bulbofile.js
+
 .PHONY: d
