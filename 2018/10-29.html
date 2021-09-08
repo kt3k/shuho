@@ -27,12 +27,12 @@
   <body>
     <article class="markdown-body">
       <p><a href="..">Back</a></p>
-<h1 id="week-44---2018">Week 44 - 2018</h1>
+<h1 id="user-content-week-44---2018">Week 44 - 2018</h1>
 <blockquote>
 <p>The weeknote for 10/29 - 11/4. You can <a href="https://github.com/kt3k/shuho/edit/master/2018/10-29.md">edit</a> this page (on github) if you find any error.</p>
 </blockquote>
-<h2 id="oss">OSS</h2>
-<h3 id="denolanddeno">denoland/deno</h3>
+<h2 id="user-content-oss">OSS</h2>
+<h3 id="user-content-denolanddeno">denoland/deno</h3>
 <p>deno は新しい V8 runtime.</p>
 <ul>
 <li>
@@ -57,8 +57,8 @@
 </ul>
 </li>
 </ul>
-<h2 id="myproject">MyProject</h2>
-<h3 id="kt3kbuttons">kt3k/buttons</h3>
+<h2 id="user-content-myproject">MyProject</h2>
+<h3 id="user-content-kt3kbuttons">kt3k/buttons</h3>
 <p><a href="https://buttons.kt3k.org/">https://buttons.kt3k.org/</a></p>
 <p>🌱buttons は毎日やるタスクのボタンを作って, その記録をカレンダーヒートマップ表示する web サービス.</p>
 <ul>
@@ -66,20 +66,22 @@
 <li>バンドル内で大きいのが, D3 v3, date-fns, cal-heatmap, core-js あたり. date-fns は requrie する path を絞ればもう少し減るかもしれない. 一番大きい D3 が v3 のため, 分割が不可能なのが痛い. D3 v4 以上であれば, 必要コンポーネントだけに限定することが出来るが, そのためにはまず cal-heatmap の依存を D3 v4 に上げる必要があって, まともにやろうと思ったら数ヶ月はかかりそう. あと core-js がかなり大きいのが非常に不可解で, decorators-legacy を入れると core-js が丸っと乗ってくるらしく, 明らかにやりたい事と積まれているバイト数のバランスが釣り合っていない. core-js はいつかは消したいけど, babel の変換の中身まで見にいかないといけない為, コストが高すぎる為断念した. 感覚的には本当にやっている事だけに絞られたバンドルなら 50K 程度は行けそうな気がする.</li>
 <li>activity feed を実装した. 誰かがボタンを押した時と, 誰かがボタンを作った時に feed に乗るというシステム. まず activity のドメインモデルを追加して, service を追加して, route を追加して, テストを書いて, frontend で activity を取得するコンポーネントを書いて, と, やりたい事のボリュームと, 必要な作業のボリュームが線形に対応している感じで, 非常に開発がスケールしていると感じた.</li>
 </ul>
-<h2 id="調査">調査</h2>
-<h3 id="new-decorators">new decorators</h3>
+<h2 id="user-content-調査">調査</h2>
+<h3 id="user-content-new-decorators">new decorators</h3>
 <ul>
 <li>capsid の decorators を新 decorators に対応したい為, まず新 decorators の挙動を調査し始めた.</li>
 </ul>
-<h3 id="router">router</h3>
+<h3 id="user-content-router">router</h3>
 <ul>
 <li>capsid にそろそろきちんとした router を備えたいと思った為, 各種 router を調査した.</li>
-<li>react-router@4, @reach/router, universal-router, vue-router, riot-router, history などを調査した.<ul>
+<li>react-router@4, @reach/router, universal-router, vue-router, riot-router, history などを調査した.
+<ul>
 <li>中でも riot-router は riot.js の依存がなく単独でシンプルな route 監視ツール兼 route 遷移ツールとして使えそうだったため, capsid の router を作る場合は riot-router ベースで作るのが良さそうと思った. サイズも minified + gzip で 2K を切るので, capsid 本体とほぼ同サイズ. react-router のコアの history は react 依存がない状態になっているものの browser 以外もサポートしていたりしてサイズが 5KB もあり使う気にならない. @react/router は割とシンプルそうな読みやすい実装になっているもの react 依存のないコア部分を切り出してくれていないため再利用不可能, 残念. universal-router はちょっと想像していたものと違って, route を監視する機能とか route を移動する機能を持っていないぽくて, 使い物にならなそうだった.</li>
-</ul></li>
 </ul>
-<h2 id="仕事">仕事</h2>
-<h3 id="react-hooks">React Hooks</h3>
+</li>
+</ul>
+<h2 id="user-content-仕事">仕事</h2>
+<h3 id="user-content-react-hooks">React Hooks</h3>
 <ul>
 <li>React Hooks という新しい API 群が発表された. renderProps や HOC を置き換える機能. ライフサイクルや, state のような基本的な機能も置き換えるもので, 今まで class component でしか出来なかった事が Hooks で出来るようになる.</li>
 </ul>

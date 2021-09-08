@@ -27,40 +27,46 @@
   <body>
     <article class="markdown-body">
       <p><a href="..">Back</a></p>
-<h1 id="week-37---2018">Week 37 - 2018</h1>
+<h1 id="user-content-week-37---2018">Week 37 - 2018</h1>
 <blockquote>
 <p>The weeknote for 9/10 - 9/16. You can <a href="https://github.com/kt3k/shuho/edit/master/2018/09-10.md">edit</a> this page (on github) if you find any error.</p>
 </blockquote>
-<h2 id="oss">OSS</h2>
-<h3 id="rydeno">ry/deno</h3>
+<h2 id="user-content-oss">OSS</h2>
+<h3 id="user-content-rydeno">ry/deno</h3>
 <ul>
-<li>コントリビュート<ul>
-<li><a href="https://github.com/denoland/deno/pull/737">https://github.com/denoland/deno/pull/737</a><ul>
+<li>コントリビュート
+<ul>
+<li><a href="https://github.com/denoland/deno/pull/737">https://github.com/denoland/deno/pull/737</a>
+<ul>
 <li>makeTempDirSync というテンポラリーディレクトリを作る API の async 版を作る PR.</li>
-</ul></li>
-</ul></li>
 </ul>
-<h3 id="babel">babel</h3>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="user-content-babel">babel</h3>
 <ul>
-<li><a href="https://github.com/babel/babel/pull/7976">https://github.com/babel/babel/pull/7976</a><ul>
+<li><a href="https://github.com/babel/babel/pull/7976">https://github.com/babel/babel/pull/7976</a>
+<ul>
 <li>新しい babel のデコレータ実装がついにマージされた. これがリリースされると唯一利用可能な現状のデコレータプロポーザルに準拠したデコレータ実装となりそう. 早くリリースされてほしい. これがリリースされたタイミングで capsid の wired デコレータ, component デコレータなどを一斉に書き換える予定.</li>
-</ul></li>
 </ul>
-<h2 id="myproject">MyProject</h2>
-<h3 id="kt3kbuttons">kt3k/buttons</h3>
+</li>
+</ul>
+<h2 id="user-content-myproject">MyProject</h2>
+<h3 id="user-content-kt3kbuttons">kt3k/buttons</h3>
 <p><a href="https://github.com/kt3k/buttons">https://github.com/kt3k/buttons</a></p>
 <p>buttons は毎日の日課をやったかどうかをチェックするボタンを設定して, カレンダーに表示するアプリ.</p>
 <ul>
 <li>User 認証部分とユーザー名を取るフローあたりまで作成. domain はほぼ完全に TDD で作れる環境が整っているけど, API を TDD する環境が整っていなかったため, どうやったらうまくテスト出来るかを色々試行錯誤した結果 express-mock-request/response というライブラリを使って, ハンドラーを切り出してテストするのが効率が良さそうという結論になって, とりあえず, <code>GET /users/self</code> のテストを書き切ったところまで進捗. しかし, テストを中心に express の API を眺めてみると, 非常にテスト向きになっていないという印象が改めて強くなった. koa も改めて, テストしやすいかという観点で API を眺めて見たけれど, やはりテストはしにくいという印象 (なぜなら, コンテキストへの副作用という形で response を作っていく形なので). redux-saga のような完全に外界と切り離された saga をベースとした web framework を作ったら, 革命的にテストがしやすいものが作れそうという気がした.</li>
 </ul>
-<h2 id="数学">数学</h2>
-<h3 id="数学ノート">数学ノート</h3>
+<h2 id="user-content-数学">数学</h2>
+<h3 id="user-content-数学ノート">数学ノート</h3>
 <p><a href="https://github.com/kt3k/math-exercises-notes">https://github.com/kt3k/math-exercises-notes</a></p>
 <ul>
 <li>プログラミングばかりやって, 数学をやらないと数学力がどんどんなまってしまうと思い, 数学ノートをつけ始めた. とりあえず, 圏論から始めようと思い適当にググって出てきたシカゴ大学の圏論の <a href="http://www.math.uchicago.edu/~mitya/topics-in-algebra/categories.pdf">練習問題集</a> を1問づつやっていくことに.</li>
 </ul>
-<h2 id="イベント">イベント</h2>
-<h3 id="社内-splatoon-2-大会">社内 Splatoon 2 大会</h3>
+<h2 id="user-content-イベント">イベント</h2>
+<h3 id="user-content-社内-splatoon-2-大会">社内 Splatoon 2 大会</h3>
 <ul>
 <li>社内 Splatoon 2 大会敗者復活戦. 普通に負けた 😭</li>
 </ul>

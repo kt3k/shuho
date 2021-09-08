@@ -27,15 +27,17 @@
   <body>
     <article class="markdown-body">
       <p><a href="..">Back</a></p>
-<h1 id="week-51---2019">Week 51 - 2019</h1>
+<h1 id="user-content-week-51---2019">Week 51 - 2019</h1>
 <blockquote>
 <p>The weeknote for 12/16 - 12/22. You can <a href="https://github.com/kt3k/shuho/edit/master/2019/12-16.md">edit</a> this page (on github) if you find any error.</p>
 </blockquote>
-<h2 id="oss">OSS</h2>
+<h2 id="user-content-oss">OSS</h2>
 <p>🦕 Deno is a new JavaScript and TypeScript runtime.</p>
 <ul>
-<li>Contributions<ul>
-<li><a href="https://github.com/denoland/deno/pull/3507">https://github.com/denoland/deno/pull/3507</a><ul>
+<li>Contributions
+<ul>
+<li><a href="https://github.com/denoland/deno/pull/3507">https://github.com/denoland/deno/pull/3507</a>
+<ul>
 <li><code>deno --version</code> shows TS/V8 versions as well as deno's version. It was a
 little difficult to find out a right lifetime for long version string.
 First I tried to put that in the function which sets up the clap
@@ -43,43 +45,51 @@ configurations, but that didn't work because the function returns clap app
 instance, and the lifetime of that string isn't long enough for that
 situation. The answer was to put the string out of the function and to
 give the static lifetime to it.</li>
-</ul></li>
-<li><a href="https://github.com/denoland/deno/pull/3514">https://github.com/denoland/deno/pull/3514</a><ul>
+</ul>
+</li>
+<li><a href="https://github.com/denoland/deno/pull/3514">https://github.com/denoland/deno/pull/3514</a>
+<ul>
 <li><code>test</code> function used to take only single function argument, and the name
 of test is specified by the name of the function, but now we have 3
 different ways to specify the name of test, and the error message was so
 outdated. This PR updated it to fit the current signature of <code>test</code>
 function.</li>
-</ul></li>
-<li><a href="https://github.com/denoland/deno/pull/3529">https://github.com/denoland/deno/pull/3529</a><ul>
+</ul>
+</li>
+<li><a href="https://github.com/denoland/deno/pull/3529">https://github.com/denoland/deno/pull/3529</a>
+<ul>
 <li>YAML module of the standard library completely lacked the documentation
 except the docs in source code. I realized it when I was creating a small
 script using deno for automating a small task in a company which now I
 worked in. So I added it to README.</li>
-</ul></li>
-<li><a href="https://github.com/denoland/deno/pull/3535">https://github.com/denoland/deno/pull/3535</a><ul>
+</ul>
+</li>
+<li><a href="https://github.com/denoland/deno/pull/3535">https://github.com/denoland/deno/pull/3535</a>
+<ul>
 <li><code>parseAll</code> function of YAML module was simply broken, and couldn't parse a
 very simple case of YAML documents. The cause was a mistake in porting of
 js-yaml to deno std.</li>
 <li>By the way, this was my 100th contribution to deno's main repository.</li>
-</ul></li>
-</ul></li>
 </ul>
-<h2 id="event">Event</h2>
-<h3 id="bokuwebnes">bokuweb.nes</h3>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="user-content-event">Event</h2>
+<h3 id="user-content-bokuwebnes">bokuweb.nes</h3>
 <ul>
 <li>Bokuweb.nes members gathered in Karumaru Ikebukuro and talked about random
 things around OSS, IT, etc.</li>
 </ul>
-<h3 id="deno-advent-calendar">Deno Advent Calendar</h3>
+<h3 id="user-content-deno-advent-calendar">Deno Advent Calendar</h3>
 <ul>
 <li>This month we, Japanese Deno community, are doing
 <a href="https://qiita.com/advent-calendar/2019/deno">Deno Advent Calendar</a> in
 qiita.com, which is the series of articles about Deno. Each article appears
 each day of December from 1st to 25th. I submitted 9 entries to it.</li>
 </ul>
-<h2 id="life">Life</h2>
-<h3 id="divorce">Divorce</h3>
+<h2 id="user-content-life">Life</h2>
+<h3 id="user-content-divorce">Divorce</h3>
 <ul>
 <li>I'm in the process of divorcing with my wife. I rented a new room to live
 alone. I've been moving things to that room these days. I prepared 2 copies of

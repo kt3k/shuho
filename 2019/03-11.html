@@ -27,12 +27,12 @@
   <body>
     <article class="markdown-body">
       <p><a href="..">Back</a></p>
-<h1 id="week-11---2019">Week 11 - 2019</h1>
+<h1 id="user-content-week-11---2019">Week 11 - 2019</h1>
 <blockquote>
 <p>The weeknote for 3/11 - 3/17. You can <a href="https://github.com/kt3k/shuho/edit/master/2019/03-11.md">edit</a> this page (on github) if you find any error.</p>
 </blockquote>
-<h2 id="oss">OSS</h2>
-<h3 id="denolanddeno">denoland/deno</h3>
+<h2 id="user-content-oss">OSS</h2>
+<h3 id="user-content-denolanddeno">denoland/deno</h3>
 <p>🦕 Deno is a new JavaScript runtime.</p>
 <ul>
 <li>
@@ -49,18 +49,18 @@
 </ul>
 </li>
 </ul>
-<h2 id="myproject">MyProject</h2>
-<h3 id="kt3kmoneybit-app">kt3k/moneybit-app</h3>
+<h2 id="user-content-myproject">MyProject</h2>
+<h3 id="user-content-kt3kmoneybit-app">kt3k/moneybit-app</h3>
 <p>💰 Moneybit is an open source mobile accounting app.</p>
 <ul>
 <li>The tooltip for editing the chart of account now becomes the capsid component and it can handle edit event and delete event. Next week I'm going to implement modal dialog for renaming the account title. It's very slow progress, but it's very important not to stop doing my own project.</li>
 </ul>
-<h2 id="javascript">JavaScript</h2>
-<h3 id="proposal-decorators">proposal-decorators</h3>
+<h2 id="user-content-javascript">JavaScript</h2>
+<h3 id="user-content-proposal-decorators">proposal-decorators</h3>
 <ul>
 <li>I realized this week that the proposal of the decorators for ecma262 has been dramatically changed. It is now something like the below:</li>
 </ul>
-<pre><code class="language-js">export decorator @logged {
+<pre><code>export decorator @logged {
   @wrap(f => {
     const name = f.name;
     function wrapped(...args) {
@@ -74,13 +74,15 @@
 }
 </code></pre>
 <ul>
-<li>It uses decorator keyword now and every decorator is derived from the builtin decorators and already defined other decorators.<ul>
+<li>It uses decorator keyword now and every decorator is derived from the builtin decorators and already defined other decorators.
+<ul>
 <li>This is very sad news because in my view the previous version of the decorator proposal seemed almost about to go to stage 3. Because of this big change, probably it needs at least one year for the proposal to go to stage 3. And this change requires totally new decorator plugin in babel project, and all of the currently working decorators need to be rewritten, which includes the 5 decorators of my capsid.js as well.</li>
 <li>The good news about this change is that the champion @littledan is quite active on renewing the proposal, and never shows the sign of giving up it.</li>
-</ul></li>
 </ul>
-<h2 id="life">Life</h2>
-<h3 id="tax-document">Tax document</h3>
+</li>
+</ul>
+<h2 id="user-content-life">Life</h2>
+<h3 id="user-content-tax-document">Tax document</h3>
 <ul>
 <li>March 15 was the deadline of tax filing for the fiscal year 2018 in Japan. I was very busy collecting information, documents, and receipts to complete the form this week. I finished creating the document and submitted to the tax office of Tachikawa on March 14. This was the 4th time I submitted the tax document as a freelancer. I used my command-line tool <a href="https://www.npmjs.com/package/moneybit">moneybit</a> for making the balance sheet from the journal of my business, which is necessary to make the financial statements, a part of the tax document. This tool is the basis of the above application moneybit-app.</li>
 </ul>

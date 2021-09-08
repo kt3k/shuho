@@ -27,23 +27,27 @@
   <body>
     <article class="markdown-body">
       <p><a href="..">Back</a></p>
-<h1 id="week-42---2018">Week 42 - 2018</h1>
+<h1 id="user-content-week-42---2018">Week 42 - 2018</h1>
 <blockquote>
 <p>The weeknote for 10/15 - 10/21. You can <a href="https://github.com/kt3k/shuho/edit/master/2018/10-15.md">edit</a> this page (on github) if you find any error.</p>
 </blockquote>
-<h2 id="oss">OSS</h2>
-<h3 id="denolanddeno">denoland/deno</h3>
+<h2 id="user-content-oss">OSS</h2>
+<h3 id="user-content-denolanddeno">denoland/deno</h3>
 <p>deno は新しい V8 runtime.</p>
 <ul>
 <li>
 <p>コントリビュート</p>
 <ul>
-<li><a href="https://github.com/denoland/deno/pull/1002">https://github.com/denoland/deno/pull/1002</a><ul>
+<li><a href="https://github.com/denoland/deno/pull/1002">https://github.com/denoland/deno/pull/1002</a>
+<ul>
 <li>ベンチマークページで効率の悪い API リクエスト (並列で良いところを直列でとっている) をしているところがあったためその効率化の対応と, インターネットアクセスするテストケースがあったため, ローカルサーバ向きにテストするように修正.</li>
-</ul></li>
-<li><a href="https://github.com/denoland/deno/pull/1037">https://github.com/denoland/deno/pull/1037</a><ul>
+</ul>
+</li>
+<li><a href="https://github.com/denoland/deno/pull/1037">https://github.com/denoland/deno/pull/1037</a>
+<ul>
 <li>ベンチマークページにデザインが入ったりした関係で全データを表示するのが厳しくなったため, トップページでは 20個だけのデータを表示するという対応. Easy peasy.</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -53,40 +57,44 @@
 </ul>
 </li>
 </ul>
-<h3 id="c3jsc3">c3js/c3</h3>
+<h3 id="user-content-c3jsc3">c3js/c3</h3>
 <ul>
-<li><a href="https://github.com/c3js/c3/pull/2476">https://github.com/c3js/c3/pull/2476</a><ul>
+<li><a href="https://github.com/c3js/c3/pull/2476">https://github.com/c3js/c3/pull/2476</a>
+<ul>
 <li>以前一度見て意味が分からなかった issue. bar チャートではなく, どうも line チャートについて以前の挙動を復活しているらしいことが分かって来た. で, ということはマージしてもいい奴かなと思い始めたところで, ツールチップがデータポイントごとに変わる example で壊れているという指摘が入って, やっぱりまだマージ出来ないことが分かった.</li>
-</ul></li>
 </ul>
-<h2 id="tc39">TC39</h2>
-<h3 id="decorator">decorator</h3>
+</li>
+</ul>
+<h2 id="user-content-tc39">TC39</h2>
+<h3 id="user-content-decorator">decorator</h3>
 <ul>
-<li><a href="https://github.com/tc39/proposal-decorators/issues/69">https://github.com/tc39/proposal-decorators/issues/69</a><ul>
+<li><a href="https://github.com/tc39/proposal-decorators/issues/69">https://github.com/tc39/proposal-decorators/issues/69</a>
+<ul>
 <li>ES の decorator proposal で, 最後に残った 2つの blocker のうちの1つの issue で圧倒的に燃えている issue. 今週も再燃して通知がたくさん来た. decorator を付けた class を export する時に <code>export @deco class {}</code> か <code>@deco export class {}</code> かという話. 正直使う側としてはどちらでも出来ることが全く変わらないので, どちらになってもただ従うだけでどっちでも良い話なのだけど, とにかく両方の派閥がお互いに譲らないので, 全く進捗がみられず, 無限に議論が続いている感がある. champion は一時 <code>export @deco class {}</code> 側に傾いていたような気配があった (というか決まりかけていた時もあったように見えた) が, <code>@deco export class {}</code> 派が絶対に譲らないという姿勢で, <code>@deco export</code> を主張し続けるので, 終わりが見えない状態. とりあえず今回の proposal では判断を保留するために export と <code>@deco</code> の併用を禁止する, みたいな妙案らしきものも出たけど, やっぱり絶対に <code>@deco export</code> が書けないのはおかしいという強硬派がいるため進捗せず.</li>
-</ul></li>
 </ul>
-<h2 id="myproject">MyProject</h2>
-<h3 id="kt3kbuttons">kt3k/buttons</h3>
+</li>
+</ul>
+<h2 id="user-content-myproject">MyProject</h2>
+<h3 id="user-content-kt3kbuttons">kt3k/buttons</h3>
 <p><a href="https://buttons.kt3k.org/">https://buttons.kt3k.org/</a></p>
 <p>🌱buttons は毎日やるタスクのボタンを作って, その記録をカレンダーヒートマップ表示する web サービス.</p>
 <ul>
 <li>だいたい欲しい機能が揃ったので, 一旦大きい機能の開発は終了. 使った技術をまとめた記事を書き中. かなり長くなって来ている. これが終わったら一旦 capsid の新 decorator 対応の様子を見てから moneybit-app の作業に戻りたい.</li>
 </ul>
-<h2 id="数学">数学</h2>
-<h3 id="to-mock-a-mockingbird">To Mock a Mockingbird</h3>
+<h2 id="user-content-数学">数学</h2>
+<h3 id="user-content-to-mock-a-mockingbird">To Mock a Mockingbird</h3>
 <p><a href="https://github.com/kt3k/math-exercises-notes/tree/master/to-mock-a-mockingbird">https://github.com/kt3k/math-exercises-notes/tree/master/to-mock-a-mockingbird</a></p>
 <ul>
 <li>ものまねどり3問進捗. 以前解けなかった Agreeable bird がいれば任意の鳥に好きな鳥がいるという問題は自力で解けたけど, なぜかその次の合成鳥が Agreeable な場合に合成の後ろの鳥が Agreeable になるという命題の方が, 初読時は解けて今回は解けなかった😭 答えを見てみたら, 単なるパズル的な問題で, なぜ解けなかったのかが逆に分からなかった.</li>
 </ul>
-<h2 id="物理">物理</h2>
-<h3 id="東大柏-ipmu-志望者向け資料">東大柏 IPMU 志望者向け資料</h3>
+<h2 id="user-content-物理">物理</h2>
+<h3 id="user-content-東大柏-ipmu-志望者向け資料">東大柏 IPMU 志望者向け資料</h3>
 <p><a href="https://member.ipmu.jp/yuji.tachikawa/misc/for-undergrads.html">https://member.ipmu.jp/yuji.tachikawa/misc/for-undergrads.html</a></p>
 <ul>
 <li>偶然上の文章を見つけて読んだら面白かった. 東大柏 IPMU という大学院に入りたい人向けの文章で, 物理的な用語ではなくて, 通常の日本語で書かれていて, どういう心構えで上の院に進むべきかということが書かれていて, 最新の理論物理研究界隈の雰囲気のようなものが伝わって来て非常に面白かった. 印象に残ったのが場の量子論が出来ることと数学が出来ることは全く別のことだから, まずは数学者になりたいのか理論物理学者になりたいのかをはっきり決める必要があるというアドバイスが面白いと思った.</li>
 </ul>
-<h2 id="生活">生活</h2>
-<h3 id="飲み会">飲み会</h3>
+<h2 id="user-content-生活">生活</h2>
+<h3 id="user-content-飲み会">飲み会</h3>
 <ul>
 <li>@ampcpmgp 送別会.</li>
 </ul>

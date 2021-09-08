@@ -27,22 +27,22 @@
   <body>
     <article class="markdown-body">
       <p><a href="..">Back</a></p>
-<h1 id="week-12---2020">Week 12 - 2020</h1>
+<h1 id="user-content-week-12---2020">Week 12 - 2020</h1>
 <blockquote>
 <p>The weeknote for 3/16 - 3/22. You can <a href="https://github.com/kt3k/shuho/edit/master/2020/03-16.md">edit</a> this page (on github) if you find any error.</p>
 </blockquote>
-<h2 id="myproject">MyProject</h2>
-<h3 id="tententen">Tententen</h3>
+<h2 id="user-content-myproject">MyProject</h2>
+<h3 id="user-content-tententen">Tententen</h3>
 <p><a href="https://github.com/monoidcc/Tententen">https://github.com/monoidcc/Tententen</a></p>
 <ul>
 <li>Continued working on Tententen. This week I felt I almost finished the prototyping. I continue working on it next week to approach further to the end of the work.</li>
 </ul>
-<h3 id="capsid">capsid</h3>
+<h3 id="user-content-capsid">capsid</h3>
 <p><a href="https://github.com/capsidjs/capsid">https://github.com/capsidjs/capsid</a></p>
 <ul>
 <li>
 <p>Continued working on it. This week I added <code>@pub</code>, <code>@sub</code>, and <code>@innerHTML</code> decorators. <code>@innerHTML</code> is the syntax sugar for the next pattern:</p>
-<pre><code class="language-js">@component('foo')
+<pre><code>@component('foo')
 class Foo {
   __mount__() {
     this.el.innerHTML = `
@@ -53,7 +53,7 @@ class Foo {
 }
 </code></pre>
 <p>The above very frequent pattern of initializing innerHTML at mount lifecycle becomes like the below using <code>@innerHTML</code> decorator:</p>
-<pre><code class="language-js">@component('foo')
+<pre><code>@component('foo')
 @innerHTML(`
   &#x3C;p>&#x3C;span>Hello, world!&#x3C;/span>&#x3C;/p>
 `)
@@ -61,7 +61,7 @@ class Foo { ... }
 </code></pre>
 <p><code>@pub</code> and <code>@sub</code> are, as their name suggest, the decorators for building pub/sub pattern in capsid components.</p>
 <p><code>@pub</code> publishes event to the elements which have <code>sub:{event}</code> class. For example:</p>
-<pre><code class="language-js">@component("foo")
+<pre><code>@component("foo")
 class Foo {
   @pub("bar")
   bar() {}
@@ -69,7 +69,7 @@ class Foo {
 </code></pre>
 <p>The above bar method publishes <code>bar</code> event to the elements which have <code>sub:bar</code> class. In this case, the class name <code>sub:bar</code> means that the element is the subscriber of <code>bar</code> event.</p>
 <p>On the other hand, <code>@sub</code> decorator adds class <code>sub:{event}</code> to the element:</p>
-<pre><code class="language-js">@component("baz")
+<pre><code>@component("baz")
 @sub("bar")
 class Baz {
   @on("bar")
@@ -80,15 +80,14 @@ class Baz {
 <p>The addition of <code>@pub</code> and <code>@sub</code> significantly simplifies the communication between components and they replaces the usages of <code>@notifies</code> decorator. So I removed <code>@notifies</code> in the latest version of capsid.js.</p>
 </li>
 </ul>
-<h2 id="event">Event</h2>
-<h3 id="denosawa_tokyo"><a href="https://twitter.com/hashtag/denosawa_tokyo"><code>#denosawa_tokyo</code></a></h3>
+<h2 id="user-content-event">Event</h2>
+<h3 id="user-content-denosawa_tokyo"><a href="https://twitter.com/hashtag/denosawa_tokyo"><code>#denosawa_tokyo</code></a></h3>
 <ul>
 <li>
 <p>I met with @sadnessOjisan and @imbsky in a restaurant in Yotsuya. I met with @imbsky for the first time.</p>
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ワイン <a href="https://twitter.com/hashtag/denosawa_tokyo?src=hash&amp;ref_src=twsrc%5Etfw">#denosawa_tokyo</a> <a href="https://t.co/O1ujAwu2MO">pic.twitter.com/O1ujAwu2MO</a></p>&mdash; Yoshiya/肩/Deno澤 (@kt3k) <a href="https://twitter.com/kt3k/status/1239877786149351424?ref_src=twsrc%5Etfw">March 17, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </li>
 </ul>
-<h3 id="uit-meetup-vol8"><a href="https://uit.connpass.com/event/161964/">UIT meetup vol.8</a></h3>
+<h3 id="user-content-uit-meetup-vol8"><a href="https://uit.connpass.com/event/161964/">UIT meetup vol.8</a></h3>
 <ul>
 <li>I talked about <a href="https://deno.land/">deno</a> at the event <a href="https://uit.connpass.com/event/161964/">UIT meetup vol.8</a> in a VR space provided by <a href="https://cluster.mu/">cluster</a>. The prepation is a little bit tougher than usual conferences because I couldn't use web browser during my talk. I was also unable to show my terminal, so I need to prepare the movie files for the demo sequences which I wanted to show during the talk. The slides are available <a href="https://git.io/uit8-deno">here</a>.</li>
 </ul>
