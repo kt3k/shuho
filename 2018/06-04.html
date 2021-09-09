@@ -27,82 +27,74 @@
   <body>
     <article class="markdown-body">
       <p><a href="..">Back</a></p>
-<h1 id="user-content-week-23---2018">Week 23 - 2018</h1>
+<h1 id="week-23---2018">Week 23 - 2018</h1>
 <blockquote>
 <p>The weeknote for 6/4 - 6/10. You can <a href="https://github.com/kt3k/shuho/edit/master/2018/06-04.md">edit</a> this page (on github) if you find any error.</p>
 </blockquote>
-<h2 id="user-content-oss">OSS</h2>
-<h3 id="user-content-c3js">c3.js</h3>
+<h2 id="oss">OSS</h2>
+<h3 id="c3js">c3.js</h3>
 <ul>
-<li>Merged <a href="https://github.com/c3js/c3/pull/2385">https://github.com/c3js/c3/pull/2385</a>
-<ul>
+<li>Merged <a href="https://github.com/c3js/c3/pull/2385">https://github.com/c3js/c3/pull/2385</a><ul>
 <li>v0.6.2 としてリリース</li>
 <li>リリース手順がかなり自動化されているので、かなり楽にリリース出来た. ただ、ドキュメントサイトの middleman が鬱陶しいので、早く gulp or bulbo に移行したい.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="user-content-golanggo">golang/go</h3>
+<h3 id="golanggo">golang/go</h3>
 <ul>
-<li>Closed <a href="https://github.com/golang/go/pull/25267">https://github.com/golang/go/pull/25267</a>
-<ul>
+<li>Closed <a href="https://github.com/golang/go/pull/25267">https://github.com/golang/go/pull/25267</a><ul>
 <li>Go の html の coverage レポートのインデックスページ (各ファイルの一覧表示) が無いので足すという PR. 出してからものすごい時間が空いてから Rob Pike がそんな変更要らんと言ってきたので閉じた. 明らかに見通し悪くて不便なんだけど、 html レポート作る周りのコードはテストもない (というか js をテストする仕組み自体持って居ない) ので、おそらくメンテナンス出来そうにないので、これ以上何もしたくないということなのかなという印象.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="user-content-rydeno">ry/deno</h3>
+<h3 id="rydeno">ry/deno</h3>
 <ul>
-<li>Merged <a href="https://github.com/ry/deno/pull/2">https://github.com/ry/deno/pull/2</a>
-<ul>
+<li>Merged <a href="https://github.com/ry/deno/pull/2">https://github.com/ry/deno/pull/2</a><ul>
 <li>deno の typo を直した. 4番目のコントリビュータになった.</li>
 <li>testing 以下のライセンスが間違っているエラーも見つけたけど、こちらは知り合いに託した.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <p>今週はみんな ry/deno の話をしているという印象. import とか、uncaught error とか、green threads とか、node の根本的な負の部分を解決しているので、かなり魅力のあるプロジェクトだと思う.</p>
-<h2 id="user-content-news">News</h2>
+<h2 id="news">News</h2>
 <ul>
 <li>GitHub が Microsoft に買われた. gitlab に移行する動きとか出ているらしいけれど、個人的には今の所移行する気はなし. 量が多すぎるし、CI のフックがどうなるとか、greenkeeper はどうなるとか、考えることはかなり多そうで、そう簡単に移行できる気がしない.</li>
 </ul>
-<h2 id="user-content-myproject">MyProject</h2>
-<h3 id="user-content-kt3kmoneybit-app">kt3k/moneybit-app</h3>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3kmoneybit-app">kt3k/moneybit-app</h3>
 <p>Moneybit は Free で Open Source なモバイル会計アプリ. 複式簿記で入力出来て、随時貸借対照表 (バランスシート) を表示できて、確定申告にもそのまま使えるというアプリ. iOS、Android.</p>
 <ul>
 <li>今週は引き続き、ジャーナル画面の新規ジャーナル入力フォームのバリデーション周りを実装中</li>
 <li>勘定科目セレクトボックスに出す勘定科目の並び順を最近使った順で出したいため、そのためのモデルとして、AccountTypeRecentList をドメインに足した. ドメインにモデルを足すのは数ヶ月ぶりにもかかわらず、そこまで大きい問題なく、平常運転の範囲内で足せて、既存のモデルに大きい影響を与えることもなく、やはり DDD はスケールする開発手法という印象がより強くなった.</li>
 </ul>
-<h3 id="user-content-kt3kdomaindoc">kt3k/domaindoc</h3>
+<h3 id="kt3kdomaindoc">kt3k/domaindoc</h3>
 <ul>
 <li>AccountTypeRecentList の追加があまりにも上手く行ったため、domaindoc を少し補強して、もっとドメインモデル同士の関係性をうまく描けるようにしようというアイデアが生まれた.</li>
 <li>そのための1手として、Model 同士の被所有関係を表示したらどうかというアイデアが生まれ、Owned by (誰々に所有されている) 欄を表示する改修を始めた.</li>
 <li>コードを見ると domaindoc 自身が DDD によって作られて居なかったため、まず domaindoc 自体を DDD 化する作業にまず着手した。(もっというとテスト自体無かったので、それを作るところから着手)</li>
 <li>DDD 化は完了して、今は owned by を出すためにはどうモデルを拡張すれば良いかを考え中.</li>
 </ul>
-<h3 id="user-content-kt3kremarker">kt3k/remarker</h3>
+<h3 id="kt3kremarker">kt3k/remarker</h3>
 <ul>
-<li>livereload がしたいという要望が来てしまった <a href="https://github.com/kt3k/remarker/issues/9">https://github.com/kt3k/remarker/issues/9</a>
-<ul>
+<li>livereload がしたいという要望が来てしまった <a href="https://github.com/kt3k/remarker/issues/9">https://github.com/kt3k/remarker/issues/9</a><ul>
 <li>難しくはないはずだけど、かなり面倒な対応.</li>
 <li>remarker は remarker -> berber -> bulbo -> vinyl-serve という順で依存して、サーバー機能を持って来ている。livereload を入れるためにはその依存系列全部に手を入れて、サーバーに connect-livereload を差し込めるようにする必要がある.</li>
 <li>vinyl-serve の改修から始めたが、vinyl-serve にそもそも greenkeeper が入っておらず、入れようとすると vinyl と mime-type のメジャーアップデートで当たりがあって、そのままだとテストが通らなかったり、まずメンテナンス性を確保する作業からして難航。ただテストケース自体はかなりがっつり入っているため、実装を全部思い出さなければいけないという程でもなく、なんとかなりそうな雰囲気.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="user-content-仕事">仕事</h2>
+<h2 id="仕事">仕事</h2>
 <ul>
 <li>こちらの記事を執筆 <a href="https://engineer.recruit-lifestyle.co.jp/techblog/2018-06-07-zenhub/">https://engineer.recruit-lifestyle.co.jp/techblog/2018-06-07-zenhub/</a></li>
 <li>来期(7月-9月)の見積もりを出した.</li>
 </ul>
-<h2 id="user-content-相談">相談</h2>
-<h3 id="user-content-webview-in-react-native">webview in react-native</h3>
+<h2 id="相談">相談</h2>
+<h3 id="webview-in-react-native">webview in react-native</h3>
 <ul>
 <li>react-native の webview の中に javascript を inject したいのだが、その方法はどうすれば良いかという相談があって面白かった.</li>
 </ul>
-<h2 id="user-content-山">山</h2>
-<h3 id="user-content-ナンガパルバット">ナンガパルバット</h3>
+<h2 id="山">山</h2>
+<h3 id="ナンガパルバット">ナンガパルバット</h3>
 <ul>
 <li>ナンガパルバットはパキスタンの 8000m峰. 裸の山という意味の名前. 標高は世界第9位. 登山史初期の遭難者数がとても多く Killer Mountain とも呼ばれる. 最近まで冬季登頂されて居ない数少ない山の一つだったが、2016年にシモーネモロによって冬季初登頂された.</li>
 </ul>
-<h3 id="user-content-神々の山嶺">神々の山嶺</h3>
+<h3 id="神々の山嶺">神々の山嶺</h3>
 <ul>
 <li>少し読んだ. 登場人物のキャラクター設定が非常に渋い気がする. キラキラした人が誰も居ない小説.</li>
 </ul>

@@ -27,28 +27,26 @@
   <body>
     <article class="markdown-body">
       <p><a href="..">Back</a></p>
-<h1 id="user-content-week-48---2018">Week 48 - 2018</h1>
+<h1 id="week-48---2018">Week 48 - 2018</h1>
 <blockquote>
 <p>The weeknote for 11/26 - 12/2. You can <a href="https://github.com/kt3k/shuho/edit/master/2018/11-26.md">edit</a> this page (on github) if you find any error.</p>
 </blockquote>
-<h2 id="user-content-oss">OSS</h2>
-<h3 id="user-content-nodejsnode">nodejs/node</h3>
+<h2 id="oss">OSS</h2>
+<h3 id="nodejsnode">nodejs/node</h3>
 <ul>
-<li><a href="https://github.com/nodejs/node/pull/24613">https://github.com/nodejs/node/pull/24613</a>
-<ul>
+<li><a href="https://github.com/nodejs/node/pull/24613">https://github.com/nodejs/node/pull/24613</a><ul>
 <li>今年の Nodefest の Code and Learn で出した PR がやっとマージされた. V8 API の Array の使い方が古い使い方になっているのを新しい使い方に書き直すという内容. 自分が選んだファイルには 3箇所古い Array::New の使い方があって, うち2つは単純に固定長 (長さ 2) の Array を作るというコードでこれは何の問題も無かった. うち1箇所で Array を作る途中で if 文があって, その条件分岐で Array の長さが 1 か 2 か変化するというコードがあって, ここの書き方で collaborator から複数のコメントがついた. 議論の流れから, もう少し最適化すべきという雰囲気になって, 提案された方法をやってみたけど, どちらの提案も穴があって単純には適用不可能だった. 結局 @refack さんの提案している方法から assertion を抜いた形のコードを push したところでマージされた. C++ の std::vector に少し詳しくなった.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="user-content-myproject">MyProject</h2>
-<h3 id="user-content-capsidjstodomvc">capsidjs/todomvc</h3>
+<h2 id="myproject">MyProject</h2>
+<h3 id="capsidjstodomvc">capsidjs/todomvc</h3>
 <p><a href="https://github.com/capsidjs/todomvc">https://github.com/capsidjs/todomvc</a></p>
 <p>Capsid TodoMVC は capsid で実装した <a href="http://todomvc.com/">TodoMVC</a>.</p>
 <ul>
 <li>capsid の decorators を babel 7.1 版に update したので, todomvc も新 decorators に移行する作業をした(<a href="https://github.com/capsidjs/todomvc/commit/274c5586da8c1bed5f78114899c9c390810fe7f5">1</a>, <a href="https://github.com/capsidjs/todomvc/commit/a43dbe9b51e15ff22c924dbd5792e8b1c884a05b">2</a>). ほぼ想定通りの作業 (decorators plugin をアップデートして wired を getter decorator から field decorator に変える) で済んだものの, 最初 decorators plugin に与えるパラメータを <code>{ "legacy": true }</code> から <code>{ "decoratorsBeforeExport": false }</code> に変えるのを忘れていて, その場合のエラーメッセージがかなり難解で, そこそこ難しかった. 特に karma 側を移行する際に上の plugin パラメータのアップデートし忘れによるエラーメッセージがかなり難解で, capsid 自体の decorator 移行が失敗しているのではないかという点から疑い直してかなりの時間を消費してしまった.</li>
 <li>結果としては新 decorators 移行は完了して, 綺麗な状態になった. ついでに TodoMVC 全体を圧縮して gzip サイズを badge ( <img src="https://img.badgesize.io/capsidjs/todomvc/master/dist/app.min.js.svg?compression=gzip" alt="badge"> ) で出して見たところ 10kB 程度になることが分かり, vue (~20kB) や react (~30kB) の runtime 自体より小さいことが分かった.</li>
 </ul>
-<h3 id="user-content-capsidjscapsid">capsidjs/capsid</h3>
+<h3 id="capsidjscapsid">capsidjs/capsid</h3>
 <p><a href="https://capsid.js.org/">https://capsid.js.org/</a></p>
 <p>💊 capsid はコンポーネントベースの DOM プログラミングをするための超軽量フレームワーク</p>
 <ul>
@@ -67,8 +65,8 @@
 </ul>
 </li>
 </ul>
-<h2 id="user-content-仕事">仕事</h2>
-<h3 id="user-content-react-hands-on">React Hands-on</h3>
+<h2 id="仕事">仕事</h2>
+<h3 id="react-hands-on">React Hands-on</h3>
 <ul>
 <li>前回の React Hands-on の続きを行なった. 内容が進むに従って参加者間で進捗の差が出てしまってそれをフォローするのがなかなか大変だった.</li>
 </ul>

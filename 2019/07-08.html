@@ -27,27 +27,23 @@
   <body>
     <article class="markdown-body">
       <p><a href="..">Back</a></p>
-<h1 id="user-content-week-28---2019">Week 28 - 2019</h1>
+<h1 id="week-28---2019">Week 28 - 2019</h1>
 <blockquote>
 <p>The weeknote for 7/8 - 7/14. You can <a href="https://github.com/kt3k/shuho/edit/master/2019/07-08.md">edit</a> this page (on github) if you find any error.</p>
 </blockquote>
-<h2 id="user-content-oss">OSS</h2>
-<h3 id="user-content-denolanddeno">denoland/deno</h3>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
 <p>🦕 Deno is a new JavaScript and TypeScript runtime.</p>
 <ul>
-<li>Contributions
-<ul>
-<li><a href="https://github.com/denoland/deno/pull/2643">https://github.com/denoland/deno/pull/2643</a>
-<ul>
+<li>Contributions<ul>
+<li><a href="https://github.com/denoland/deno/pull/2643">https://github.com/denoland/deno/pull/2643</a><ul>
 <li>Added onload and <code>load</code> event handling to <code>window</code> object. This feature is
 inspired by the <code>load</code> event of the browsers. We can use <code>window.onload</code>
 as the main entrypoint of the script.</li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code>window.onload = async function() {
+<pre><code class="language-ts">window.onload = async function() {
   const res = await fetch(Deno.args[1]);
   console.log(await res.text());
 };
@@ -55,8 +51,8 @@ as the main entrypoint of the script.</li>
 <p>This script shows the contents from the url given from the command line
 argument. There is no explicit call of <code>onload</code> function above, but it's called
 automatically by the system when the script is loaded.</p>
-<h2 id="user-content-job">Job</h2>
-<h3 id="user-content-s3sync">s3sync</h3>
+<h2 id="job">Job</h2>
+<h3 id="s3sync">s3sync</h3>
 <p>♻️ s3sync is a Golang utility for syncing between s3 and local.</p>
 <ul>
 <li>We, engineers at SEQSENSE, created and open sourced
@@ -70,8 +66,8 @@ implementation of AWS and can be used as a 'fake' AWS in testing environment.
 We set up the testing of this library using localstack. That simplified our
 test code significantly.</li>
 </ul>
-<h2 id="user-content-event">Event</h2>
-<h3 id="user-content-ts-meetup-2">TS meetup #2</h3>
+<h2 id="event">Event</h2>
+<h3 id="ts-meetup-2">TS meetup #2</h3>
 <ul>
 <li>We, TypeScript users near Tokyo, gathered in Folio's office and listened to
 the talks about TypeScript. @mizchi's talk was the most accessible to the

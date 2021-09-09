@@ -27,51 +27,41 @@
   <body>
     <article class="markdown-body">
       <p><a href="..">Back</a></p>
-<h1 id="user-content-week-8---2019">Week 8 - 2019</h1>
+<h1 id="week-8---2019">Week 8 - 2019</h1>
 <blockquote>
 <p>The weeknote for 2/18 - 2/24. You can <a href="https://github.com/kt3k/shuho/edit/master/2019/02-18.md">edit</a> this page (on github) if you find any error.</p>
 </blockquote>
-<h2 id="user-content-oss">OSS</h2>
-<h3 id="user-content-deno">deno</h3>
+<h2 id="oss">OSS</h2>
+<h3 id="deno">deno</h3>
 <p>🦕 Deno は新しい JavaScript 処理系.</p>
 <ul>
-<li>コントリビューション
-<ul>
-<li><a href="https://github.com/denoland/deno/pull/1788">https://github.com/denoland/deno/pull/1788</a>
-<ul>
+<li>コントリビューション<ul>
+<li><a href="https://github.com/denoland/deno/pull/1788">https://github.com/denoland/deno/pull/1788</a><ul>
 <li>以前 typescript 用の V8 isolate を本体と別にした影響で typescript のバージョン番号が本体で取れなくなっていた問題を修正. rollup.config.js 内でバージョン番号をとって, rollup-plugin-replace で入れるというテクニックを使用. rollup-plugin-replace は react が <code>__DEV__</code> という変数を true / false に置き換える用途で使っているのを見て知っていたのが役に立った.</li>
-</ul>
-</li>
-<li><a href="https://github.com/denoland/deno/pull/1804">https://github.com/denoland/deno/pull/1804</a>
-<ul>
+</ul></li>
+<li><a href="https://github.com/denoland/deno/pull/1804">https://github.com/denoland/deno/pull/1804</a><ul>
 <li><code>//js/console.ts</code> の中の <code>any</code> を <code>unknown</code> (等)で置き換えるという対応. <code>any</code> は何をやっても良い型で, これを使うと型チェックをしていないのと同じになる. <code>unknown</code> は何をやってもダメな型で, きちんと typeof / instanceof を使って, 何型か調べてから扱わないといけなくなる. <code>any</code> を <code>unknown</code> にすることで, 何か分からないものは型チェックしてからしか使えないという状態になるため, 型に関するバグが出にくい状態にすることが出来る.</li>
 <li>console.ts は一番多く any を持っていたので, とりあえずこれを潰してみようと思って着手した. やってみると, console.table を実装するためのメソッドが本当に any だらけな上に, 単純に any -> unknown というだけではなく, any -> unknown[] だったり, any -> string[] が正解になるような箇所がいくつかあって, 元の実装者が何をやりたかったのかを色々推しはかる必要があったため, 結構大変だった.</li>
-</ul>
-</li>
-<li><a href="https://github.com/denoland/deno/pull/1813">https://github.com/denoland/deno/pull/1813</a>
-<ul>
+</ul></li>
+<li><a href="https://github.com/denoland/deno/pull/1813">https://github.com/denoland/deno/pull/1813</a><ul>
 <li>window object を取得するのに <code>globalEval('this')</code> という怪しげな表現を使っていたのをやめて, 普通に window object を import して使えるようにする変更.</li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="user-content-c3jsc3">c3js/c3</h3>
+<h3 id="c3jsc3">c3js/c3</h3>
 <ul>
-<li><a href="https://github.com/kt3k/c3-code-reading">https://github.com/kt3k/c3-code-reading</a>
-<ul>
+<li><a href="https://github.com/kt3k/c3-code-reading">https://github.com/kt3k/c3-code-reading</a><ul>
 <li>c3 のコードリーディングを進めた. <code>//src/size.js</code> というところで問題 ( <a href="https://github.com/c3js/c3/issues/2567">https://github.com/c3js/c3/issues/2567</a> ) が起きていて, その周辺を読み進めた. issue #2567 の原因自体は, svg とその 1枚上の div の高さが違う場合に, redraw 毎に svg のサイズが div と同じになってしまう (その結果 svg が微妙に大きくなってしまう) ということが問題になっている模様. これが起こる場合と起こらない場合があって, 状況の差分が不明で調査が難航中. 一旦 revert するという手もありそう.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="user-content-myproject">MyProject</h2>
-<h3 id="user-content-kt3kmoneybit-app">kt3k/moneybit-app</h3>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3kmoneybit-app">kt3k/moneybit-app</h3>
 <p>💰 Moneybit はオープンソースのモバイル経理アプリ</p>
 <ul>
 <li>科目設定画面周りの仕様の整理, ページ名の一部付け直し, マイルストーンの切り直しなどを行なった. 切り直しの結果 5末に Android 版がリリースされるスケジュールになった.</li>
 </ul>
-<h2 id="user-content-本">本</h2>
-<h3 id="user-content-yuzutas0-さんの本">yuzutas0 さんの本</h3>
+<h2 id="本">本</h2>
+<h3 id="yuzutas0-さんの本">yuzutas0 さんの本</h3>
 <ul>
 <li>yuzutas0 さんの本に, 以前作った🌱ボタンズの話を書く予定だったのだけど, 風邪とか, 仕事を変わったりとか各種都合で忙しくなってしまった為, キャンセルさせてもらった. ごめんなさい.</li>
 </ul>

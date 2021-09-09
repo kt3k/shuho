@@ -27,21 +27,21 @@
   <body>
     <article class="markdown-body">
       <p><a href="..">Back</a></p>
-<h1 id="user-content-week-24---2019">Week 24 - 2019</h1>
+<h1 id="week-24---2019">Week 24 - 2019</h1>
 <blockquote>
 <p>The weeknote for 6/10 - 6/16. You can <a href="https://github.com/kt3k/shuho/edit/master/2019/06-10.md">edit</a> this page (on github) if you find any error.</p>
 </blockquote>
-<h2 id="user-content-oss">OSS</h2>
-<h3 id="user-content-denolanddeno">denoland/deno</h3>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
 <p>🦕 Deno is a new JavaScript and TypeScript runtime.</p>
 <ul>
 <li>This week version 0.9.0 has been released, which includes <code>deno install</code>
 subcommand. Now we can install the standalone cli as follows:</li>
 </ul>
-<pre><code>$ deno install file_server https://deno.land/std/http/file_server.ts --allow-net --allow-read
+<pre><code class="language-console">$ deno install file_server https://deno.land/std/http/file_server.ts --allow-net --allow-read
 </code></pre>
-<h2 id="user-content-myproject">MyProject</h2>
-<h3 id="user-content-kt3kmoneybit-app">kt3k/moneybit-app</h3>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3kmoneybit-app">kt3k/moneybit-app</h3>
 <p>💰 Moneybit is an open source mobile accounting app.</p>
 <ul>
 <li>I made a little progress on <code>delete</code>-modal in chart-settings page. Now I
@@ -53,8 +53,8 @@ container of modal dialog. The other two have separate overlay shadows and
 modal dialog doms. The former is simpler, but less flexible. The latters are
 more complex, but more flexible.</li>
 </ul>
-<h2 id="user-content-job">Job</h2>
-<h3 id="user-content-goroutine-leaks">goroutine leaks</h3>
+<h2 id="job">Job</h2>
+<h3 id="goroutine-leaks">goroutine leaks</h3>
 <ul>
 <li>At @seqsense, we use Go language in many places. Though I first joined this
 team as a frontend engineer, but now I help implementing the data collector
@@ -62,7 +62,7 @@ agent in Go language. This week I first experienced I leaked a goroutine.
 Thanks to @t-asaka's review, that leak has never been deployed to the actual
 device, but it was about to be shipped and I really didn't realize it leaked.</li>
 </ul>
-<pre><code>func Foo() {
+<pre><code class="language-go">func Foo() {
   ...
   for _, item := range list {
     go func(item Item) {
@@ -80,7 +80,7 @@ device, but it was about to be shipped and I really didn't realize it leaked.</l
 }
 </code></pre>
 <p>I supposed this worked like something JavaScript equivalent of:</p>
-<pre><code>function foo() {
+<pre><code class="language-js">function foo() {
   ...
   try {
     await Promise.race(list.map(doNetworkJob))
@@ -93,8 +93,8 @@ device, but it was about to be shipped and I really didn't realize it leaked.</l
 <p>But it actually isn't. This leaks the gorouines after leaving the function <code>Foo</code>
 because the channel <code>c</code> looses the receiver and <code>c &#x3C;- doNetworkJob(item)</code> blocks
 forever!</p>
-<h2 id="user-content-movie">Movie</h2>
-<h3 id="user-content-mib-international">MIB: International</h3>
+<h2 id="movie">Movie</h2>
+<h3 id="mib-international">MIB: International</h3>
 <ul>
 <li>Seen Men In Black: International. I liked the hammer scene.</li>
 </ul>

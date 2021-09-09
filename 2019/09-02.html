@@ -27,32 +27,27 @@
   <body>
     <article class="markdown-body">
       <p><a href="..">Back</a></p>
-<h1 id="user-content-week-36---2019">Week 36 - 2019</h1>
+<h1 id="week-36---2019">Week 36 - 2019</h1>
 <blockquote>
 <p>The weeknote for 9/2 - 9/8. You can <a href="https://github.com/kt3k/shuho/edit/master/2019/09-02.md">edit</a> this page (on github) if you find any error.</p>
 </blockquote>
-<h2 id="user-content-oss">OSS</h2>
-<h3 id="user-content-denolanddeno">denoland/deno</h3>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
 <p>🦕 Deno is a new JavaScript and TypeScript runtime.</p>
 <ul>
 <li>
 <p>Contributions</p>
 <ul>
-<li><a href="https://github.com/denoland/deno/pull/2851">https://github.com/denoland/deno/pull/2851</a>
-<ul>
+<li><a href="https://github.com/denoland/deno/pull/2851">https://github.com/denoland/deno/pull/2851</a><ul>
 <li>Implemented Response.statusText. This was necessary for my book to explain
 the fetch response object.</li>
-</ul>
-</li>
-<li><a href="https://github.com/denoland/deno/pull/2855">https://github.com/denoland/deno/pull/2855</a>
-<ul>
+</ul></li>
+<li><a href="https://github.com/denoland/deno/pull/2855">https://github.com/denoland/deno/pull/2855</a><ul>
 <li><code>deno version</code> command used to use V8 Isolate for showing the version
 number. This PR changes it. Now <code>deno version</code> is only processed by the
 rust side. It's partly done by @nayeemrmn.</li>
-</ul>
-</li>
-<li><a href="https://github.com/denoland/deno/pull/2864">https://github.com/denoland/deno/pull/2864</a>
-<ul>
+</ul></li>
+<li><a href="https://github.com/denoland/deno/pull/2864">https://github.com/denoland/deno/pull/2864</a><ul>
 <li>We used to use rollup-plugin-replace for replacing arbitrary symbols in
 TypeScript source code. That was handy technique, but we recently ditched
 rollup and now that string replacing behavior was very naively performed
@@ -61,17 +56,14 @@ on start up message from rust to V8. The extension of such message has
 become really easy because of the recent ops infrastructure change. The
 messages are now simply JSON. So what I needed to do was just adding
 fields to a JSON object.</li>
-</ul>
-</li>
-<li><a href="https://github.com/denoland/deno/pull/2877">https://github.com/denoland/deno/pull/2877</a>
-<ul>
+</ul></li>
+<li><a href="https://github.com/denoland/deno/pull/2877">https://github.com/denoland/deno/pull/2877</a><ul>
 <li>Response.bodyUsed wasn't implemented. I tried it, and it wasn't difficult.
 I had a little concern about the timing when the bodyUsed becomes true,
 but when I checked it in Google Chrome, the browser seemed making it true
 immediately after the response.text() called. So I mimicked that behavior
 in the above PR.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 </li>
 <li>
@@ -87,8 +79,8 @@ add any crate as a dependency. The rust side of deno is now truly open for
 everyone to extend.</p>
 </li>
 </ul>
-<h2 id="user-content-news">News</h2>
-<h3 id="user-content-aws-lambda">AWS Lambda</h3>
+<h2 id="news">News</h2>
+<h3 id="aws-lambda">AWS Lambda</h3>
 <ul>
 <li>This week lambda started releasing the update which speed up the cold start up
 time of lambda functions which connect to VPC. It used to be very very slow
@@ -96,26 +88,24 @@ because of the start up time of ENI was very very slow. Now AWS provides new
 infrastructure for ENI initialization. So the lambda is now very quick to
 start up 👍</li>
 </ul>
-<h3 id="user-content-csrf">CSRF</h3>
+<h3 id="csrf">CSRF</h3>
 <ul>
-<li><a href="https://scotthelme.co.uk/csrf-is-really-dead/">https://scotthelme.co.uk/csrf-is-really-dead/</a>
-<ul>
+<li><a href="https://scotthelme.co.uk/csrf-is-really-dead/">https://scotthelme.co.uk/csrf-is-really-dead/</a><ul>
 <li>According to the above article. Google Chrome is to change the browser's
 default behavior around <code>SameSite=</code> attribute of Set-Cookie header, and the
 article says it will result the end of CSRF attacks. I've never checked the
 above assertion in detail, but if it's true, we can simplify the typical web
 development process significantly.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="user-content-book">Book</h2>
-<h3 id="user-content-denobook-02">denobook 02</h3>
+<h2 id="book">Book</h2>
+<h3 id="denobook-02">denobook 02</h3>
 <p>🦕 denobook 02 is the 2nd volume of denobook by deno-ja</p>
 <ul>
 <li>I finished the editing of the book.</li>
 </ul>
-<h2 id="user-content-job">Job</h2>
-<h3 id="user-content-grpc">gRPC</h3>
+<h2 id="job">Job</h2>
+<h3 id="grpc">gRPC</h3>
 <ul>
 <li>Have written many things using gRPC.</li>
 </ul>

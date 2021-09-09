@@ -27,38 +27,36 @@
   <body>
     <article class="markdown-body">
       <p><a href="..">Back</a></p>
-<h1 id="user-content-week-25---2018">Week 25 - 2018</h1>
+<h1 id="week-25---2018">Week 25 - 2018</h1>
 <blockquote>
 <p>The weeknote for 6/18 - 6/24. You can <a href="https://github.com/kt3k/shuho/edit/master/2018/06-18.md">edit</a> this page (on github) if you find any error.</p>
 </blockquote>
-<h2 id="user-content-oss">OSS</h2>
-<h3 id="user-content-c3js">c3.js</h3>
+<h2 id="oss">OSS</h2>
+<h3 id="c3js">c3.js</h3>
 <ul>
 <li><a href="https://github.com/c3js/c3/pull/2389">#2389</a> のリファクタをレビュー &#x26; マージした</li>
 <li><a href="https://github.com/c3js/c3/issues/2199">#2199</a> gh-pages に https 機能きたよと教えてもらって、ターナーさんに連絡して DNS の設定を調整してもらって、 <a href="https://c3js.org/">https://c3js.org/</a> で見れるようになった. 地味に嬉しい.</li>
 </ul>
-<h3 id="user-content-rydeno">ry/deno</h3>
+<h3 id="rydeno">ry/deno</h3>
 <ul>
 <li>deno2 が src にリネームされ、golang 実装は削除された. ヒープスナップショットというのがすでに効いているらしく, 起動だけなら結構早い状態になった. (golang 実装の時は1秒以上かかっていたのが、今は100ms 程度で node.js とほぼ遜色ないレベル)</li>
 </ul>
-<h2 id="user-content-myproject">MyProject</h2>
-<h3 id="user-content-kt3kmoneybit-app">kt3k/moneybit-app</h3>
+<h2 id="myproject">MyProject</h2>
+<h3 id="kt3kmoneybit-app">kt3k/moneybit-app</h3>
 <p>Moneybit は無料でオープンソースのモバイル会計アプリ. 複式簿記で入力出来て、貸借対照表 (バランスシート) を表示できて、確定申告にもそのまま使えるというアプリ. iOS、Android 対応(予定).</p>
 <ul>
 <li>新規勘定の入力が完成して、既存の勘定の編集に着手して、そちらもほぼ完成. あと、削除ボタンの削除確認がまだ confirm 関数でやってるので、そこだけさらにモーダルを出す仕様に変えたら仕訳帳画面の入力系はほぼ完成に近い.</li>
 <li>次は仕分けの一覧表示を月ごとに表示したりとかその周辺をやる.</li>
 <li>毎度の感想として、DDD がすごいワークしていると感じた. ものすごく久しぶりにドメイン層を触るのに、昨日まで作業していたのと変わらないくらい自然に拡張が出来る. ドメインという層が、完璧にそれ以上の層と分かれていて, そのスパッと別れた境界線上でテストカバレッジがほぼ100% でテストされきっている (追加分にもさらにテストを足した) ので, このレイヤーでの技術的負債がほとんど溜まらない状態で進捗できていると感じる. ドメインとして切った周辺での停滞がほとんどない.</li>
 </ul>
-<h3 id="user-content-capsidjscapsid">capsidjs/capsid</h3>
+<h3 id="capsidjscapsid">capsidjs/capsid</h3>
 <ul>
-<li><a href="https://github.com/capsidjs/capsid/releases/tag/v0.24.0">0.24.0</a> リリース
-<ul>
+<li><a href="https://github.com/capsidjs/capsid/releases/tag/v0.24.0">0.24.0</a> リリース<ul>
 <li>on.click.at というデコレータが出来た.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <p>従来下のような書き方が必要だったのが、</p>
-<pre><code>class MyComponent {
+<pre><code class="language-javascript">class MyComponent {
   @on('click', { at: '.edit-button' })
   onClickAtEditButton () {
     // handling of edit button click
@@ -66,7 +64,7 @@
 }
 </code></pre>
 <p>下のように書けるようになった.</p>
-<pre><code>class MyComponent {
+<pre><code class="language-js">class MyComponent {
   @on.click.at('.edit-button')
   onClickAtEditButton () {
     // handling of edit button click
@@ -75,39 +73,35 @@
 </code></pre>
 <p>ちょっとした工夫だけど、そこそこ読みやすさが上がる気がしている.</p>
 <ul>
-<li><a href="https://github.com/capsidjs/capsid/releases/tag/v0.25.0">0.25.0</a>
-<ul>
+<li><a href="https://github.com/capsidjs/capsid/releases/tag/v0.25.0">0.25.0</a><ul>
 <li>上の発展形で、on.useHandler('foo') とやると、on.foo デコレータと on.foo.at デコレータが出来るという機能を追加.</li>
 <li>例えば、on.useHandler('change') とやると、<code> @on.change.at('.title-input')</code> というデコレータが使えるようになる.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="user-content-kt3kaquapress">kt3k/aquapress</h3>
+<h3 id="kt3kaquapress">kt3k/aquapress</h3>
 <ul>
 <li>aquapress という名前だけ考えた. berber の次期バージョン. やりたいこととしては js-liftoff を berber から除却して, さらにアプリケーション側のテストがしやすいなんらかの形を与えること. 今の berber アプリケーションは、 cli そのものとしてテストするしかなくて, 若干テストがしづらい.</li>
 </ul>
-<h2 id="user-content-仕事">仕事</h2>
-<h3 id="user-content-インフラ">インフラ</h3>
+<h2 id="仕事">仕事</h2>
+<h3 id="インフラ">インフラ</h3>
 <ul>
 <li>grafana プロビジョニングを相変わらず調べている. AWS のクレデンシャルをどう入れるんだろう? みたいなところで若干停滞.</li>
 </ul>
-<h3 id="user-content-社内ツール">社内ツール</h3>
+<h3 id="社内ツール">社内ツール</h3>
 <ul>
 <li>割と上手くいっていた社内ツールで性能問題が出てきた. バックエンド側でまだまだ出来ることがあるのに, とりあえず UI を変えて負荷軽減してみようという意見がなぜか支配的になってしまい, 困った. まずバックエンドで出来ることがあるでしょ, という意見を提言. UI もスケーリングも分かっていない人がステークホルダーやってることに問題がある.</li>
 </ul>
-<h2 id="user-content-山">山</h2>
-<h3 id="user-content-八甲田山">八甲田山</h3>
+<h2 id="山">山</h2>
+<h3 id="八甲田山">八甲田山</h3>
 <ul>
 <li>八甲田山の雪中行軍遭難事件 (1902年) という事件があったことを知った. とにかく恐ろしい内容. 色々資料を読んでいきたい.</li>
 </ul>
-<h3 id="user-content-本">本</h3>
+<h3 id="本">本</h3>
 <ul>
-<li>ラインホルト・メスナーのナンガ・パルバート単独行読書中.
-<ul>
+<li>ラインホルト・メスナーのナンガ・パルバート単独行読書中.<ul>
 <li>とりあえず、C1 まで行ったけど撤退した時の話まで読んだ.</li>
 <li>心理的描写にプログラミングと通じるものを感じる.</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <hr>
 <p><a href="..">Back</a></p>

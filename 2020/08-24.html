@@ -27,44 +27,48 @@
   <body>
     <article class="markdown-body">
       <p><a href="..">Back</a></p>
-<h1 id="user-content-week-35---2020">Week 35 - 2020</h1>
+<h1 id="week-35---2020">Week 35 - 2020</h1>
 <blockquote>
 <p>The weeknote for 8/24 - 8/30. You can <a href="https://github.com/kt3k/shuho/edit/master/2020/08-24.md">edit</a> this page (on github) if you find any error.</p>
 </blockquote>
-<h2 id="user-content-oss">OSS</h2>
-<h3 id="user-content-denolanddeno">denoland/deno</h3>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
 <p>🦕 Deno is a new JavaScript and TypeScript runtime</p>
 <ul>
-<li>Contributions
-<ul>
+<li>Contributions<ul>
 <li>Fix a test case of <code>//cli/flags.rs</code> at <a href="https://github.com/denoland/deno/pull/7236">#7236</a>.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="user-content-romefrontendrome">romefrontend/rome</h3>
+<h3 id="romefrontendrome">romefrontend/rome</h3>
 <p>Rome is a new frontend toolchain.</p>
 <ul>
 <li>Rome is a revolutionary tool or at least it aims to be a revolutionary tool. It supports almost the entire process of frontend development by the only one single cli tool without any external dependencies. It could be the most significant masterpiece of frontend development if it attained what it first promised. This week I tried to use <code>rome check</code> (the linter) in one of my old projects to replace the usage of <code>lynt</code> because <code>lynt</code> now seems unmaintained and I don't want to set up the so combersome <code>typescript-eslint</code> configuration. In it I found <a href="https://github.com/romefrontend/rome/issues/425">this issue</a>. It suggests that rome should use tabs for indentation for the purpose of accessibility. @sebmck accepted the proposal and now rome uses tabs. What I found is a problem there is that rome doesn't provide the way to configure it. We can't choose <code>2 spaces</code> for indentation 🤔 That's comparably small thing but what I found that I can never agree is that it enforces <code>no-explicit-any</code> rule for TypeScript source code. I agree that <code>any</code> is a bad thing but I sometimes can't find a way to avoid it. The very good part of TypeScript is its so tolerable approach to <code>bad code</code>. TypeScript always gives a way to compile to any JavaScript code no matter how badly typed they are. I believe any JavaScript code can be transformed into TypeScript without changing semantics and that's possible because TypeScript can be so loose in typing. I think that "loose" character of TypeScript is the great strong point of it to promote its adoption. However if you use rome, it enforces <code>no-explicit-any</code> so you can't use <code>any</code> and you can't configure it. That means you can't use rome if your code is "bad". My library capsid needs to use <code>any</code> and I don't know the way to avoid it at the moment. So that means I'm literally unable to use rome at the moment because of this restriction 😬</li>
 </ul>
-<h2 id="user-content-myproejct">MyProejct</h2>
-<h3 id="user-content-monoidcctententen">monoidcc/Tententen</h3>
+<h2 id="myproejct">MyProejct</h2>
+<h3 id="monoidcctententen">monoidcc/Tententen</h3>
 <ul>
 <li>
 <p>Finally I was successful at saving images on Huawei Android devices! 🎉 (<a href="https://github.com/monoidcc/Tententen/commit/db5122b1e49f7b3c171a62aa1c5fd4e966aef365">The commit</a>). The modules I used in the final successful form were <code>react-native-fs</code>, <code>@react-native-community/cameraroll</code> and PermissionsAndroid of <code>react-native</code>. The modules I couldn't use for this purpose were <code>react-native-share</code> (and any other sharing libraries) and <code>react-native-file-provider</code> (unable to compile because it's too old). I also tried <code>&#x3C;a download /></code> but it didn't work because it doesn't handle <code>data:</code> uri scheme (The error message says they don't support it).</p>
 <p>I finally understand the correct way to save the image on the device's camera roll. So the next step is finally finish the UI and ship it to App Store and Google Play 👍 However before that I would create some lepont modules to make it easy to reuse the above process in the next similar apps.</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/tententenapp?src=hash&amp;ref_src=twsrc%5Etfw">#tententenapp</a> やっとアプリからカメラロール保存出来ただよ <a href="https://t.co/bDPv9oEJek">pic.twitter.com/bDPv9oEJek</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1299015521690558464?ref_src=twsrc%5Etfw">August 27, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </li>
 </ul>
-<h2 id="user-content-life">Life</h2>
-<h3 id="user-content-iyos-kitchen">Iyo's kitchen</h3>
+<h2 id="life">Life</h2>
+<h3 id="iyos-kitchen">Iyo's kitchen</h3>
 <ul>
 <li>
 <p>Iyo-chan was a great chef this week again!</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/kt3kmeal?src=hash&amp;ref_src=twsrc%5Etfw">#kt3kmeal</a> そうめん、天ぷら <a href="https://t.co/C53QpkOAEj">pic.twitter.com/C53QpkOAEj</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1297869337844305925?ref_src=twsrc%5Etfw">August 24, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="und" dir="ltr">🥰 <a href="https://t.co/QRC0gwdbTF">pic.twitter.com/QRC0gwdbTF</a></p>&mdash; あずき (@azukimeal) <a href="https://twitter.com/azukimeal/status/1298630778633371648?ref_src=twsrc%5Etfw">August 26, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/kt3kmeal?src=hash&amp;ref_src=twsrc%5Etfw">#kt3kmeal</a> 生姜焼、お野菜、みそ汁、とうふ、ご飯 <a href="https://t.co/hkThJ56ho6">pic.twitter.com/hkThJ56ho6</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1298951690578583552?ref_src=twsrc%5Etfw">August 27, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/kt3kmeal?src=hash&amp;ref_src=twsrc%5Etfw">#kt3kmeal</a> 肉じゃが <a href="https://t.co/nzJll6rY08">pic.twitter.com/nzJll6rY08</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1299325241512964099?ref_src=twsrc%5Etfw">August 28, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </li>
 </ul>
-<h3 id="user-content-toshi-yoroizuka">Toshi Yoroizuka</h3>
+<h3 id="toshi-yoroizuka">Toshi Yoroizuka</h3>
 <ul>
 <li>
 <p>Iyo-chan and I went to <a href="http://www.grand-patissier.info/ToshiYoroizuka/">Toshi Yoroizuka</a> in Roppongi Midtown this weekend. Toshi Yoroizuka is a fancy sweet shop in Tokyo. We had special parfaits and they were so delicious 😋</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/kt3kmeal?src=hash&amp;ref_src=twsrc%5Etfw">#kt3kmeal</a> Toshi Yoroizuka パフェ <a href="https://t.co/hibbB8hSZK">pic.twitter.com/hibbB8hSZK</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1299302548570955776?ref_src=twsrc%5Etfw">August 28, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </li>
 </ul>
 <hr>

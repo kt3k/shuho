@@ -27,37 +27,31 @@
   <body>
     <article class="markdown-body">
       <p><a href="..">Back</a></p>
-<h1 id="user-content-week-30---2019">Week 30 - 2019</h1>
+<h1 id="week-30---2019">Week 30 - 2019</h1>
 <blockquote>
 <p>The weeknote for 7/22 - 7/28. You can <a href="https://github.com/kt3k/shuho/edit/master/2019/07-22.md">edit</a> this page (on github) if you find any error.</p>
 </blockquote>
-<h2 id="user-content-oss">OSS</h2>
-<h3 id="user-content-denolanddeno">denoland/deno</h3>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
 <p>🦕 Deno is a new JavaScript and TypeScript runtime.</p>
 <ul>
-<li>Contributions
-<ul>
-<li><a href="https://github.com/denoland/deno_std/pull/546">https://github.com/denoland/deno_std/pull/546</a>
-<ul>
+<li>Contributions<ul>
+<li><a href="https://github.com/denoland/deno_std/pull/546">https://github.com/denoland/deno_std/pull/546</a><ul>
 <li>Fixed an uncaught error on responding 400 to aborted (or imcomplete) http
 requests. The fix itself is just surrounding the code with a <code>try</code> block,
 but the testing of it was very difficult to set up.</li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="user-content-nodejsnode">nodejs/node</h3>
+<h3 id="nodejsnode">nodejs/node</h3>
 <ul>
-<li><a href="https://github.com/nodejs/node/pull/28817">https://github.com/nodejs/node/pull/28817</a>
-<ul>
+<li><a href="https://github.com/nodejs/node/pull/28817">https://github.com/nodejs/node/pull/28817</a><ul>
 <li>pkg-exports are experimentally introduced in Node 12.7.0. Need to catch up
 what it is.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="user-content-job">Job</h2>
-<h3 id="user-content-gengo-genpy">gengo, genpy</h3>
+<h2 id="job">Job</h2>
+<h3 id="gengo-genpy">gengo, genpy</h3>
 <ul>
 <li>Worked on gengo's bug. The serialization of some types of fields were wrong. I
 first confirmed the fix worked in the debugger, but setting up the proper
@@ -71,15 +65,15 @@ deserialize the message using (b), 5) assert that the deserialized message is
 the same as the original. I implemented all these steps in CI process. It took
 the entire 2 days of work.</li>
 </ul>
-<h3 id="user-content-aws-nitro-system">AWS Nitro System</h3>
+<h3 id="aws-nitro-system">AWS Nitro System</h3>
 <ul>
 <li>We first used Nitro based instance on our AWS. We didn't know enough about
 what it was and what imcompatiblities happened when we migrated from the
 legacy system. So some small incident happened about our EBS mountings. It
 required a half day for us to figure out the problem and fix it.</li>
 </ul>
-<h2 id="user-content-news">News</h2>
-<h3 id="user-content-tc39">TC39</h3>
+<h2 id="news">News</h2>
+<h3 id="tc39">TC39</h3>
 <ul>
 <li>TC39 seemed to happen this week. Nullish Coalescing went to stage 3.
 Promise.allSettled went to stage 4. Promise.any went to stage 2. I like the
