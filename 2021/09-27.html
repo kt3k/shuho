@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Week 39 - 2021 | @kt3k の週報 | Weeknote of @kt3k" />
+    <meta name="description" content="@kt3k の週報です | Weeknote of @kt3k">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2021/09-27.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 39 - 2021 | @kt3k の週報 | Weeknote of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2039%20-%202021" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weeknote of @kt3k" />
+    <title>Week 39 - 2021 | @kt3k の週報 | Weeknote of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-39---2021">Week 39 - 2021</h1>
+<blockquote>
+<p>The weeknote for 9/27 - 10/3. You can <a href="https://github.com/kt3k/shuho/edit/master/2021/09-27.md">edit</a> this page (on github) if you find any error.</p>
+</blockquote>
+<h2 id="tech">Tech</h2>
+<h3 id="microcms-and-deno">microCMS and Deno</h3>
+<ul>
+<li>
+<p>I found an example of using Deno with <code>microCMS</code>. <code>microCMS</code> is a headless content management system. Content Management System, typically like WordPress, traditionally has it's frontend integrated, but because that frontend and is very tightly integrated into the system, the frontend tends to become old quickly and can't update itself because of its tightly integrated nature. Headless CMSes try to solve this issue by dropping the entire frontend from the system. Instead they provide API to access the contents through REST or GraphQL APIs. <code>microCMS</code> is one of those system, which is created in Japan and now popular in Japan. Contentful is another such system, which seems the most popular internationally among those type of software.</p>
+<p><a href="https://zenn.dev/ryusou/articles/alephjs-microcms">This article</a> is a tutorial of using Deno with microCMS. The article actually uses Aleph as the frontend framework. I now wonder how it looks if I we Deno Deploy as the frontend of microCMS 🤔</p>
+</li>
+</ul>
+<h2 id="oss">OSS</h2>
+<h3 id="microsofttypescript">microsoft/TypeScript</h3>
+<ul>
+<li>I sent a PR to fix the type of RegExp.prototype.compile to TypeScript a few weeks ago, and they finally merged <a href="https://github.com/microsoft/TypeScript/pull/46038">it</a> this week. This indirectly fixes Deno's <a href="https://github.com/denoland/deno/issues/11663">issue</a>.</li>
+</ul>
+<h2 id="job">Job</h2>
+<h3 id="looking-for-a-designer">Looking for a designer</h3>
+<ul>
+<li>This week we published a job posting for the Lead Designer position. <a href="https://deno.com/jobs/designer/">https://deno.com/jobs/designer/</a></li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="fuu-chan">Fuu-chan</h3>
+<ul>
+<li>
+<p>This week's Fuu-chan!</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">食後のウトウトタイム <a href="https://t.co/5z4ABT9A1u">pic.twitter.com/5z4ABT9A1u</a></p>&mdash; あずき (@okomekirai) <a href="https://twitter.com/okomekirai/status/1444239403317022720?ref_src=twsrc%5Etfw">October 2, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/master/2021/09-27.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
