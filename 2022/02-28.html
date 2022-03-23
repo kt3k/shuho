@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Week 9 - 2022 | @kt3k の週報 | Weeknote of @kt3k" />
+    <meta name="description" content="@kt3k の週報です | Weeknote of @kt3k">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2022/02-28.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 9 - 2022 | @kt3k の週報 | Weeknote of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%209%20-%202022" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weeknote of @kt3k" />
+    <title>Week 9 - 2022 | @kt3k の週報 | Weeknote of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-9---2022">Week 9 - 2022</h1>
+<blockquote>
+<p>The weeknote for 2/28 - 3/6. You can <a href="https://github.com/kt3k/shuho/edit/main/2022/02-28.md">edit</a> this page (on github) if you find any error.</p>
+</blockquote>
+<h2 id="job">Job</h2>
+<h3 id="crypto-browserify">crypto-browserify</h3>
+<ul>
+<li>
+<p>This week I was porting crypto-browserify to <code>deno_std</code> (standard modules for Deno). Deno natively supports WebCrypto APIs, but they are almost asynchronous APIs. Because Node.js crypto APIs are mostly synchronous APIs, WebCrypto is not usable for shimming these APIs. So I chose to port <code>crypto-browserify</code> to <code>deno_std</code> to support Node.js crypto APIs in Deno.</p>
+<p><code>crypto-browserify</code> is a crypto module implementation in all JavaScript for use in browser. It's not actively developed now, but it seems enough well maintained, and has enough features. At least it covers most features of crypto which we're interested in. We were especially interested in <code>publicEncrypt</code> API because it's used in mysql driver package for node. It seems using it for encrypting password when connecting to the server.</p>
+<p>It required really a lot of work, but at the end we successfully implemented <code>publicEncrypt</code> by using this port and was able to make <code>mysql2</code> module works.</p>
+</li>
+</ul>
+<h3 id="webview">WebView</h3>
+<p><a href="https://twitter.com/clockmaker/status/1498555651055779840">https://twitter.com/clockmaker/status/1498555651055779840</a></p>
+<ul>
+<li>The tweet above says macOS uses WebViews in several places in the OS's native UIs. It's not that much surprising as WebView is almost dominant in Desktop UI market (see Slack, VSCode, etc). But some people still believe Web/WebView is not a tool for building application's UI, but it's for showing simple 'documents', and also there are some people who believe the native UI libs are always better than Web. So the usage of WebView in macOS UI is another good evidence to show to those people that Web being really a good choice for building application's UI.</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="shiseido">Shiseido</h3>
+<ul>
+<li>
+<p>Went to Shiseido parlour together with Iyo-chan. We had strawberry parfaits, and they were really good!</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/kt3kmeal?src=hash&amp;ref_src=twsrc%5Etfw">#kt3kmeal</a> いちごパフェ <a href="https://t.co/w2XhNO0eX5">pic.twitter.com/w2XhNO0eX5</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1500364410266984453?ref_src=twsrc%5Etfw">March 6, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/main/2022/02-28.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
