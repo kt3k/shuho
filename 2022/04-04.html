@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Week 14 - 2022 | @kt3k の週報 | Weeknote of @kt3k" />
+    <meta name="description" content="@kt3k の週報です | Weeknote of @kt3k">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2022/04-04.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 14 - 2022 | @kt3k の週報 | Weeknote of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2014%20-%202022" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weeknote of @kt3k" />
+    <title>Week 14 - 2022 | @kt3k の週報 | Weeknote of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-14---2022">Week 14 - 2022</h1>
+<blockquote>
+<p>The weeknote for 4/4 - 4/10. You can <a href="https://github.com/kt3k/shuho/edit/main/2022/04-04.md">edit</a> this page (on github) if you find any error.</p>
+</blockquote>
+<h2 id="tech">Tech</h2>
+<h3 id="javascript-addition">JavaScript addition</h3>
+<ul>
+<li>
+<p>Found an interesting thread by Brendan Eich which explains the design decision of '+' operator in JavaScript. Bill Joy was suggesting '@' operator for string concatenation, but it was too late and couldn't be implemented.</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Late in 1995, Bill Joy suggested using a different operator (I recall suggesting @, not used yet in Java) for string concatenation, but too late to change JS in Netscape 2. Perl favored number with + and used . for concat. Python threw an exception, requiring explicit conversion. <a href="https://t.co/a9Pdc2axV6">pic.twitter.com/a9Pdc2axV6</a></p>&mdash; BrendanEich (@BrendanEich) <a href="https://twitter.com/BrendanEich/status/1512018181979717632?ref_src=twsrc%5Etfw">April 7, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h2 id="job">Job</h2>
+<h3 id="dynamodb">DynamoDB</h3>
+<ul>
+<li>
+<p>Working on DynamoDB again these days on the job. DynamoDB has 2 special keys: One is partition key and the other is sort key. The partition key cannot be queried by range, but as its name suggests it's used for partitioning the data. So you can usually specify only one partition key in a single query. The sort key is more like the primary key in the other DB terminologies. The items are sorted by this key by default and you can query them by the ordering condition about this key. I found these definitions are very peculiar and specific to DynamoDB. It's like sharded by the partition key by default. So in my view this is a very peculiar kind of database in the wild, very much focused on the scalability by default.</p>
+<p>When I first created a few dynamodb tables in this job, I didn't understand this peculiarity well and made wrong decision about the design of the tables. So this time I created another table for the same system again with this special condition in mind and re-architecting almost everything.</p>
+</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="rei-100-days">Rei 100 days</h3>
+<ul>
+<li>
+<p>Rei is now 100 days old!</p>
+<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhinosawa%2Fposts%2F5213180018726697&show_text=true&width=500" width="500" height="645" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+</li>
+</ul>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/main/2022/04-04.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
