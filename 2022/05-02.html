@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Week 18 - 2022 | @kt3k の週報 | Weeknote of @kt3k" />
+    <meta name="description" content="@kt3k の週報です | Weeknote of @kt3k">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2022/05-02.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 18 - 2022 | @kt3k の週報 | Weeknote of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2018%20-%202022" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weeknote of @kt3k" />
+    <title>Week 18 - 2022 | @kt3k の週報 | Weeknote of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-18---2022">Week 18 - 2022</h1>
+<blockquote>
+<p>The weeknote for 5/2 - 5/8. You can <a href="https://github.com/kt3k/shuho/edit/main/2022/05-02.md">edit</a> this page (on github) if you find any error.</p>
+</blockquote>
+<h2 id="job">Job</h2>
+<h3 id="google-identity-services">Google Identity Services</h3>
+<ul>
+<li>This week I worked on Google Identity Services. I used to work with the previous version of Google's authentication and authorization services, but it seems they upgraded the service recently and it's now called Google Identity Services. The new version looks a little cleaner, but still feels very messy to work with. This week I implemented authorization by authorization code flow of OAuth 2.0. I got a lot of errors from the service, but I found many error messages are very unclear and took many hours to debug. Expecially I stuck on auth code exchange step of OAuth 2.0 Authorization Code flow. I literally used more than the entire day for debugging it. The fundamental cause of the error was I used <code>FormData</code> for body of <code>fetch</code> function call, which wasn't actually supported. Google's Token server responded with some validation errors first, so I misunderstand my API call is mostly correct except some details, but the reality is my call was totally wrong about <code>Content-Type</code> and Google's Token server couldn't point that. It errored with very obscure error: <code>You can't sign in to this app because it doesn't comply with Google's OAuth 2.0 policy for keeping apps secure. You can let the app developer know that this app doesn't comply with one or more Google validation rules.</code> I literally saw this error more than 100 times. It was really a painful debugging experience.</li>
+</ul>
+<h2 id="hobby">Hobby</h2>
+<h3 id="peano-axioms">Peano axioms</h3>
+<ul>
+<li>
+<p>Working on Peano axioms as hobby. I've been trying to formulate Peano axioms <a href="https://scrapbox.io/kt3k/s-Peano-axioms">in Epista syntax</a>, but not entirely successful yet though.</p>
+<p>The fundamental goal here is that I want to read and process these axioms completely in computer, not by hand or brain.</p>
+</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="rei">Rei</h3>
+<ul>
+<li>
+<p>Rei-kun now practises to be face-down.</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">息子、うつ伏せ練習中 <a href="https://t.co/JM49ccgj1S">pic.twitter.com/JM49ccgj1S</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1521136352435535872?ref_src=twsrc%5Etfw">May 2, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h3 id="new-room">New room</h3>
+<ul>
+<li>On Monday, Iyo-chan and I went to see the candidate room for our next home in Toyosu, which has 3 rooms and 1 living room. It was very nice place near the shopping mall, Lalaport. The building has nursery school in it, which is perfect for Rei-kun.</li>
+</ul>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/main/2022/05-02.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
