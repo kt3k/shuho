@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Week 19 - 2022 | @kt3k の週報 | Weeknote of @kt3k" />
+    <meta name="description" content="@kt3k の週報です | Weeknote of @kt3k">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2022/05-09.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 19 - 2022 | @kt3k の週報 | Weeknote of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2019%20-%202022" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weeknote of @kt3k" />
+    <title>Week 19 - 2022 | @kt3k の週報 | Weeknote of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-19---2022">Week 19 - 2022</h1>
+<blockquote>
+<p>The weeknote for 5/9 - 5/15. You can <a href="https://github.com/kt3k/shuho/edit/main/2022/05-09.md">edit</a> this page (on github) if you find any error.</p>
+</blockquote>
+<h2 id="tech">Tech</h2>
+<h3 id="css-sticky">CSS Sticky</h3>
+<ul>
+<li>Learned a nice way to make footer stick to the bottom of the screen using <code>position: sticky</code> property of CSS from <a href="https://github.com/denoland/docland/pull/147">a PR</a> to documentation web site for Deno. I realized I so much underestimated the potential of <code>position: sticky</code>.</li>
+</ul>
+<h3 id="gray-colors-in-tailwind">gray colors in Tailwind</h3>
+<ul>
+<li>I found that Tailwind has 5 gray colors builtin: <code>gray</code>, <code>zinc</code>, <code>stone</code>, <code>slate</code>, and <code>neutral</code>. They all look almost gray, but they are very slightly different. <code>slate</code> is more blue than others. <code>stone</code> is more red. <code>gray</code> is a little bit blue, but less blue than <code>slate</code>. <code>zinc</code> is only a little less blue than <code>gray</code>. <code>neutral</code> is completely non saturated. They are a little excessive for the default colors. How do people use them?</li>
+</ul>
+<h3 id="deno">Deno</h3>
+<ul>
+<li>Deno turned 4 on May 13th. I had expected we'd release Deno 2.0 on the day, but it didn't happen mainly because (in my view) we couldn't decide on the design about how we provide Node.js compatibility. We keep releasing v1.x series for a while.</li>
+</ul>
+<h3 id="reason">Reason</h3>
+<ul>
+<li>
+<p>This week I found that Reason language has almost stopped being developed a few years ago. I also found that Meta also stopped developing ReScript. They seem competely to have stopped investing ML languages that is compiled to JavaScript.</p>
+<p>Half surprised, half not surprsed by this. I'm a little surprised by this because Meta used to be boasting how Reason is effective in implementation of Facebook. They had significantly less bugs after partially migrating to Reason. However I'm also not surprised by that because almost all AltJS efforts were already failed. Reason and ReScript are typical in this area. They are so much different from JavaScript language, and almost 0% frontend developers prefer using functional programming language. So in my view they were destined to be failing.</p>
+</li>
+</ul>
+<h3 id="rethinkdb">RethinkDB</h3>
+<ul>
+<li>Found an article from the RethinkDB founder, which is the post-mortem of the company they founded. They analyzed that one of the reasons they failed is that they stick to the correctness of the product, rather than the speed. Their competitor MongoDB was doing very wrong things on many edge cases, but they pleased the users by releasing many features the community wants in a timely manner. They see that the case when "Worse is better" principle works.</li>
+</ul>
+<hr>
+<p><a href="..">Back</a></p>
+<p>See any mistakes? <a href="https://github.com/kt3k/shuho/edit/main/2022/05-09.md">Please fix</a>!</p>
+
+    </article>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
