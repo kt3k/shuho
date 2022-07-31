@@ -6,8 +6,7 @@
   "scripts": {
     "clean": "rimraf build",
     "start": "deno run --unstable --compat -A node_modules/.bin/bulbo",
-    "build": "bulbo build",
-    "pub": "npm run clean && npm run build && gh-pages -d build -m 'chore: update [skip ci]'"
+    "build": "bulbo build"
   },
   "repository": {
     "type": "git",
