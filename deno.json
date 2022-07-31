@@ -5,5 +5,10 @@
         "bulbofile.js"
       ]
     }
+  },
+  "tasks": {
+    "clean": "rm -rf build",
+    "start": "deno run --compat --unstable -A node_modules/.bin/bulbo",
+    "build": "deno run --compat --unstable -A node_modules/.bin/bulbo build"
   }
 }
