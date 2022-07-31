@@ -2,15 +2,14 @@
 
 # {{ file.data.title }}
 
-> The weeknote for {{ file.data.start }} - {{ file.data.end }}. You can [edit][] this page (on github) if you find any error.
-
+> The weeknote for {{ file.data.start }} - {{ file.data.end }}.
 
 {{ file.contents | safe }}
 
 ---
 [Back][]
 
-[Edit this page (needs GitHub account)][Edit]
+[Edit this page][Edit]
 
 [Back]: {{ file.data.basepath }}
 [Edit]: https://github.com/kt3k/shuho/edit/main/{{ file.relative.replace('.html', '.md') }}
