@@ -10,6 +10,8 @@ const data = require("gulp-data");
 const moment = require("moment");
 const frontmatter = require("gulp-front-matter");
 
+const rev = process.argv[3];
+
 const PORT = 7070;
 
 const paths = {
@@ -29,7 +31,7 @@ const SITE_DESCRIPTION = "@kt3k の週報です | Weeknote of @kt3k";
 const DOMAIN = "shuho.kt3k.org";
 
 const tmpl = (tmpl) =>
-  layout1.nunjucks(tmpl, { data: { SITE_TITLE, SITE_DESCRIPTION, DOMAIN } });
+  layout1.nunjucks(tmpl, { data: { SITE_TITLE, SITE_DESCRIPTION, DOMAIN, rev } });
 const acc = () => accumulate(paths.index, { debounce: 500, sort });
 const md = () =>
   remark()
