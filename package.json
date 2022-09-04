@@ -4,7 +4,7 @@
   "description": "Weeknotes of kt3k",
   "main": "index.js",
   "scripts": {
-    "start": "deno run --unstable --compat -A node_modules/.bin/bulbo",
+    "start": "bulbo",
     "build": "bulbo build"
   },
   "repository": {
