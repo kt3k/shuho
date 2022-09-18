@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "bulbo",
-    "build": "bulbo build"
+    "build": "bulbo build $(git rev-parse --short HEAD)"
   },
   "repository": {
     "type": "git",
