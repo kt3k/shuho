@@ -3,18 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="title" content="Week 22 - 2022 | @kt3k の週報 | Weeknote of @kt3k" />
+    <meta name="title" content="Week 37 - 2022 | @kt3k の週報 | Weeknote of @kt3k" />
     <meta name="description" content="@kt3k の週報です | Weeknote of @kt3k">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@kt3k" />
-    <meta property="og:url" content="https://shuho.kt3k.org/2022/05-30.html" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2022/09-12.html" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Week 22 - 2022 | @kt3k の週報 | Weeknote of @kt3k" />
+    <meta property="og:title" content="Week 37 - 2022 | @kt3k の週報 | Weeknote of @kt3k" />
     
-    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2022%20-%202022" />
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2037%20-%202022" />
     
     <meta property="og:description" content="@kt3k の週報です | Weeknote of @kt3k" />
-    <title>Week 22 - 2022 | @kt3k の週報 | Weeknote of @kt3k</title>
+    <title>Week 37 - 2022 | @kt3k の週報 | Weeknote of @kt3k</title>
     <link rel="stylesheet" href="../css/sakura.css" />
     <link rel="stylesheet" href="../css/arduino-light.min.css" />
     <link rel="icon" href="../favicon.ico" />
@@ -27,22 +27,23 @@
   <body>
     <article class="markdown-body">
       <p><a href="..">Back</a></p>
-<h1 id="week-22---2022">Week 22 - 2022</h1>
+<h1 id="week-37---2022">Week 37 - 2022</h1>
 <blockquote>
-<p>The weeknote for 5/30 - 6/5.</p>
+<p>The weeknote for 9/12 - 9/18.</p>
 </blockquote>
 <h2 id="job">Job</h2>
-<h3 id="denolanddeno_std"><code>denoland/deno_std</code></h3>
+<h3 id="node-compat">Node compat</h3>
 <ul>
-<li>This week I mainly reviewed <code>encoding/varint</code>, <code>flags</code> negatable option, <code>std/crypto</code> FNV algorithm.</li>
+<li>We've been recently working on Node compatibility feature in Deno. We switched from <code>--compat</code> mode from <code>npm:</code> specifier. <code>npm:</code> specifier has some advantages. It can be enabled by default (in the future), and we don't have 2 different modes. <code>npm:</code> specifier is less invasive to the current deno ecosystem. All deno modules keep working as is, and in addition to that all npm modules work in Deno. So the change is purely additive to the existing Deno, not alternating it. The disadvantage is that we don't have the ability to start a script in Node context. That significantly reduces the compatibility. Many module don't work with this strategy. There seem still many problems ahead of us in this path.</li>
 </ul>
-<h3 id="meet-me">Meet Me</h3>
+<h2 id="family">Family</h2>
+<h3 id="rei">Rei</h3>
 <ul>
-<li>We've been working on a showcase app which showcases the usage of Google Calendar API in Deno Deploy. This week I implemented most of onboarding flow of the app.</li>
+<li>Rei caught a cold this week. It turned out later that it was caused by RS virus.</li>
 </ul>
 <hr>
 <p><a href="..">Back</a></p>
-<p><a href="https://github.com/kt3k/shuho/edit/main/2022/05-30.md">Edit this page</a></p>
+<p><a href="https://github.com/kt3k/shuho/edit/main/2022/09-12.md">Edit this page</a></p>
 
     </article>
     
