@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Week 39 - 2022 | @kt3k の週報 | Weeknote of @kt3k" />
+    <meta name="description" content="@kt3k の週報です | Weeknote of @kt3k">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2022/09-26.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 39 - 2022 | @kt3k の週報 | Weeknote of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2039%20-%202022" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weeknote of @kt3k" />
+    <title>Week 39 - 2022 | @kt3k の週報 | Weeknote of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-39---2022">Week 39 - 2022</h1>
+<blockquote>
+<p>The weeknote for 9/26 - 10/2.</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="cloudflareworkerd">cloudflare/workerd</h3>
+<p><a href="https://github.com/cloudflare/workerd">https://github.com/cloudflare/workerd</a></p>
+<ul>
+<li>
+<p>Cloudflare finally open sourced <code>workerd</code> project. It is the core component of Cloudflare Workers. There are significant differences from Node or Deno. For example the entrypoint is Cap'n Proto settings file instead of a script.</p>
+<p>It states that the its purpose is being the core module of Cloudflare Workers, and not being a general purpose JavaScript runtime. So in my view this isn't a direct competitor to Node, Deno, or Bun in my view.</p>
+</li>
+</ul>
+<h3 id="denolanddeno">denoland/deno</h3>
+<ul>
+<li>
+<p>Implemented <code>--allow-sys</code> permission flag to Deno in <a href="https://github.com/denoland/deno/pull/16028">https://github.com/denoland/deno/pull/16028</a></p>
+<p>This is the 8th permission flag. Deno added 7th permission flag (was <code>--allow-plugin</code>, then it became <code>--allow-ffi</code>) 3 years ago. It was the first time to add a new flag in 3 years.</p>
+<p>This work was necessary for stabilizing APIs such as <code>Deno.hostname</code>. Those stabilizations are required for supporting some of npm modules without <code>--unstable</code> flag.</p>
+</li>
+<li>
+<p>Wrote an article about how to receive file upload in Deno in Qiita <a href="https://qiita.com/kt3k/items/6461a59eef0f8ff18d44">https://qiita.com/kt3k/items/6461a59eef0f8ff18d44</a></p>
+<p>It was suprising to me that the parsing is all done in Web Platform APIs.</p>
+</li>
+<li>
+<p>Bought the poster from the merch shop.</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Deno ポスター <a href="https://t.co/WZyJIDkH2E">pic.twitter.com/WZyJIDkH2E</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1576192446706638848?ref_src=twsrc%5Etfw">October 1, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="monja">Monja</h3>
+<ul>
+<li>
+<p>Iyo-chan and I went to Monja lunch on Saturday together. It was very delicious.</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ランチにもんじゃってきた <a href="https://t.co/e5RdsZzpaB">pic.twitter.com/e5RdsZzpaB</a></p>&mdash; あずき🦕9 (@okomekirai) <a href="https://twitter.com/okomekirai/status/1576167976310493184?ref_src=twsrc%5Etfw">October 1, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<h2 id="event">Event</h2>
+<h3 id="denobata-13">Denobata 13</h3>
+<ul>
+<li>Had denobata meetup on Sunday. Talked about random Deno things.</li>
+</ul>
+<hr>
+<p><a href="..">Back</a></p>
+<p><a href="https://github.com/kt3k/shuho/edit/main/2022/09-26.md">Edit this page</a></p>
+
+    </article>
+    
+    <div style="text-align: center; font-size: 12px; color: #bbb;">
+      <a href="https://github.com/kt3k/shuho/commit/13e729e">revision: 13e729e</a>
+    </div>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
