@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Week 48 - 2022 | @kt3k の週報 | Weeknote of @kt3k" />
+    <meta name="description" content="@kt3k の週報です | Weeknote of @kt3k">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2022/11-28.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 48 - 2022 | @kt3k の週報 | Weeknote of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2048%20-%202022" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weeknote of @kt3k" />
+    <title>Week 48 - 2022 | @kt3k の週報 | Weeknote of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../img/logo-square-white.png" />
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-48---2022">Week 48 - 2022</h1>
+<blockquote>
+<p>The weeknote for 11/28 - 12/4.</p>
+</blockquote>
+<h2 id="tech">Tech</h2>
+<h3 id="cjs-esm-polyglot">CJS ESM Polyglot</h3>
+<ul>
+<li>I learned the trick of JavaScript that the expression <code>typeof await /0/["test"]</code> is valid in both CJS and ESM context, but it evaluate differently in both contexts. It parses like <code>typeof (await (/0/["test"]))</code> in ESM (<code>/0/</code> is a regexp here), but <code>(typeof await) / 0 / ["test"]</code> (=== NaN) in CJS. By using this, one can define the module which works as both CJS and ESM modules. More details are explored <a href="https://speakerdeck.com/qnighy/hands-on-native-esm-at-jsconf-jp-2022?slide=170">this slides</a> by @qnighy.</li>
+</ul>
+<h3 id="chatgpt">ChatGPT</h3>
+<ul>
+<li>ChatGPT was released this week. It looks extremely good. It still gives wrong answers sometimes, but it also gives unbelievably well written answers in many cases. Now everybody is playing with it in a lot of creative ways.</li>
+</ul>
+<h3 id="explicit-resource-management">Explicit Resource Management</h3>
+<ul>
+<li><a href="https://github.com/tc39/proposal-explicit-resource-management">Explicit Resource Management</a> proposal went to the stage 3 this week. This proposal, in my view, is the most life changing proposal in recent a few years in ECMAScript. Probably this is the biggest change after the addition of async/await syntax. I'm looking forward to using it in the near future.</li>
+</ul>
+<h2 id="hobby">Hobby</h2>
+<h3 id="business-card">Business Card</h3>
+<ul>
+<li>
+<p>I created a new business card. I don't need cards already for long time as a software engineer/a web developer. I don't need to introduce myself with cards. I created a card just because I wanted to experiment an idea of new design.</p>
+<p>This is my 4th time to design my business card. This time I tried to make it as minimal as possible. Maybe it's too minimal to be considered as 'a business card' as it even doesn't include email address. However in my view it's sufficient for a business card for a software engineer as other necessary info are linked from the given info, and I only contract with people who understand how to use the browsers and the internet.</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">New business card <a href="https://t.co/BPlgcSh7dS">pic.twitter.com/BPlgcSh7dS</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1598872717163630592?ref_src=twsrc%5Etfw">December 3, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<hr>
+<p><a href="..">Back</a></p>
+<p><a href="https://github.com/kt3k/shuho/edit/main/2022/11-28.md">Edit this page</a></p>
+
+    </article>
+    
+    <div style="text-align: center; font-size: 12px; color: #bbb;">
+      <a href="https://github.com/kt3k/shuho/commit/94cbbd2">revision: 94cbbd2</a>
+    </div>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
