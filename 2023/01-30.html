@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Week 5 - 2023 | @kt3k の週報 | Weeknote of @kt3k" />
+    <meta name="description" content="@kt3k の週報です | Weeknote of @kt3k">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2023/01-30.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 5 - 2023 | @kt3k の週報 | Weeknote of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%205%20-%202023" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weeknote of @kt3k" />
+    <title>Week 5 - 2023 | @kt3k の週報 | Weeknote of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../img/logo-square-white.png" />
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-5---2023">Week 5 - 2023</h1>
+<blockquote>
+<p>The weeknote for 1/30 - 2/5.</p>
+</blockquote>
+<h2 id="tech">Tech</h2>
+<h3 id="decorators">Decorators</h3>
+<ul>
+<li>
+<p>There was an issue in the decorators proposal of JavaScript. In the first version of the proposal, the decorators are appeared before <code>export</code> keyword:</p>
+<pre><code class="language-js">@decorator
+export class MyClass { ... }
+</code></pre>
+<p>But some people argued that <code>@decorator</code> should appear 'after' export. This makes more sense if the decorator is considered as 'adjective'. Compare the 2 sentences: <code>export red apple</code> vs <code>red export apple</code>. The former makes much more sense obviously.</p>
+<p>After many many iterations of discussions (I couldn't follow all of them though), @littledan (the champion at that time) concluded that they decided to choose export-before-decorator is the only correct word order about 4 years ago, and it was written in spec.</p>
+<p>The spec was later drastically changed, but the part about export-decorator word order was unchanged, and then it was approved to the stage 3. So everybody should've been on the same page about it, but this week this part was suddenly changed.</p>
+<p>Someone found that TypeScript implement this in a different way. Actually they implemented to allow decorator-before-export word order in TypeScript syntax on purpose (Some guessed it was because they wanted to keep the examples of Angular working without change). And the discussion started heating a lot.</p>
+<p>In the discussion, it was found that TypeScript team is not open to disallowing decorator-before-export syntax. I'm not sure it was because of it, but anyway the current champion @pzuraq was very open to changing it at this point. That was a little surprising to me. That wasn't something I expected to see in TC39 champions. Anyway they accepted the request from TypeScript team and the spec is now the opposite. decorator-before-export is the only correct way to decorate the classes. I've never seen this kind of twist in the spec process in TC39 and was really surprised.</p>
+</li>
+</ul>
+<h3 id="article">Article</h3>
+<ul>
+<li>
+<p>I wrote an article about <code>deno_std</code> and published in gihyo.jp.</p>
+<p><a href="https://gihyo.jp/article/2023/01/deno-standard-modules-01">https://gihyo.jp/article/2023/01/deno-standard-modules-01</a></p>
+</li>
+</ul>
+<h2 id="event">Event</h2>
+<h3 id="denobata-16">denobata #16</h3>
+<ul>
+<li>We had denobata #16. Talked misc things together with @uki00a and @magurotuna. I had to leave in the middle to meet Asher @iuioiua in Yoyogi.</li>
+</ul>
+<hr>
+<p><a href="..">Back</a></p>
+<p><a href="https://github.com/kt3k/shuho/edit/main/2023/01-30.md">Edit this page</a></p>
+
+    </article>
+    
+    <div style="text-align: center; font-size: 12px; color: #bbb;">
+      <a href="https://github.com/kt3k/shuho/commit/26bdd4f">revision: 26bdd4f</a>
+    </div>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
