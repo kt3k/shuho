@@ -5,10 +5,5 @@
         "bulbofile.js"
       ]
     }
-  },
-  "tasks": {
-    "clean": "rm -rf build",
-    "start": "npm run start",
-    "build": "npm run build"
   }
 }
