@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Week 10 - 2023 | @kt3k の週報 | Weeknote of @kt3k" />
+    <meta name="description" content="@kt3k の週報です | Weeknote of @kt3k">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2023/03-06.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 10 - 2023 | @kt3k の週報 | Weeknote of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2010%20-%202023" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weeknote of @kt3k" />
+    <title>Week 10 - 2023 | @kt3k の週報 | Weeknote of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../img/logo-square-white.png" />
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-10---2023">Week 10 - 2023</h1>
+<blockquote>
+<p>The weeknote for 3/6 - 3/12.</p>
+</blockquote>
+<h2 id="job">Job</h2>
+<h3 id="crypto">Crypto</h3>
+<ul>
+<li>
+<p>I was working on polyfills of <code>node:crypto</code> and mainly on AES cipher via <code>crypto.createCipehriv</code> API. This time I first learned AES in details, and I found it's very interesting. AES was selected from 15 candidates algorithms. NIST chose Rijndael algotihm as AES and published it as FIPS PUB 197. I still haven't understood it completely. I started the reading notes of AES spec in scrapbox. <a href="https://scrapbox.io/kt3k/AES_spec_reading">https://scrapbox.io/kt3k/AES_spec_reading</a></p>
+<p>AES itself is not enough for implementing <code>crypto.createCipheriv</code>. We also need to implement block operation mode to make it work. AES itself can only encrypt 128 bits input data, and it doesn't work for arbitrary length of data. To make it work for arbitrary length data, we need to choose block operation modes such as ECB, CBC, GCM, etc. These are also very complex and I still keep learning it. Interesting thing about it is that these block operation modes are defined independent of the block ciphers. They can be used together with any block ciphers.</p>
+</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="tax-return">Tax return</h3>
+<ul>
+<li>Filed a tax return for 2022. This was the 8th time I filed it by myself.</li>
+</ul>
+<hr>
+<p><a href="..">Back</a></p>
+<p><a href="https://github.com/kt3k/shuho/edit/main/2023/03-06.md">Edit this page</a></p>
+
+    </article>
+    
+    <div style="text-align: center; font-size: 12px; color: #bbb;">
+      <a href="https://github.com/kt3k/shuho/commit/f81a6ec">revision: f81a6ec</a>
+    </div>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
