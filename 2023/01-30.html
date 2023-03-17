@@ -40,6 +40,9 @@
 export class MyClass { ... }
 </code></pre>
 <p>But some people argued that <code>@decorator</code> should appear 'after' export. This makes more sense if the decorator is considered as 'adjective'. Compare the 2 sentences: <code>export red apple</code> vs <code>red export apple</code>. The former makes much more sense obviously.</p>
+<p>If we follow that argument, the syntax would be:</p>
+<pre><code class="language-js">export @decorator class Apple { ... }
+</code></pre>
 <p>After many many iterations of discussions (I couldn't follow all of them though), @littledan (the champion at that time) concluded that they decided to choose export-before-decorator is the only correct word order about 4 years ago, and it was written in spec.</p>
 <p>The spec was later drastically changed, but the part about export-decorator word order was unchanged, and then it was approved to the stage 3. So everybody should've been on the same page about it, but this week this part was suddenly changed.</p>
 <p>Someone found that TypeScript implement this in a different way. Actually they implemented to allow decorator-before-export word order in TypeScript syntax on purpose (Some guessed it was because they wanted to keep the examples of Angular working without change). And the discussion started heating a lot.</p>
@@ -65,7 +68,7 @@ export class MyClass { ... }
     </article>
     
     <div style="text-align: center; font-size: 12px; color: #bbb;">
-      <a href="https://github.com/kt3k/shuho/commit/09ab275">revision: 09ab275</a>
+      <a href="https://github.com/kt3k/shuho/commit/7ef44d2">revision: 7ef44d2</a>
     </div>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
