@@ -54,10 +54,10 @@ const fileToArticle = (file) => {
   // If the next week is the first week, then it's the last week of the year
   const isLastWeek = m.clone().add(7, "days").format("W") === "1";
   const title = `Week ${week} - ${year}`;
-  const categories = file.contents
-    .toString()
-    .match(/^##\s.*$/gm)
-    .map((s) => s.replace(/^##\s*/, ""));
+  const categories =
+    file.contents.toString().match(/^##\s.*$/gm)?.map((s) =>
+      s.replace(/^##\s*/, "")
+    ) || [];
   const lang = file.frontMatter.lang || "en";
   return {
     year,
