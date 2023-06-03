@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Week 19 - 2023 | @kt3k の週報 | Weeknote of @kt3k" />
+    <meta name="description" content="@kt3k の週報です | Weeknote of @kt3k">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2023/05-08.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 19 - 2023 | @kt3k の週報 | Weeknote of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2019%20-%202023" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weeknote of @kt3k" />
+    <title>Week 19 - 2023 | @kt3k の週報 | Weeknote of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../img/logo-square-white.png" />
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-19---2023">Week 19 - 2023</h1>
+<blockquote>
+<p>The weeknote for 5/8 - 5/14.</p>
+</blockquote>
+<h2 id="tech">Tech</h2>
+<h3 id="dart">Dart</h3>
+<ul>
+<li>Dart 3 was announced this week. It's announced that Dart 3 is sound. That's probably significant achievement for gradually typed language.</li>
+</ul>
+<h3 id="pronounis">pronoun.is</h3>
+<ul>
+<li>I found that pronoun.is is now dead (probably because of the change of terms of use of Heroku) and it was written in Clojure.</li>
+</ul>
+<h2 id="job">Job</h2>
+<h3 id="github-api">GitHub API</h3>
+<ul>
+<li>Was interacting GitHub API this week. I found a bug with the endpoint <a href="https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#create-a-repository-using-a-template">"Create a repository using a template"</a>. When I was calling this API, the call never succeeded and the error message was unintelligible. After a number of tries I finally reached out to the support. After a few communications, we found that the access permission is required for the template repository itself (whic should have been unnecessary when the template repo is public). We ended up using a little complicated workaround to it.</li>
+</ul>
+<h2 id="hobby">Hobby</h2>
+<h3 id="midjourney">Midjourney</h3>
+<ul>
+<li>
+<p>Played a little with Midjourney. <code>mandala</code> keyword gives interesting results.</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Got this by the query &quot;symmetric mandala&quot; to midjourney <a href="https://t.co/Nm8jxzmgwy">pic.twitter.com/Nm8jxzmgwy</a></p>&mdash; Yoshiya Hinosawa (@kt3k) <a href="https://twitter.com/kt3k/status/1657269881090502660?ref_src=twsrc%5Etfw">May 13, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</li>
+</ul>
+<hr>
+<p><a href="..">Back</a></p>
+<p><a href="https://github.com/kt3k/shuho/edit/main/2023/05-08.md">Edit this page</a></p>
+
+    </article>
+    
+    <div style="text-align: center; font-size: 12px; color: #bbb;">
+      <a href="https://github.com/kt3k/shuho/commit/827b602">revision: 827b602</a>
+    </div>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
