@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Week 27 - 2023 | @kt3k の週報 | Weeknote of @kt3k" />
+    <meta name="description" content="@kt3k の週報です | Weeknote of @kt3k">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2023/07-03.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 27 - 2023 | @kt3k の週報 | Weeknote of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2027%20-%202023" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weeknote of @kt3k" />
+    <title>Week 27 - 2023 | @kt3k の週報 | Weeknote of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../img/logo-square-white.png" />
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-27---2023">Week 27 - 2023</h1>
+<blockquote>
+<p>The weeknote for 7/3 - 7/9.</p>
+</blockquote>
+<h2 id="tech">Tech</h2>
+<h3 id="threads">Threads</h3>
+<ul>
+<li>This week Threads has been released from Meta. It was a very interesting timing for a big new SNS to be released as twitter had awful operation this week. Threads got 100 million registration in the first week.</li>
+</ul>
+<h3 id="json">JSON</h3>
+<ul>
+<li>
+<p>I was randomly pondering about the spec of JSON. JSON looks nearly perfect in a sense that it's easy to parse, portable to any language. It's actually the infrastructure for data transfer between systems now. One thing I feel it's very unfortunate about JSON is the spec of <code>number</code>s. It doesn't have any restriction to its resulting value. As a result, the parse result of number value in JSON can be arbitrarily large integer, arbitrarily large or small float, etc. This kind of absense of restriction is very inconvenient to handle in usual languages. No language actually can handle such huge range of various numbers. This results in some ambiguity in parse result of number types of JSON.</p>
+<p>On the other hand, <a href="https://msgpack.org/index.html">messagepack</a> spec has explicit rules about parsed number values. This is very good and sane.</p>
+</li>
+</ul>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno">denoland/deno</h3>
+<p><a href="https://github.com/denoland/deno">https://github.com/denoland/deno</a></p>
+<ul>
+<li>Deno released v1.35 this week. <code>Deno.serve</code> has been finally stabilized. Before this, Deno has <code>Deno.serveHttp</code> which works on existing <code>Deno.listener</code> object, which was good enough to show the better HTTP throughput than Node.js, but it wasn't enough to be better than the HTTP performance of Bun. We need to handle the entire HTTP stack on Rust side, and it requires Deno to expose simple <code>Deno.serve</code> API, which processes the entire HTTP stack on Rust.</li>
+</ul>
+<h2 id="hobby">Hobby</h2>
+<h3 id="minblog">minblog</h3>
+<ul>
+<li>I'm planning to build my own micro blogging software, code named minblog. It has a UI like twitter. You post things in short text, sometime with attached photos. OG images are expanded. Each post has unique permalink. You don't get any likes, replies, etc. No quick interactions. If someone would like to interact with it, they can quote posts using permalinks.</li>
+</ul>
+<hr>
+<p><a href="..">Back</a></p>
+<p><a href="https://github.com/kt3k/shuho/edit/main/2023/07-03.md">Edit this page</a></p>
+
+    </article>
+    
+    <div style="text-align: center; font-size: 12px; color: #bbb;">
+      <a href="https://github.com/kt3k/shuho/commit/fe4fc54">revision: fe4fc54</a>
+    </div>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
