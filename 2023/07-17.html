@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Week 29 - 2023 | @kt3k の週報 | Weeknote of @kt3k" />
+    <meta name="description" content="@kt3k の週報です | Weeknote of @kt3k">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2023/07-17.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 29 - 2023 | @kt3k の週報 | Weeknote of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2029%20-%202023" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weeknote of @kt3k" />
+    <title>Week 29 - 2023 | @kt3k の週報 | Weeknote of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../img/logo-square-white.png" />
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-29---2023">Week 29 - 2023</h1>
+<blockquote>
+<p>The weeknote for 7/17 - 7/23.</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="chromium">Chromium</h3>
+<ul>
+<li>
+<p>I started working on the bug fix on chromium this week.</p>
+<p>In the discussion of the design of <code>delay</code> function in <code>std/async</code>, Jesse Jackson (@jsejcksn) pointed that in the web platform spec <code>fetch</code> throws 'abort reason' when the abort signal is aborted, and chrome doesn't follow this rule. <a href="https://github.com/denoland/deno_std/pull/3479">https://github.com/denoland/deno_std/pull/3479</a></p>
+<p>I got interested in the reason why chrome doesn't follow it. It's rare that chrome doesn't follow the spec, especially when the spec is maintained by whatwg.</p>
+<p>I checked <a href="https://wpt.fyi/results/">https://wpt.fyi/results/</a> and the case (<code>Aborting rejects with abort reason</code>) was actually failing.</p>
+<p>I also check the chromium's issue tracker and there was actually an issue for it. <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1371359">https://bugs.chromium.org/p/chromium/issues/detail?id=1371359</a> . According to the issue, this behavior used to be not a bug, but it became a bug at some point because of the change in the upstream spec. This describes a little bit of why this is in this way.</p>
+<p>I decided to work on this mainly because this bug doesn't look difficult to resolve. It looks like really a simple bug. It throws a wrong error, instead of correct one. The fix should one line change.</p>
+<p>After working on this a while, I found the code which caused this, and fixed it. <a href="https://chromium-review.googlesource.com/c/chromium/src/+/4705592">https://chromium-review.googlesource.com/c/chromium/src/+/4705592</a></p>
+<p>This was my first contribution to chrome browser. I'm glad to be able to contribute back to the software which I've been using almost everyday over 10 years.</p>
+<p>The experience of review in chromium's review system was a bit tough because it's very different from what I'm used to. I mean it's very different from GitHub. I needed to learn their own tool <code>git cl</code> subcommands.</p>
+<p>The reviewers are very responsive and supportive. My change list was reviewed in very timely manner. I got 3 LGTMs in a few days. It felt a little better than the case of Deno CLI. You rarely get 3 LGTMs there.</p>
+<p>One of the tough part of contributing to it is the build time. It takes enormous amount of time. The first day I started the full build of chrome target, and it didn't finish when I woke up next day. The CPU usage had been 100% more than a half day. Another tough part was probably specific to my contribution. I updated my WPT expectation and I thought that's enought for passing CI, but the CI reported the error in other expectation files, which look exactly similar to what I already updated. After reading the code base carefully I found some special settings about <code>virtual</code> tests, which trigger the chrome with special flags. That <code>virtual</code> testing things are not documented well, and I needed to read lot of code, lof of past changes, etc to understand it.</p>
+<p>After all, I'm glad to be able to contribute to chrome. Now my name is in <a href="https://github.com/chromium/chromium/blob/main/AUTHORS"><code>AUTHORS</code></a> list.</p>
+</li>
+</ul>
+<h2 id="event">Event</h2>
+<h3 id="workers-tech">Workers Tech</h3>
+<ul>
+<li>Joined Workers Tech #1, which is the tech meetup for cloudflare workers, organized by @yusukebe. The venue was Classmethod's office. Really nice place and nice talks.</li>
+</ul>
+<h3 id="denobata-21">Denobata #21</h3>
+<p><a href="https://denobata-monthly-report.deno.dev/report/21">https://denobata-monthly-report.deno.dev/report/21</a></p>
+<ul>
+<li>We had denobata #21. Talked about random things about Deno.</li>
+</ul>
+<hr>
+<p><a href="..">Back</a></p>
+<p><a href="https://github.com/kt3k/shuho/edit/main/2023/07-17.md">Edit this page</a></p>
+
+    </article>
+    
+    <div style="text-align: center; font-size: 12px; color: #bbb;">
+      <a href="https://github.com/kt3k/shuho/commit/05787b6">revision: 05787b6</a>
+    </div>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
