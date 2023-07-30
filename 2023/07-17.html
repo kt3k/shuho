@@ -36,7 +36,7 @@
 <ul>
 <li>
 <p>I started working on the bug fix on chromium this week.</p>
-<p>In the discussion of the design of <code>delay</code> function in <code>std/async</code>, Jesse Jackson (@jsejcksn) pointed that in the web platform spec <code>fetch</code> throws 'abort reason' when the abort signal is aborted, and chrome doesn't follow this rule. <a href="https://github.com/denoland/deno_std/pull/3479">https://github.com/denoland/deno_std/pull/3479</a></p>
+<p>In the discussion of the design of <code>delay</code> function in <code>deno_std/async</code>, Jesse Jackson (@jsejcksn) pointed that in the web platform spec <code>fetch</code> throws 'abort reason' when the abort signal is aborted, and chrome doesn't follow this rule. <a href="https://github.com/denoland/deno_std/pull/3479">https://github.com/denoland/deno_std/pull/3479</a></p>
 <p>I got interested in the reason why chrome doesn't follow it. It's rare that chrome doesn't follow the spec, especially when the spec is maintained by whatwg.</p>
 <p>I checked <a href="https://wpt.fyi/results/">https://wpt.fyi/results/</a> and the case (<code>Aborting rejects with abort reason</code>) was actually failing.</p>
 <p>I also check the chromium's issue tracker and there was actually an issue for it. <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1371359">https://bugs.chromium.org/p/chromium/issues/detail?id=1371359</a> . According to the issue, this behavior used to be not a bug, but it became a bug at some point because of the change in the upstream spec. This describes a little bit of why this is in this way.</p>
@@ -66,7 +66,7 @@
     </article>
     
     <div style="text-align: center; font-size: 12px; color: #bbb;">
-      <a href="https://github.com/kt3k/shuho/commit/05787b6">revision: 05787b6</a>
+      <a href="https://github.com/kt3k/shuho/commit/80cb51f">revision: 80cb51f</a>
     </div>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
