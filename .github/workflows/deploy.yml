@@ -8,6 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: denoland/setup-deno@v1
+        with:
+          deno-version: canary
       - run: deno task build
       - uses: peaceiris/actions-gh-pages@v3
         with:
