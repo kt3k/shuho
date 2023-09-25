@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Week 35 - 2023 | @kt3k の週報 | Weeknote of @kt3k" />
+    <meta name="description" content="@kt3k の週報です | Weeknote of @kt3k">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2023/08-28.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 35 - 2023 | @kt3k の週報 | Weeknote of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2035%20-%202023" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weeknote of @kt3k" />
+    <title>Week 35 - 2023 | @kt3k の週報 | Weeknote of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../img/logo-square-white.png" />
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-35---2023">Week 35 - 2023</h1>
+<blockquote>
+<p>The weeknote for 8/28 - 9/3.</p>
+</blockquote>
+<h2 id="tech">Tech</h2>
+<h3 id="filewebkitrelativepath"><code>File#webkitRelativePath</code></h3>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/File/webkitRelativePath">https://developer.mozilla.org/en-US/docs/Web/API/File/webkitRelativePath</a></p>
+<ul>
+<li>
+<p>File class in Web Standard API has <code>webkitRelativePath</code> property. The name looks like the vendor prefixed version of the property <code>relativePath</code>, but it actually isn't. This property is now implemented in all major browsers with this exact name, including Firefox. I <a href="https://github.com/WICG/entries-api/issues/42">asked</a> the spec editor about the situation, but they say they just documented the de facto standard implemented in all browsers, and they don't have a way to revert or change it. So it means that <code>webkitRelativePath</code> property is a web standard API name as is. I shared this to colleague, but everyone looks surprised or even looks trying to rejecting that fact.</p>
+<p>BTW the API is already included in DOM typing of TypeScript, but Deno still doesn't have it. That discrepancy caused some minor issue in the PR to my hobby project, <a href="https://github.com/kt3k/packup/pull/54#pullrequestreview-1538714208">packup</a>. So I tried to prevent it by <a href="https://github.com/denoland/deno/pull/20306">adding <code>webkitRelativePath</code></a> to Deno, but it's still in review.</p>
+</li>
+</ul>
+<h3 id="biome">Biome</h3>
+<ul>
+<li>Biome has been <a href="https://biomejs.dev/blog/annoucing-biome">announced</a> this week. Biome is the successor project of <a href="https://github.com/rome/tools">Rome</a>, which was started a while ago by <a href="https://github.com/sebmck">@sebmck</a>, but disappeared in the end of the last year.</li>
+</ul>
+<hr>
+<p><a href="..">Back</a></p>
+<p><a href="https://github.com/kt3k/shuho/edit/main/2023/08-28.md">Edit this page</a></p>
+
+    </article>
+    
+    <div style="text-align: center; font-size: 12px; color: #bbb;">
+      <a href="https://github.com/kt3k/shuho/commit/e35418f">revision: e35418f</a>
+    </div>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
