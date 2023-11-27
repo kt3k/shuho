@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Week 47 - 2023 | @kt3k の週報 | Weeknote of @kt3k" />
+    <meta name="description" content="@kt3k の週報です | Weeknote of @kt3k">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2023/11-20.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 47 - 2023 | @kt3k の週報 | Weeknote of @kt3k" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2047%20-%202023" />
+    
+    <meta property="og:description" content="@kt3k の週報です | Weeknote of @kt3k" />
+    <title>Week 47 - 2023 | @kt3k の週報 | Weeknote of @kt3k</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../img/logo-square-white.png" />
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-47---2023">Week 47 - 2023</h1>
+<blockquote>
+<p>The weeknote for 11/20 - 11/26.</p>
+</blockquote>
+<h2 id="oss">OSS</h2>
+<h3 id="denolanddeno_std">denoland/deno_std</h3>
+<ul>
+<li>
+<p>I finished <a href="https://github.com/denoland/deno_std/pull/3814"><code>std/expect</code> work</a> this week. It started long long time ago, and a couple of people started working on it, but nobody actually finished them, and the task was stalled for a long time.</p>
+<p>This should have important meaning to people who consider migrating from Node.js to Deno. Now Jest is the de facto standard testing framework for Node.js, and now <code>deno_std</code> has <code>testing/bdd.ts</code> and <code>std/expect</code>. The most basic part of Jest is now covered by <code>deno_std</code>.</p>
+</li>
+</ul>
+<h3 id="denolanddeno">denoland/deno</h3>
+<ul>
+<li>
+<p>I wrote test coverage improvements plan in Deno issue this week. <a href="https://github.com/denoland/deno/issues/21325">https://github.com/denoland/deno/issues/21325</a></p>
+<p>The goal of this plan is to make the coverage reporting feature on par with <code>jest --coverage</code>. I believe this makes total sense. Having best builtin tooling is the best selling point of Deno. The existing state of coverage reporting support is far below the expectation to it. Deno should make it at similar level as Jest at least.</p>
+</li>
+</ul>
+<h2 id="life">Life</h2>
+<h3 id="sick">Sick</h3>
+<ul>
+<li>Iyo-chan and Rei were very sick in the weekend. They couldn't eat well.</li>
+</ul>
+<hr>
+<p><a href="..">Back</a></p>
+<p><a href="https://github.com/kt3k/shuho/edit/main/2023/11-20.md">Edit this page</a></p>
+
+    </article>
+    
+    <div style="text-align: center; font-size: 12px; color: #bbb;">
+      <a href="https://github.com/kt3k/shuho/commit/bb453d2">revision: bb453d2</a>
+    </div>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
