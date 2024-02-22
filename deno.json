@@ -1,9 +1,7 @@
 {
   "fmt": {
-    "files": {
-      "include": [
-        "bulbofile.js"
-      ]
-    }
+    "include": [
+      "bulbofile.js"
+    ]
   }
 }

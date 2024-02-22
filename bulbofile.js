@@ -26,8 +26,8 @@ const langIcon = {
 const sort = (x, y) => y.data.date.diff(x.data.date);
 const getBasepath = (path) => join(".", relative(dirname(path), ""));
 const DATE_FORMAT = "M/D";
-const SITE_TITLE = "@kt3k の週報 | Weeknote of @kt3k";
-const SITE_DESCRIPTION = "@kt3k の週報です | Weeknote of @kt3k";
+const SITE_TITLE = "@kt3k の週報 | @kt3k weeknotes";
+const SITE_DESCRIPTION = "@kt3k の週報です | @kt3k weeknotes";
 const DOMAIN = "shuho.kt3k.org";
 
 const tmpl = (tmpl) =>
