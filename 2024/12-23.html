@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Week 52 - 2024 | @kt3k の週報 | @kt3k weeknotes" />
+    <meta name="description" content="@kt3k の週報です | @kt3k weeknotes">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kt3k" />
+    <meta property="og:url" content="https://shuho.kt3k.org/2024/12-23.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Week 52 - 2024 | @kt3k の週報 | @kt3k weeknotes" />
+    
+    <meta property="og:image" content="https://shuho-og-image.vercel.app/Week%2052%20-%202024" />
+    
+    <meta property="og:description" content="@kt3k の週報です | @kt3k weeknotes" />
+    <title>Week 52 - 2024 | @kt3k の週報 | @kt3k weeknotes</title>
+    <link rel="stylesheet" href="../css/sakura.css" />
+    <link rel="stylesheet" href="../css/arduino-light.min.css" />
+    <link rel="icon" href="../img/logo-square-white.png" />
+    <style>
+      .align-center {
+        text-align: center;
+      }
+		</style>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+<h1 id="week-52---2024">Week 52 - 2024</h1>
+<blockquote>
+<p>The weeknote for 12/23 - 12/29.</p>
+</blockquote>
+<h2 id="job">Job</h2>
+<h3 id="aes-gcm-mode">AES GCM mode</h3>
+<ul>
+<li>
+<p>I added support of the initialization vector of any length with GCM mode in aead-gcm-stream crate <a href="https://github.com/littledivy/aead-gcm-stream/pull/3">https://github.com/littledivy/aead-gcm-stream/pull/3</a>, which indirectly fixed the compatibility bug of Deno with Node <a href="https://github.com/denoland/deno/issues/27441">https://github.com/denoland/deno/issues/27441</a></p>
+<p>It was interesting to implement the calculation of initial block by reading the official spec. One tricky part was that there's outdated version of the spec available on the internet, and unfortunately I first tried to implement it first. After struggling to match the result with Node version of cipher a few hours, I realized that there's another version of the spec, which was actually the true spec..</p>
+</li>
+</ul>
+<h2 id="event">Event</h2>
+<h3 id="deno-advent-calendar">Deno Advent Calendar</h3>
+<ul>
+<li>
+<p>I joined Deno Advent Calendar this year. I wrote 16 articles about Deno, each featuring small new feature introduced this year.</p>
+<p><a href="https://qiita.com/advent-calendar/2024/deno">https://qiita.com/advent-calendar/2024/deno</a></p>
+</li>
+</ul>
+<hr>
+<p><a href="..">Back</a></p>
+<p><a href="https://github.com/kt3k/shuho/edit/main/2024/12-23.md">Edit this page</a></p>
+
+    </article>
+    
+    <div style="text-align: center; font-size: 12px; color: #bbb;">
+      <a href="https://github.com/kt3k/shuho/commit/97d7217">revision: 97d7217</a>
+    </div>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121539714-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121539714-1');
+    </script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
