@@ -20,7 +20,7 @@ jobs:
       - uses: denoland/setup-deno@v2
       - run: deno install
       - run: deno task build
-- uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: ./build
       - uses: actions/deploy-pages@v4
