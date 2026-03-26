@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const require = createRequire(join(__dirname, "node_modules", "bulbo", "src", "index.js"));
+const require = createRequire(join(__dirname, "package.json"));
 const vfs = require("vinyl-fs");
 
 // Clean output dir
