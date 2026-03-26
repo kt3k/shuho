@@ -1,5 +1,11 @@
-import vfs from "npm:vinyl-fs@3.0.3";
+import { createRequire } from "node:module";
 import { readFileSync, rmSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const require = createRequire(join(__dirname, "node_modules", "bulbo", "src", "index.js"));
+const vfs = require("vinyl-fs");
 
 // Clean output dir
 try { rmSync("build_debug", { recursive: true }); } catch {}
