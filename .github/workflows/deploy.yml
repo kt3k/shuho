@@ -20,6 +20,8 @@ jobs:
       - uses: denoland/setup-deno@v2
       - run: deno install
       - run: deno task build
+      - name: Restore binary assets corrupted by Deno Node compat
+        run: cd assets && find . -type f \( -name '*.jpg' -o -name '*.png' -o -name '*.gif' -o -name '*.webp' -o -name '*.ico' \) -exec cp -f {} ../build/{} \;
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./build
