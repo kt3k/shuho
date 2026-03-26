@@ -20,7 +20,7 @@
   "homepage": "https://github.com/kt3k/shuho#readme",
   "devDependencies": {
     "branch-pipe": "^1.0.1",
-    "bulbo": "^8.0.2",
+    "bulbo": "^8.0.5",
     "gulp-data": "^1.3.1",
     "gulp-front-matter": "^1.3.0",
     "gulp-remark": "^8.0.0",
