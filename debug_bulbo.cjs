@@ -1,30 +1,16 @@
-// Standalone debug: check build output after deno task build
 const fs = require("fs");
 
-const files = [
-  "img/kt3k.jpg",
-  "img/logo-square-white.png",
-  "img/logo.svg",
-];
+// Test 1: Check build output after deno task build
+console.log("=== Test 1: Build output check ===");
+const original = fs.readFileSync("assets/img/kt3k.jpg");
+const built = fs.readFileSync("build/img/kt3k.jpg");
+console.log("original:", original.length, "bytes, header:", Array.from(original.slice(0, 4)).map(b => b.toString(16).padStart(2, '0')).join(' '));
+console.log("built:   ", built.length, "bytes, header:", Array.from(built.slice(0, 4)).map(b => b.toString(16).padStart(2, '0')).join(' '));
+console.log("match:", Buffer.compare(original, built) === 0);
 
-for (const f of files) {
-  try {
-    const original = fs.readFileSync("assets/" + f);
-    const built = fs.readFileSync("build/" + f);
-    const match = Buffer.compare(original, built) === 0;
-    console.log(f + ":", match ? "OK" : "CORRUPTED",
-      `(${original.length} -> ${built.length})`);
-    if (!match) {
-      console.log("  original:", Array.from(original.slice(0, 8)).map(b => b.toString(16).padStart(2, '0')).join(' '));
-      console.log("  built:   ", Array.from(built.slice(0, 8)).map(b => b.toString(16).padStart(2, '0')).join(' '));
-      // Check if it's a UTF-8 encoding issue
-      const asString = original.toString("utf-8");
-      const reEncoded = Buffer.from(asString, "utf-8");
-      if (Buffer.compare(reEncoded, built) === 0) {
-        console.log("  -> CONFIRMED: round-trip through UTF-8 string produces same corruption");
-      }
-    }
-  } catch (e) {
-    console.log(f + ": ERROR -", e.message);
-  }
-}
+// Test 2: UTF-8 round-trip check
+const reEncoded = Buffer.from(original.toString("utf-8"), "utf-8");
+console.log("utf8 roundtrip matches built:", Buffer.compare(reEncoded, built) === 0);
+
+// Test 3: Check if file.contents is a string in vinyl
+console.log("\n=== Test 2: vinyl-fs src check ===");

@@ -25,7 +25,7 @@ jobs:
           xxd build/img/kt3k.jpg | head -3
           wc -c build/img/kt3k.jpg
           wc -c assets/img/kt3k.jpg
-          node debug_bulbo.cjs
+          deno run -A debug_vinyl.mjs
       - name: Restore binary assets corrupted by Deno Node compat
         run: cd assets && find . -type f \( -name '*.jpg' -o -name '*.png' -o -name '*.gif' -o -name '*.webp' -o -name '*.ico' \) -exec cp -f {} ../build/{} \;
       - uses: actions/upload-pages-artifact@v3
