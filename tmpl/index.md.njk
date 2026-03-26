@@ -5,7 +5,7 @@
 <img src="img/kt3k.jpg" width="45" height="45" style="border-radius: 50%; margin-bottom: -15px; margin-right: 5px;" alt="kt3k"/> The weeknotes of [@kt3k][github]
 
 {% for f in file.files %}
-{% if loop.first or f.data.isLastWeek %}
+{% if loop.first or f.data.year != file.files[loop.index0 - 1].data.year %}
   <hr />
 
   ## {{ f.data.year }}

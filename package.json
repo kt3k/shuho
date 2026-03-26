@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Weeknotes of kt3k",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "start": "bulbo",
     "build": "bulbo build $(git rev-parse --short HEAD)"
